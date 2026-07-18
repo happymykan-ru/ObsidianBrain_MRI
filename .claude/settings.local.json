@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tesseract IMG_3730.JPG stdout)",
+      "Bash(convert IMG_3730.JPG -colorspace Gray -contrast-stretch 15% -sharpen 0x1 temp_3730.png)",
+      "Bash(tesseract temp_3730.png stdout)",
+      "Bash(convert IMG_3729.JPG -colorspace Gray -contrast-stretch 15% -sharpen 0x1 temp_3729.png)",
+      "Bash(tesseract temp_3729.png stdout)",
+      "Bash(convert IMG_3730.JPG -resize 200% -colorspace Gray -auto-level -sharpen 0x3 temp_3730_big.png)",
+      "Bash(tesseract temp_3730_big.png stdout --psm 6)"
+    ]
+  }
+}

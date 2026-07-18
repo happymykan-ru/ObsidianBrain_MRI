@@ -72,7 +72,7 @@ Ultra-fast T2*-weighted EPI for haemorrhage screening. Single-shot, long TE, mag
 Standard dose IV gadolinium. Post-contrast sequences (#6–#9) begin immediately. Target ~3 min from injection to post-contrast T1.
 
 **`t1_fl2d_tra_C` (#6) & `t1_fl2d_cor_C` (#7) — Ultra-fast FLASH**
-Two-plane 2D post-contrast T1. Both ~20 s, slice-by-slice, no fat sat. FLASH provides clean T1 with good gray-white contrast — #6 matches pre-contrast (#2) for enhancement comparison; #7 adds a quick coronal anatomical reference. 
+Two-plane 2D post-contrast T1. Both ~20 s, slice-by-slice, no fat sat. FLASH provides clean T1 with good gray-white contrast — #6 matches pre-contrast (#2) for subtraction/enhancement comparison; #7 adds a quick coronal anatomical reference.
 
 **`t1_vibe_fs_cor_C` (#8) & `t1_vibe_fs_tra_C` (#9) — Ultra-fast VIBE**
 3D T1 with fat saturation, ~20 s each, coronal + axial. 

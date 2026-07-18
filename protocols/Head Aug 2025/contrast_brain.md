@@ -54,7 +54,7 @@ Standard dose IV gadolinium. DWI (#4) fills the 5-minute delay post-injection �
 Multiplanar reconstruction from post-contrast VIBE (#5). **Sagittal:** midline and brainstem. **Axial:** conventional axial post-contrast reference. No additional acquisition.
 
 **`t1_fl2d_tra_C` (#7)**
-Post-contrast 2D T1 — identical geometry to the pre-contrast baseline (#2). Direct subtraction or visual comparison confirms enhancement. Because FLASH is inherently less T1-weighted than MPRAGE, enhancing tissue (which shortens T1) appears bright against suppressed background.
+Post-contrast 2D T1 — identical geometry to the pre-contrast baseline (#2). Subtract from #2 for a pure enhancement map; direct visual comparison also valid.
 
 ---
 

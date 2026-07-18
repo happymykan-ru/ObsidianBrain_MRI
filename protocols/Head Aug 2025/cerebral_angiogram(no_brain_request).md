@@ -43,23 +43,32 @@ RESOLVE DWI with GRAPPA ×2. 3 orthogonal directions averaged to trace. Acute is
 **`TOF_3D_multi-slab` (#4)**
 3D time-of-flight MR angiography, multi-slab acquisition. The primary diagnostic sequence. Sequential thin slabs are acquired perpendicular to arterial flow to maximise inflow enhancement — fresh unsaturated spins entering each slab appear bright against saturated stationary tissue. Multi-slab reduces saturation effects that degrade single-slab TOF over long travel distances. Sat band placed **superior** to suppress venous flow signal descending from above, keeping the TOF arterial-dominant.
 
-*Coverage:* Image position is copied at the circle of Willis level. Slab spans **carotid siphon → above corpus callosum** (~60–80 mm), typically across 3–4 overlapping thin 3D slabs (~20–30 mm each, ~25% overlap). Inferior boundary must capture the full carotid siphon curve and vertebrobasilar junction — cutting too high misses dissection and aneurysm at the petrous-cavernous junction. Superior boundary captures the distal ACA (pericallosal, callosomarginal) and MCA candelabra. Slab overlap <25% causes horizontal dark bands at slab junctions (venetian blind artefact).
+*Coverage:* Image position is copied at the circle of Willis level. Slab spans **carotid siphon → above corpus callosum** (~60–80 mm), typically across 3–4 overlapping thin 3D slabs (~20–30 mm each, ~25% overlap). Inferior boundary must capture the full carotid siphon curve and vertebrobasilar junction — cutting too high misses dissection and aneurysm at the petrous-cavernous junction. Superior boundary captures the distal ACA (pericallosal, callosomarginal) and MCA candelabra. Slab overlap <25% causes horizontal dark bands at slab junctions (venetian blind artefact). If the lesion or vessel of interest is not fully covered (e.g., high ICA stenosis extending extracranially, distal ACA/MCA pathology), either increase slices per slab or switch to an EC/IC bypass TOF protocol with larger coverage.
 
 **Contrast**
 Standard dose IV gadolinium. Target ~5 min delay before post-contrast T1 (#5).
 
 **`t1_fl2d_tra_brain_C` (#5)**
-Post-contrast 2D FLASH axial. Matches pre-contrast baseline (#2) for enhancement comparison. Post-contrast T1 is included because vascular pathology (vasculitis, tumour encasement, aneurysm wall enhancement) may not be visible on TOF alone.
+Post-contrast 2D FLASH axial. Identical geometry to pre-contrast baseline (#2) — subtract for pure enhancement map. Post-contrast T1 is included because vascular pathology (vasculitis, tumour encasement, aneurysm wall enhancement) may not be visible on TOF alone.
 
 ---
 
 ## 4. Pathology-Based Variations
 
-- **Aneurysm screening:** TOF is the primary sequence. If aneurysm is suspected and TOF quality is limited (slow flow, large aneurysm with turbulent dephasing), add post-contrast MRA
-- **Dissection:** TOF with fat saturation through the neck if cervical dissection is suspected. Intramural haematoma on T1 FS neck is the key finding
+- **Post-coiling:** Add `TOF_fl3d_tra_C` — post-contrast TOF with high bandwidth. Coil mass causes severe susceptibility dropout on standard TOF. High bandwidth shortens the readout, reducing the dephasing time across the susceptibility gradient. Post-contrast gadolinium shortens blood T1, partially compensating for the inflow saturation near the coil where flow is stagnant. Acquired after the standard post-contrast T1 (#5).
+
+- **Dissection:** Add `t1_tse_fs_tra` through the neck (skull base → C2–C3, 2–3 mm slices). 
+    - *Coverage:* The V3 segment is most vulnerable at C1–C2 — exiting the C2 foramen and looping around the C1 lateral mass before piercing the dura, head rotation maximally stretches the vessel here. Skull base captures the V3–V4 junction at dural penetration. C2–C3 inferiorly captures V2 just before the mobile segment. No need below C3 — lower dissections are rare. 
+    - *Plane:* Axial, parallel to cervical disc spaces. The vertebral artery runs vertically — true perpendicular cuts show the intramural haematoma as a crisp bright crescent. Any tilt elongates it into a smear indistinguishable from lumen. Spin echo avoids the flow-void and susceptibility artefacts that degrade GRE at the transverse foramina.
+
+- **AVM / fistula:** Add `TWIST_HEAD_ePAT2×3`. Time-resolved MRV capturing dynamic contrast passage — arterial feeders → nidus → early venous drainage in sequential frames (~1–3 s per frame, ePAT ×3).
+    - *Plane:* **Sagittal** 3D source for general AVM/fistula — most efficient for whole-head coverage with the fewest slabs. Covers all potential feeders (ICA, ECA, vertebral) and drainers. Consider **coronal** source if the target is specifically the transverse sinus (e.g., transverse-sigmoid dural fistula) — the transverse sinus runs laterally, so a coronal source profiles it in-plane for better spatial resolution along the sinus axis.
+    - *Coverage:* Whole skull — temporal bone to temporal bone, vertex to skull base. Include the ECA territory (scalp, meninges) as these are common feeders in dural fistulae.
+    - *Timing:* Acquired immediately post-contrast during the first-pass bolus. Start the TWIST acquisition — the first measurement serves as the pre-contrast mask. Inject contrast after the 1st measurement frame with no pause. Subsequent frames track the bolus through arterial → capillary → venous phases.
+    - *Contrast:* Use the CeMRA contrast injection protocol (including saline bolus and pause after flush) but at **standard** brain contrast dose — not the CeMRA double-dose. The time-resolved nature of TWIST compensates for the lower dose.
+    - *Key finding:* Early venous drainage — veins filling on the same frame as arteries or within 1–2 frames. Normal venous filling should be 4–6 seconds delayed from arterial peak.
+
 - **Vasculitis:** Post-contrast T1 (#5) is essential — vessel wall enhancement is the primary finding. Consider adding high-resolution T1 FS post-contrast through the circle of Willis
-- **AVM / fistula:** Consider adding t2_fl2d (T2* FLASH) post-contrast for venous anatomy
-- **Large vessel occlusion (stroke):** DWI (#3) + TOF (#4) provide the core acute stroke workup — territory and vessel status
 
 ---
 
@@ -67,12 +76,10 @@ Post-contrast 2D FLASH axial. Matches pre-contrast baseline (#2) for enhancement
 
 | Check | Improve |
 |---|---|
-| **Coverage** — vertex to foramen magnum on all axials? | Adjust slice stack if any sequence is short |
+| **TOF Lesion Coverage** — lesion/vessel of interest fully covered? | If not: increase slices/slab or switch to EC/IC bypass TOF with larger coverage |
+| **TOF Anatomical Coverage** — coverage adequate? Carotid siphon through pericallosal ACA? | Reposition if siphon cut inferiorly or distal ACA missing superiorly |
 | **TOF** — venous contamination? (sigmoid/transverse sinus bright) | Confirm superior sat band is placed. If venous signal persists, extend or reposition sat band |
-| **TOF** — slab boundary artefact? (horizontal dark lines at slab junctions) | Increase slab overlap to ≥25%. If severe, consider single-slab TOF with reduced coverage |
-| **TOF** — coverage adequate? Carotid siphon through pericallosal ACA? | Reposition if siphon cut inferiorly or distal ACA missing superiorly |
-| **`resolve_3scan_trace_p2`** — true restriction vs T2 shine-through on ADC? | Document true restriction. If distorted at skull base: flip phase-encode (A>>P → P>>A) |
-| **`resolve_3scan_trace_p2`** — water peak centred and narrow? | Re-shim if water peak broad or shifted |
+| **TOF** — slab boundary artefact? (horizontal dark lines at slab junctions) | Increase slab overlap to ≥25%. If severe, consider single-slab TOF with reduced coverage. Check source images — dark lines can mimic stenosis or occlusion on MIP |
 | **`t1_fl2d_tra_brain_C`** — contrast present? Confirm intravascular enhancement | If absent: check IV line, confirm injection, repeat if extravasation suspected |
 
 ---

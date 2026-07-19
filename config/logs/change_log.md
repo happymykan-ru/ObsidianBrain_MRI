@@ -17,3 +17,5 @@
 | `/protocols/Head Aug 2025/orbit.md` | ✅ Complete | Initial — 6 sequences + 2 optional (STIR, Dixon, TSE-only, dynamic VIBE, oblique sagittal) |
 | `/protocols/Head Aug 2025/pituitary.md` | ✅ Complete | Initial — 6 sequences (TSE-only, dynamic coronal, fat sat post-contrast) |
 | `/protocols/Head Aug 2025/pituitary+brain.md` | ✅ Complete | Initial — 10 sequences (full brain + targeted pituitary) |
+| `/protocols/Head Aug 2025/epilepsy.md` | ✅ Complete | Initial — 10 sequences (MP2RAGE, SWI, coronal oblique hippocampal, FLAIR) |
+| `/protocols/Head Aug 2025/MS.md` | ✅ Complete | Initial — 10 sequences (DIR SPACE replaces FLAIR, orbit screening, post-contrast DWI delay) |

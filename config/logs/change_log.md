@@ -12,3 +12,8 @@
 | `/protocols/Head Aug 2025/blade_brain.md` | ✅ Complete | New protocol — 8 sequences (BLADE T2/T1/FLAIR + RESOLVE DWI, motion-robust) |
 | `/protocols/Head Aug 2025/cerebral_angiogram+brain.md` | ✅ Complete | Initial — 9 sequences (TOF MRA + brain, FLASH 2D instead of MPRAGE pre-contrast) |
 | `/protocols/Head Aug 2025/cerebral_angiogram(no_brain_request).md` | ✅ Complete | Initial — 5 sequences (focused TOF + basic brain, detailed TOF coverage rationale) |
+| `/protocols/Head Aug 2025/IAM+brain.md` | ✅ Complete | Initial — 9 sequences (T2 SPACE IAM + full brain ± contrast) |
+| `/protocols/Head Aug 2025/IAM(no_brain_request).md` | ✅ Complete | Initial — 7 sequences (focused IAM, T2 SPACE + T1 TSE FS targeted) |
+| `/protocols/Head Aug 2025/orbit.md` | ✅ Complete | Initial — 6 sequences + 2 optional (STIR, Dixon, TSE-only, dynamic VIBE, oblique sagittal) |
+| `/protocols/Head Aug 2025/pituitary.md` | ✅ Complete | Initial — 6 sequences (TSE-only, dynamic coronal, fat sat post-contrast) |
+| `/protocols/Head Aug 2025/pituitary+brain.md` | ✅ Complete | Initial — 10 sequences (full brain + targeted pituitary) |

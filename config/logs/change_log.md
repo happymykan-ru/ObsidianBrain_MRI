@@ -19,3 +19,4 @@
 | `/protocols/Head Aug 2025/pituitary+brain.md` | ✅ Complete | Initial — 10 sequences (full brain + targeted pituitary) |
 | `/protocols/Head Aug 2025/epilepsy.md` | ✅ Complete | Initial — 10 sequences (MP2RAGE, SWI, coronal oblique hippocampal, FLAIR) |
 | `/protocols/Head Aug 2025/MS.md` | ✅ Complete | Initial — 10 sequences (DIR SPACE replaces FLAIR, orbit screening, post-contrast DWI delay) |
+| `/protocols/Head Aug 2025/GBM_DSC.md` | ✅ Complete | Initial — 9 sequences (DSC perfusion at 4 mL/s, CSI sLASER TE 135 MRS, DWI pre-contrast) |

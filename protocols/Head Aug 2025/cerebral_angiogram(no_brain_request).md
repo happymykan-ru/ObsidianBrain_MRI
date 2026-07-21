@@ -38,7 +38,7 @@ Core T2 axial brain anatomy. Reference plane for the protocol. Provides parenchy
 Pre-contrast 2D FLASH axial. Baseline T1 reference for post-contrast comparison (#5). No sat band: short TR has no slack.
 
 **`resolve_3scan_trace_p2` (#3)**
-RESOLVE DWI with GRAPPA ×2. 3 orthogonal directions averaged to trace. Acute ischaemia detection — essential in an angiogram protocol to identify territory already infarcted vs tissue at risk. RESOLVE reduces susceptibility distortion at skull base.
+RESOLVE DWI with GRAPPA ×2. The DWI-TOF pair answers the core acute stroke question: what's already dead vs what's at risk. Infarcted core shows restricted diffusion (bright on DWI, dark on ADC) — this tissue is dead regardless of intervention. The TOF (#4) shows the vessel occlusion. When DWI shows a small lesion but TOF shows a large vessel occlusion, the mismatch is tissue at risk (penumbra) — still salvageable if the vessel is reopened. When DWI already matches the full vascular territory, the infarct is complete and intervention may not change outcome. RESOLVE reduces susceptibility distortion at skull base.
 
 **`TOF_3D_multi-slab` (#4)**
 3D time-of-flight MR angiography, multi-slab acquisition. The primary diagnostic sequence. Sequential thin slabs are acquired perpendicular to arterial flow to maximise inflow enhancement — fresh unsaturated spins entering each slab appear bright against saturated stationary tissue. Multi-slab reduces saturation effects that degrade single-slab TOF over long travel distances. Sat band placed **superior** to suppress venous flow signal descending from above, keeping the TOF arterial-dominant.
@@ -55,7 +55,18 @@ Post-contrast 2D FLASH axial. Identical geometry to pre-contrast baseline (#2) �
 
 ## 4. Pathology-Based Variations
 
-- **Post-coiling:** Add `TOF_fl3d_tra_C` — post-contrast TOF with high bandwidth. Coil mass causes severe susceptibility dropout on standard TOF. High bandwidth shortens the readout, reducing the dephasing time across the susceptibility gradient. Post-contrast gadolinium shortens blood T1, partially compensating for the inflow saturation near the coil where flow is stagnant. Acquired after the standard post-contrast T1 (#5).
+- **Post-coiling:** The post-coiling protocol replaces most of the standard angiogram sequences. Coil mass changes the diagnostic question entirely — before coiling: "is there an aneurysm?"; after coiling: "is it completely occluded? Any neck remnant? Parent vessel compromise?" The coil mass creates severe susceptibility artefact on standard TOF, and post-contrast brain sequences are needed to assess for procedural complications.
+
+  Post-coiling sequences:
+  - `t2_tse_tra_brain`
+  - `t1_fl2d_tra`
+  - `TOF_fl3d_tra` *(pre-contrast — FLASH 3D TOF, less susceptible to coil artefact than multi-slab)*
+  - Contrast
+  - `TOF_fl3d_tra_C` *(post-contrast, high bandwidth — penetrates coil susceptibility to show residual flow in the aneurysm neck or sac)*
+  - `t1_vibe_fs_cor_C` + `MPR`
+  - `t1_fl2d_tra_C`
+
+  Key differences from the standard angiogram: pre-contrast TOF switches to FLASH 3D (less susceptibility than multi-slab near the coil). Post-contrast TOF with high bandwidth is the key sequence — it sees past the coil dropout to confirm occlusion or detect residual filling. A full post-contrast brain block (VIBE + MPR + FLASH) is added to assess for procedural complications (ischaemia, haematoma). RESOLVE DWI is omitted — the coil susceptibility would degrade it beyond diagnostic value.
 
 - **Dissection:** Add `t1_tse_fs_tra` through the neck (skull base → C2–C3, 2–3 mm slices). 
     - *Coverage:* The V3 segment is most vulnerable at C1–C2 — exiting the C2 foramen and looping around the C1 lateral mass before piercing the dura, head rotation maximally stretches the vessel here. Skull base captures the V3–V4 junction at dural penetration. C2–C3 inferiorly captures V2 just before the mobile segment. No need below C3 — lower dissections are rare. 

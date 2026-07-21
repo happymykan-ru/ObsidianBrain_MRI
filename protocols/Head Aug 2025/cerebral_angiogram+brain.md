@@ -48,7 +48,7 @@ CSF-suppressed T2 FLAIR. Periventricular and cortical/subcortical lesion detecti
 3D time-of-flight MR angiography, multi-slab acquisition. Sequential thin slabs are acquired perpendicular to arterial flow to maximise inflow enhancement. Shows the circle of Willis and major intracranial arteries without contrast. Sat band placed **superior** to suppress venous flow signal. If the lesion or vessel of interest is not fully covered, increase slices per slab or switch to an EC/IC bypass TOF with larger coverage. For detailed TOF slab strategy, see `cerebral_angiogram(no_brain_request).md`.
 
 **`resolve_3scan_trace_tra_p2` (#5)**
-RESOLVE DWI with GRAPPA ×2. Acute ischaemia detection — DWI + TOF (#4) provide territory and vessel status for acute stroke workup.
+RESOLVE DWI. DWI + TOF (#4) answer the core stroke question: infarcted core (DWI bright, ADC dark) = dead tissue. Small DWI lesion + large vessel occlusion on TOF = tissue at risk (penumbra), still salvageable. DWI matching full territory = completed infarct. See `cerebral_angiogram(no_brain_request).md` for full explanation.
 
 **`t1_fl2d_sag` (#6) — Plain brain only**
 Pre-contrast 2D FLASH sagittal. Fills the midline anatomical gap left by not having an MPRAGE/MPR — corpus callosum, brainstem, vermis, craniocervical junction. Omitted when contrast is given because post-contrast VIBE (#7) and MPR (#8) provide the sagittal view.

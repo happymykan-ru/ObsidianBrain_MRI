@@ -25,7 +25,7 @@
 | — | **Contrast** | — | — | — | — |
 | 5 | `t1_vibe_fs_cor_brain_C` | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **Inferior** |
 | 6 | `MPR` | Sag+Ax | — | Whole brain | — |
-| 7 | `t1_tse_fs_tra_3mm_IAM_C` | Axial | Copy Slice from #3 | — | **None** |
+| 7 | `t1_se_r_fs_tra_IAM_C` *(or `t1_tse_fs_tra_3mm_IAM_C` for 3T)* | Axial | Copy Slice from #3 | — | **None** |
 
 ---
 
@@ -50,7 +50,7 @@ Pre-contrast T1 baseline. FLASH 2D — matched geometry for post-contrast compar
 
 *Coverage:* Upper medulla → mid-pons (~30–40 mm). The 7th/8th nerve travels ~10–15 mm from pontomedullary junction root entry zone through the CPA cistern into the IAM fundus. Inferior boundary captures the CPA cistern. Superior boundary at mid-pons captures the 5th nerve root entry zone. Centering on the bony IAM alone clips the cisternal segment where small tumours first appear.
 
-*Slice oversampling (0%):* The small slab needs enough coverage for the full nerve course. Adding oversampling would either add scan time or force a smaller slab that clips anatomy. Wrap from outside the slab lands at the edges, away from the centrally-positioned IAMs — provided the slab is properly centred (see Alerts).
+*Slice oversampling (10%):* Modest oversampling — enough to reduce slab edge signal falloff but may not fully prevent wrap from anatomy outside the slab. Confirm IAMs sit well within the slab centre where wrap does not reach (see Alerts).
 
 **`resolve_3scan_trace_tra_p2` (#4)**
 RESOLVE DWI. Acute ischaemia, abscess. Less distortion at skull base vs single-shot EPI.
@@ -64,14 +64,17 @@ Standard dose IV gadolinium. Post-contrast T1 brain (#5) runs first to allow suf
 **`MPR` (#6)**
 Multiplanar reconstruction from post-contrast VIBE (#5). Sagittal and axial views.
 
-**`t1_tse_fs_tra_3mm_IAM_C` (#7)**
-Diagnostic post-contrast T1 TSE with fat saturation, 3 mm slices through the IAMs. Vestibular schwannomas and meningiomas enhance avidly. TSE (not GRE) is essential at the petrous apex — 180° refocusing pulses correct for static field inhomogeneity from air-bone interfaces. GRE would bloom and obscure the IAM/CPA. Fat sat suppresses petrous marrow fat that can mask thin enhancing tumour along the canal. Matched geometry to T2 SPACE (#3) for side-by-side comparison.
+**`t1_se_r_fs_tra_IAM_C` (or `t1_tse_fs_tra_3mm_IAM_C` for 3T) (#7)**
+Post-contrast T1 with fat saturation through the IAMs. SE (conventional spin echo with restore) is the default at 1.5T: one 180° pulse per TR means no T2 blurring, giving sharper depiction of fine structures within the IAM. The restore pulse compensates for the SNR penalty. At 3T, higher baseline SNR makes TSE acceptable — TSE is faster and the mild T2 blurring is offset by the inherently higher resolution. Fat sat suppresses petrous marrow; SE/TSE both avoid GRE (180° refocusing survives petrous apex susceptibility). Matched geometry to T2 SPACE (#3).
 
 ---
 
 ## 4. Pathology-Based Variations
 
 - **Facial nerve pathology:** Standard IAM coverage is sufficient — the facial nerve shares the same CPA → IAM course as the vestibulocochlear nerve. T2 SPACE (#3) traces the nerve from root entry zone through the IAM to the geniculate ganglion. Post-contrast T1 (#7) — normal facial nerve can enhance mildly at the geniculate ganglion; asymmetry is the key.
+
+- **Cholesteatoma:** Add `t2_haste_diff_cor_cholesteatoma` and `t2_haste_diff_tra_cholesteatoma`. HASTE diffusion is a single-shot TSE with diffusion gradients — unlike standard EPI-DWI (gradient echo readout, severe distortion at the petrous bone-air interface), HASTE's long train of 180° refocusing pulses corrects for static field inhomogeneity at the mastoid and middle ear. The result: diffusion-weighted images of the petrous bone where EPI is non-diagnostic. Restricted diffusion (bright) = recurrent cholesteatoma (packed keratin debris). No restriction = post-surgical granulation or fluid. Axial + coronal cover the middle ear and mastoid. This sequence is only available at 1.5T — at 3T, SAR limits prevent running the full 180° refocusing train needed for susceptibility resistance.
+
 - **CPA mass:** Shift centre posteriorly and inferiorly — centre on the CPA cistern rather than the bony IAM. Extend coverage to lower medulla. The standard IAM slab centred on the porus acusticus will clip a CPA meningioma or epidermoid extending posteriorly into the cistern.
 
 ---
@@ -80,12 +83,32 @@ Diagnostic post-contrast T1 TSE with fat saturation, 3 mm slices through the IAM
 
 | Check | Improve |
 |---|---|
-| **`t2_space_tra_iso_IAM` (#3)** — IAM centred in slab? Wrapped anatomy or signal falloff reaching the lesion? | 0% slice oversampling — wrap and edge signal decay land at slab edges. Confirm IAM/lesion sits well within the central safe zone. If near edge: extend slab or add 10–20% slice oversampling |
+| **`t2_space_tra_iso_IAM` (#3)** — IAM centred in slab? Wrapped anatomy or signal falloff reaching the lesion? | 10% slice oversampling — wrap and edge signal decay may still reach slab edges. Confirm IAM/lesion sits well within the central safe zone. If near edge: extend slab or increase slice oversampling |
 | **`t1_vibe_fs_cor_brain_C` (#5)** — contrast present? Confirm intravascular enhancement | If absent: check IV line, confirm injection |
 
 ---
 
-## 6. Version Control
+## 6. Comparison: Non-KCC IAM Protocol
+
+Some other institutes use a fully IAM-targeted protocol with no whole-brain sequences:
+
+- `t2_tse_tra_IAM`
+- `t1_se_tra_IAM`
+- `t2_space_tra_cs4_iso_IAM`
+- `t2_flair_fs_cor_IAM` (exclude pituitary)
+- Contrast
+- `t1_se_r_fs_tra_IAM_C`
+- `t1_se_r_fs_cor_IAM_C`
+
+This protocol is fully targeted — every sequence is a small IAM FOV only. No brain T2 or DWI, no whole-brain post-contrast. SE T1 is used throughout for sharper images (no T2 blurring from turbo factor). SPACE uses compressed sensing ×4 instead of standard GRAPPA. Dedicated FLAIR FS coronal through the IAMs is included. Post-contrast covers both axial and coronal planes at the IAM.
+
+Dedicated FLAIR FS coronal through the IAMs targets the brainstem and root entry zone where central causes of IAM symptoms (brainstem MS plaque, periaqueductal lesion) would first appear — it catches what a whole-brain FLAIR might miss due to slice thickness and FOV. Our protocol omits this: the brain T2 already covers the brainstem at standard resolution, and if FLAIR-level brainstem assessment is needed, we use `IAM+brain.md` instead. Adding dedicated FLAIR to the no_brain protocol would blur the boundary between the two — the +brain protocol exists precisely for cases where brain pathology needs a FLAIR.
+
+The advantage of the non-KCC approach is higher per-sequence IAM resolution, sharper SE T1 contrast, and pure throughput. The disadvantage is no brain screening — a brainstem MS plaque, CPA meningioma, or infarct presenting as IAM symptoms will be missed, requiring a recall. Our protocol includes minimal brain sequences (T2 + DWI + VIBE) specifically to avoid this gap.
+
+---
+
+## 7. Version Control
 
 | Version | Date | Author | Changes |
 |---|---|---|---|

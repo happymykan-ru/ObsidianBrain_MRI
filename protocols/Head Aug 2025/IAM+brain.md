@@ -27,7 +27,7 @@
 | — | **Contrast** | — | — | — | — |
 | 7 | `t1_vibe_fs_cor_brain_C` | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **Inferior** |
 | 8 | `MPR planning` | Sag+Ax | — | Whole brain | — |
-| 9 | `t1_tse_fs_tra_3mm_IAM_C` | Axial | Copy Slice from #4 | — | **None** |
+| 9 | `t1_se_r_fs_tra_IAM_C` *(or `t1_tse_fs_tra_3mm_IAM_C` for 3T)* | Axial | Copy Slice from #4 | — | **None** |
 
 *#5 is for plain brain only — omit if contrast is given.*
 
@@ -49,7 +49,7 @@ Pre-contrast T1 baseline. FLASH 2D — matched geometry to post-contrast sequenc
 CSF-suppressed T2 FLAIR. Periventricular/cortical lesions. Brainstem and periaqueductal plaques can present with IAM symptoms — FLAIR catches these.
 
 **`t2_space_tra_iso_IAM` (#4)**
-3D T2 SPACE isotropic — primary IAM screening sequence. Cisternographic effect (CSF bright, nerves dark). Vestibular schwannoma: CPA mass extending into or widening the IAM. Coronal reformat recommended for canalicular extension and cochlear relationship. For full details on resolution, coverage, and 0% slice oversampling, see `IAM(no_brain_request).md`.
+3D T2 SPACE isotropic — primary IAM screening sequence. Cisternographic effect (CSF bright, nerves dark). Vestibular schwannoma: CPA mass extending into or widening the IAM. Coronal reformat recommended for canalicular extension and cochlear relationship. For full details on resolution, coverage, and slice oversampling, see `IAM(no_brain_request).md`.
 
 **`t1_fl2d_sag_brain` (#5) — Plain brain only**
 Midline anatomical reference — brainstem, vermis, craniocervical junction. Omitted when contrast is given because post-contrast MPR (#9) provides the sagittal view.
@@ -66,8 +66,8 @@ Standard dose IV gadolinium. VIBE (#7) runs first — brain enhancement screenin
 **`MPR planning` (#8)**
 Multiplanar reconstruction from post-contrast VIBE (#7). Sagittal and axial reformatted views.
 
-**`t1_tse_fs_tra_3mm_IAM_C` (#9)**
-Diagnostic post-contrast IAM sequence. TSE + fat sat — vestibular schwannomas and meningiomas enhance avidly. For full TSE vs GRE and fat sat rationale, see `IAM(no_brain_request).md`.
+**`t1_se_r_fs_tra_IAM_C` (or `t1_tse_fs_tra_3mm_IAM_C` for 3T) (#9)**
+Post-contrast T1 with fat saturation. SE with restore at 1.5T (sharper, no T2 blurring); TSE at 3T (faster, SNR compensates). See `IAM(no_brain_request).md`.
 
 ---
 
@@ -92,7 +92,7 @@ Use `IAM(no_brain_request).md` when the brain has already been screened or the q
 - **Pre-op planning for CPA/IAM surgery** — focused anatomical detail only
 - **Confirmed peripheral pathology** — e.g., Ménière's diagnosed clinically (tinnitus + vertigo + fluctuating hearing loss, audiometry confirms). MRI is to exclude a retrocochlear mimic, not to diagnose Ménière's. T2 SPACE for labyrinthine hydrops, post-contrast T1 for enhancement
 
-For pathology-based variations (facial nerve, CPA mass), see `IAM(no_brain_request).md`.
+For pathology-based variations (facial nerve, CPA mass, cholesteatoma), see `IAM(no_brain_request).md`. Cholesteatoma in particular requires dedicated HASTE diffusion sequences not part of the standard IAM protocol.
 
 ---
 

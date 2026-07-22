@@ -19,4 +19,9 @@
 | `/protocols/Head Aug 2025/pituitary+brain.md` | ✅ Complete | Initial — 10 sequences (full brain + targeted pituitary) |
 | `/protocols/Head Aug 2025/epilepsy.md` | ✅ Complete | Initial — 10 sequences (MP2RAGE, SWI, coronal oblique hippocampal, FLAIR) |
 | `/protocols/Head Aug 2025/MS.md` | ✅ Complete | Initial — 10 sequences (DIR SPACE replaces FLAIR, orbit screening, post-contrast DWI delay) |
-| `/protocols/Head Aug 2025/GBM_DSC.md` | ✅ Complete | Initial — 9 sequences (DSC perfusion at 4 mL/s, CSI sLASER TE 135 MRS, DWI pre-contrast) |
+| `/protocols/Head Aug 2025/Brain/` | ✅ Reorganized | All 14 brain protocols moved into `Brain/` subdirectory |
+| `/protocols/Head Aug 2025/NS/brain+viewing_wand.md` | ✅ Complete | Initial — 7 sequences (FLASH 3D sagittal for neuronavigation, no fat sat for geometric accuracy) |
+| `/protocols/Head Aug 2025/NS/EC_IC_bypass.md` | ✅ Complete | Initial — 6 sequences (TOF + TWIST for bypass patency, extended STA coverage) |
+| `/protocols/Head Aug 2025/NS/diamox.md` | ✅ Complete | Initial — 8 sequences + optional TOF (Diamox-challenged DSC ×2, cerebrovascular reserve mapping) |
+| `/protocols/Head Aug 2025/RT/X-knife_SRS.md` | ✅ Complete | Initial — 2 branches (Tumor: 5 seq; AVM: 5 seq). FLASH 3D sagittal, T2 SPACE, geometric accuracy priority |
+| `/protocols/Head Aug 2025/Brain/fMRI.md` | ✅ Complete | Initial — 13 sequences (7 fMRI paradigms, DTI 20-dir SMS, field map, standard brain) |

@@ -25,3 +25,7 @@
 | `/protocols/Head Aug 2025/NS/diamox.md` | ✅ Complete | Initial — 8 sequences + optional TOF (Diamox-challenged DSC ×2, cerebrovascular reserve mapping) |
 | `/protocols/Head Aug 2025/RT/X-knife_SRS.md` | ✅ Complete | Initial — 2 branches (Tumor: 5 seq; AVM: 5 seq). FLASH 3D sagittal, T2 SPACE, geometric accuracy priority |
 | `/protocols/Head Aug 2025/Brain/fMRI.md` | ✅ Complete | Initial — 13 sequences (7 fMRI paradigms, DTI 20-dir SMS, field map, standard brain) |
+| `/protocols/Head Aug 2025/Paed/paed_brain.md` | ✅ Complete | Initial — 2 age pathways (<2yr + >2yr), multi-echo T2 for immature brain, FLAIR >1yr only |
+| `/protocols/Head Aug 2025/Paed/paed_orbit.md` | ✅ Complete | Initial — 5 sequences + retinoblastoma variation (T2 SPACE, oblique sagittal, brain screening) |
+| `/protocols/Head Aug 2025/Paed/paed_pit.md` | ✅ Complete | Initial — 6 sequences (age-adapted: SE vs TSE sagittal, dynamic >6yr only) |
+| `/protocols/Head Aug 2025/Head & Neck/All head and neck/NP.md` | ✅ Complete | Initial — 7 sequences (StarVIBE, lower neck Dixon, 4-scan DWI, skull base → clavicles) |

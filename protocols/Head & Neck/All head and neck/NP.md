@@ -9,7 +9,7 @@
 - **Position:** Supine, head-first
 - **Coil:** Head and neck coil. Full coverage from skull base to supraclavicular fossa is required for nodal staging.
 - **Laser Landmark:** Nasion
-- **Immobilization:** Foam padding. A bite block or tongue depressor may help keep the oral cavity still.
+- **Immobilization:** Foam padding.
 - **Verbal Instructions:** Breathe quietly and avoid swallowing during acquisitions — swallowing motion degrades the nasopharyngeal and nodal sequences.
 - **IV Access:** 20G (pink) or 22G (blue). Injection rate: 2 mL/s (20G) or 1.5 mL/s (22G). Standard dose. Saline flush: [Confirm volume].
 

@@ -30,3 +30,4 @@
 | `/protocols/Head Aug 2025/Paed/paed_pit.md` | ✅ Complete | Initial — 6 sequences (age-adapted: SE vs TSE sagittal, dynamic >6yr only) |
 | `/protocols/Head Aug 2025/Head & Neck/All head and neck/NP.md` | ✅ Complete | Initial — 7 sequences (StarVIBE, lower neck Dixon, 4-scan DWI, skull base → clavicles) |
 | `/protocols/Head Aug 2025/Head & Neck/All head and neck/NP_for_IMRT.md` | ✅ Complete | Initial — 8 sequences (straight axial for IMRT planning, two DWI acquisitions, pre-contrast coronal oblique) |
+| `/protocols/Head & Neck/All head and neck/oral_cavity.md` | ✅ Complete | Initial — 8 sequences + variations (Ca tongue sagittal, larynx Dixon) |

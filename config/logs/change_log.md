@@ -31,3 +31,5 @@
 | `/protocols/Head Aug 2025/Head & Neck/All head and neck/NP.md` | ✅ Complete | Initial — 7 sequences (StarVIBE, lower neck Dixon, 4-scan DWI, skull base → clavicles) |
 | `/protocols/Head Aug 2025/Head & Neck/All head and neck/NP_for_IMRT.md` | ✅ Complete | Initial — 8 sequences (straight axial for IMRT planning, two DWI acquisitions, pre-contrast coronal oblique) |
 | `/protocols/Head & Neck/All head and neck/oral_cavity.md` | ✅ Complete | Initial — 8 sequences + variations (Ca tongue sagittal, larynx Dixon) |
+| `/protocols/Head & Neck/All head and neck/oral_cavity_for_IMRT.md` | ✅ Complete | Initial — 11 sequences (straight axial, split OC/neck DWI, pre-contrast neck STIR/T1 SE, T2 Dixon coronal, separate lower neck Dixon) |
+| `/protocols/Head & Neck/All head and neck/oral_cavity_for_IMRT.md` | ✅ Revised | v1.1 corrections: DWI OC includes skull base, StarVIBE includes vertex + can tilt, VIBE OC starts ventricles, neck/lower neck can tilt |

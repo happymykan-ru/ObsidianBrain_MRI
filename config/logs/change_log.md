@@ -33,3 +33,4 @@
 | `/protocols/Head & Neck/All head and neck/oral_cavity.md` | ✅ Complete | Initial — 8 sequences + variations (Ca tongue sagittal, larynx Dixon) |
 | `/protocols/Head & Neck/All head and neck/oral_cavity_for_IMRT.md` | ✅ Complete | Initial — 11 sequences (straight axial, split OC/neck DWI, pre-contrast neck STIR/T1 SE, T2 Dixon coronal, separate lower neck Dixon) |
 | `/protocols/Head & Neck/All head and neck/oral_cavity_for_IMRT.md` | ✅ Revised | v1.1 corrections: DWI OC includes skull base, StarVIBE includes vertex + can tilt, VIBE OC starts ventricles, neck/lower neck can tilt |
+| `/protocols/Head & Neck/All head and neck/salivary_glands.md` | ✅ Complete | Initial — 9 sequences (DCE, MPR). Two coverage options (parotid-only, all salivary glands) |

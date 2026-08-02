@@ -199,7 +199,15 @@ The base sequence set is essentially the same as oral cavity. Both protocols nee
 
 ---
 
-## 5. Alerts
+## 5. Pathology-Based Variations
+
+- **MR Sialogram:** For non-contrast ductal imaging (stones, strictures, chronic sialadenitis), add `t2_spc_fs_sag_obl` for each side pre-contrast. T2 SPACE is a heavily T2-weighted 3D sequence — static fluid (saliva in the ducts) is bright against the suppressed background. Coverage includes the parotid and submandibular gland on each side. MPR from the 3D source provides axial and coronal ductal views.
+
+  **Planning the sagittal oblique plane:** On the axial image at the level of the parotid hilum (external auditory canal), identify the parotid duct (Stensen's duct) exiting the anterior border of the gland and coursing forward over the masseter muscle toward the buccal space. Prescribe the sagittal oblique slice parallel to the long axis of the duct — this is typically angled ~10–20° from true sagittal, with the anterior edge rotated toward the cheek. Perform separately for left and right.
+
+---
+
+## 6. Alerts
 
 | Check | Improve |
 |---|---|
@@ -212,7 +220,7 @@ The base sequence set is essentially the same as oral cavity. Both protocols nee
 
 ---
 
-## 6. Version Control
+## 7. Version Control
 
 | Version | Date | Author | Changes |
 |---|---|---|---|

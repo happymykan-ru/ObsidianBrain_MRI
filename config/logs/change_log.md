@@ -36,3 +36,4 @@
 | `/protocols/Head & Neck/All head and neck/salivary_glands.md` | ✅ Complete | Initial — 9 sequences (DCE, MPR). Two coverage options (parotid-only, all salivary glands) |
 | `/protocols/Head & Neck/All head and neck/TM_joint.md` | ✅ Complete | Initial — 5 sequences (dual-echo PD+T2 sagittal, open-mouth PD sagittal, coronal ± contrast). Double oblique sagittal, 2 mm slices |
 | `/protocols/Head & Neck/All head and neck/brachial_plexus.md` | ✅ Complete | Initial — 7 sequences (TIRM, fast Dixon throughout, coronal + separate R/L axials + sagittals). C1 → manubrium coverage, head & neck + body coils |
+| `/protocols/Head & Neck/Brain & Carotid CeMRA/CeMRA.md` | ✅ Complete | Initial — 14 sequences over 3 phases (brain pre, CeMRA, brain post). TOF + Care Bolus CeMRA in a single contrast injection. Table shifts LOC→ISO→LOC |

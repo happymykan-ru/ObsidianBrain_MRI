@@ -37,3 +37,7 @@
 | `/protocols/Head & Neck/All head and neck/TM_joint.md` | ✅ Complete | Initial — 5 sequences (dual-echo PD+T2 sagittal, open-mouth PD sagittal, coronal ± contrast). Double oblique sagittal, 2 mm slices |
 | `/protocols/Head & Neck/All head and neck/brachial_plexus.md` | ✅ Complete | Initial — 7 sequences (TIRM, fast Dixon throughout, coronal + separate R/L axials + sagittals). C1 → manubrium coverage, head & neck + body coils |
 | `/protocols/Head & Neck/Brain & Carotid CeMRA/CeMRA.md` | ✅ Complete | Initial — 14 sequences over 3 phases (brain pre, CeMRA, brain post). TOF + Care Bolus CeMRA in a single contrast injection. Table shifts LOC→ISO→LOC |
+| `/protocols/Abdomen/Liver/liver_routine.md` | ✅ Complete | Initial — 13 sequences (HASTE, TSE ± FS, heavy T2, T1 VIBE Dixon, TrueFISP, TWIST Dixon art 5-phase, PVP, delayed, DWI b50/300/800). Multiphasic liver with fixed delay timing |
+| `/protocols/Abdomen/Liver/liver_non-bh.md` | ✅ Complete | Initial — 10 sequences (HASTE T2, T1 TFL in/opp, StarVIBE dynamic, DWI, StarVIBE delayed). Free-breathing alternative to liver_routine.md |
+| `/protocols/Abdomen/Liver/primovist.md` | ✅ Complete | Initial — 14 sequences (T2 deferred to post-contrast to fill hepatobiliary wait, hepatobiliary phase at ~20 min). Primovist hepatobiliary protocol |
+| `/protocols/Abdomen/Liver/primovist_non-bh.md` | ✅ Complete | Initial — 13 sequences (HASTE, TFL, BLADE, StarVIBE dyn + 5/10/20 min). Free-breathing Primovist protocol |

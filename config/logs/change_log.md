@@ -41,3 +41,7 @@
 | `/protocols/Abdomen/Liver/liver_non-bh.md` | ✅ Complete | Initial — 10 sequences (HASTE T2, T1 TFL in/opp, StarVIBE dynamic, DWI, StarVIBE delayed). Free-breathing alternative to liver_routine.md |
 | `/protocols/Abdomen/Liver/primovist.md` | ✅ Complete | Initial — 14 sequences (T2 deferred to post-contrast to fill hepatobiliary wait, hepatobiliary phase at ~20 min). Primovist hepatobiliary protocol |
 | `/protocols/Abdomen/Liver/primovist_non-bh.md` | ✅ Complete | Initial — 13 sequences (HASTE, TFL, BLADE, StarVIBE dyn + 5/10/20 min). Free-breathing Primovist protocol |
+| `/protocols/Abdomen/MRCP/MRCP.md` | ✅ Complete | Initial — 8 sequences (T2 liver screen + T2 SPACE 3D MRCP + 2 thin-slab HASTE projections). Non-contrast ductal protocol |
+| `/protocols/Abdomen/MRCP/MRCP_non-bh.md` | ✅ Complete | Initial — 11 sequences. Free-breathing variant: liver_non-bh BLADE screen + MRCP core. Thin slabs respiratory-triggered; 3T FS variant |
+| `/protocols/Abdomen/Pancreas/pancreas.md` | ✅ Complete | Initial — 12 sequences. Pancreas-only FOV. TrueFISP coronal. Optional ERCP sequence. Dynamic phases per liver_routine. No delayed 5 min |
+| `/protocols/Abdomen/Pancreas/pancreas_non-bh.md` | ✅ Complete | Initial — 9 sequences. Free-breathing pancreas. HASTE T2, TFL trig, StarVIBE dynamic. SPACE ERCP dropped |

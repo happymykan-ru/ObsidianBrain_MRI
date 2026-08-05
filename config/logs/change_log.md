@@ -45,3 +45,9 @@
 | `/protocols/Abdomen/MRCP/MRCP_non-bh.md` | ✅ Complete | Initial — 11 sequences. Free-breathing variant: liver_non-bh BLADE screen + MRCP core. Thin slabs respiratory-triggered; 3T FS variant |
 | `/protocols/Abdomen/Pancreas/pancreas.md` | ✅ Complete | Initial — 12 sequences. Pancreas-only FOV. TrueFISP coronal. Optional ERCP sequence. Dynamic phases per liver_routine. No delayed 5 min |
 | `/protocols/Abdomen/Pancreas/pancreas_non-bh.md` | ✅ Complete | Initial — 9 sequences. Free-breathing pancreas. HASTE T2, TFL trig, StarVIBE dynamic. SPACE ERCP dropped |
+| `/protocols/Abdomen/Adrenal/adrenal.md` | ✅ Complete | Initial — 9 sequences. Adrenal-only FOV. Chemical shift primary, dynamics simplified (single AP + PVP axial/coronal) |
+| `/protocols/Abdomen/Kidney/kidney.md` | ✅ Complete | Initial — 13 sequences. Renal FOV. Coronal plane + delayed phase + DWI. Single arterial phase. TrueFISP for vascular assessment |
+| `/protocols/Abdomen/Kidney/kidney_CeMRA.md` | ✅ Complete | Initial — 9 sequences. CeMRA + single nephrographic T1. Two pathways: Care Bolus or Test Bolus. No multiphasic dynamics, no DWI |
+| `/protocols/Abdomen/Kidney/kidney_nativeMRA.md` | ✅ Complete | Initial — 5 sequences. Non-contrast NATIVE TrueFISP renal MRA. Two triggering options: respiratory (PERU) or ECG. No contrast, no DWI |
+| `/protocols/Abdomen/Kidney/kidney_MRU.md` | ✅ Complete | Initial — 17 sequences. Split-FOV upper/lower. T2 SPACE + Angio3D excretory phases (2/5/10/15 min). Whole urinary tract from kidneys to bladder |
+| `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Complete | Initial — 5 sequences (×2 kidneys). Oblique coronal, sagittal, and axial for renal volumetry. Non-contrast |

@@ -45,7 +45,9 @@ As `pancreas.md`. All sequences are free-breathing or respiratory-triggered. Fas
 
 ### Core Strategy
 
-This is the free-breathing variant of `pancreas.md`. The key substitutions follow the same pattern as `liver_non-bh.md`: T2 TSE → HASTE (single-shot), T1 VIBE Dixon → TFL in/opp (respiratory triggered), TWIST dynamic → StarVIBE radial (1st measurement = baseline).  TrueFISP and DWI are unchanged (already free-breathing). See `liver_non-bh.md` for technique trade-offs.
+This is the free-breathing variant of `pancreas.md`. The key substitutions follow the same pattern as `liver_non-bh.md`: T2 TSE → HASTE (single-shot), T1 VIBE Dixon → TFL in/opp (respiratory triggered), TWIST dynamic → StarVIBE radial (1st measurement = baseline). TrueFISP and DWI are unchanged (already free-breathing). See `liver_non-bh.md` for technique trade-offs.
+
+**Why all-HASTE, not BLADE:** `liver_non-bh.md` uses BLADE for the primary T2 FS axial because BLADE has higher SNR than HASTE and the liver FOV is large. BLADE requires a minimum FOV (~15–20 cm) for enough independent rotating blades to provide effective motion correction. A pancreas-only FOV is too small — the blade count drops and the motion-correction benefit degrades. HASTE has no minimum FOV constraint and is the better choice for small-FOV targets. The lower SNR of HASTE is acceptable because the pancreas is assessed on multiple complementary sequences (T2, T1, dynamic enhancement, DWI).
 
 ---
 
@@ -61,7 +63,7 @@ The SPACE is respiratory-triggered and takes several minutes — in a non-BH pat
 
 ---
 
-**Post-contrast (#8):** StarVIBE dynamic — see `liver_non-bh.md` for technique rationale, `pancreas.md` for enhancement patterns. No separate PVP or delayed phases — the continuous StarVIBE acquisition captures all enhancement phases. The arterial window is identified per `pancreas.md` (coeliac/SMA bright, parenchyma dark).
+**Post-contrast:** Same StarVIBE dynamic technique as `liver_non-bh.md` (1st measurement = baseline, contrast injected after). Differs from liver_non-bh in two ways: (1) no separate delayed phases — the pancreas does not need a 5 min delayed phase (enhancement peaks at PVP and washes out by 2 min), so the continuous StarVIBE acquisition alone suffices; (2) the arterial window uses pancreas criteria (coeliac/SMA bright, parenchyma dark — earlier than the liver window). DWI (#9) is pancreas-only FOV, same b-values.
 
 ---
 

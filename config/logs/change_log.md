@@ -51,3 +51,4 @@
 | `/protocols/Abdomen/Kidney/kidney_nativeMRA.md` | ✅ Complete | Initial — 5 sequences. Non-contrast NATIVE TrueFISP renal MRA. Two triggering options: respiratory (PERU) or ECG. No contrast, no DWI |
 | `/protocols/Abdomen/Kidney/kidney_MRU.md` | ✅ Complete | Initial — 17 sequences. Split-FOV upper/lower. T2 SPACE + Angio3D excretory phases (2/5/10/15 min). Whole urinary tract from kidneys to bladder |
 | `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Complete | Initial — 5 sequences (×2 kidneys). Oblique coronal, sagittal, and axial for renal volumetry. Non-contrast |
+| `/protocols/Abdomen/Enteroclysis/enteroclysis.md` | ✅ Complete | Initial — 16 sequences. TrueFISP cine motility + Buscopan ×2 + split-FOV abdomen/pelvis + arterial/PVP. FL2D coronal post-contrast |

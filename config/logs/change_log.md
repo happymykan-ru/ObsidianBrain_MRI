@@ -52,3 +52,5 @@
 | `/protocols/Abdomen/Kidney/kidney_MRU.md` | ✅ Complete | Initial — 17 sequences. Split-FOV upper/lower. T2 SPACE + Angio3D excretory phases (2/5/10/15 min). Whole urinary tract from kidneys to bladder |
 | `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Complete | Initial — 5 sequences (×2 kidneys). Oblique coronal, sagittal, and axial for renal volumetry. Non-contrast |
 | `/protocols/Abdomen/Enteroclysis/enteroclysis.md` | ✅ Complete | Initial — 16 sequences. TrueFISP cine motility + Buscopan ×2 + split-FOV abdomen/pelvis + arterial/PVP. FL2D coronal post-contrast |
+| `/protocols/Pelvis/Male Pelvis/prostate.md` | ✅ Complete | Initial — 8 sequences. Oblique axial/coronal per prostate wall. DWI b=50/500/1500. DCE with 2 baseline measurements. T2 SPACE sagittal 3D |
+| `/protocols/Pelvis/Male Pelvis/FIA.md` | ✅ Complete | Initial — 6 sequences. Oblique axial/coronal per anal canal. T2 STIR + T1 TSE + delayed post-contrast T1 Dixon. 2 min delay |

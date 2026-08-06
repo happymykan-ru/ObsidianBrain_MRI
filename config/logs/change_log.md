@@ -62,3 +62,6 @@
 | `/protocols/Pelvis/Female Pelvis/urethral_diverticulum.md` | ✅ Complete | Initial — 8 sequences. T2 in 3 planes + delayed post-contrast T1 + post-micturition imaging. 60 s contrast delay |
 | `/protocols/Pelvis/Female Pelvis/incontinence.md` | ✅ Complete | Initial — 7 sequences. T2 in 3 planes + T2 SPACE + pre/post T1 Dixon. Pelvic floor anatomical protocol |
 | `/protocols/Pelvis/Female Pelvis/endometriosis.md` | ✅ Complete | Initial — 7 sequences. T2 sagittal primary + axial + SPACE + DWI + pre/post T1. Sagittal + axial post-contrast |
+| `/protocols/Pelvis/Female Pelvis/generic_pelvis.md` | ✅ Complete | Initial — 7 sequences. Gender-neutral general-purpose pelvic screening. StarVIBE post-contrast. Two pathology variations (O-RADS, pelvic venous) |
+| `/protocols/Pelvis/Male Pelvis/testes.md` | ✅ Complete | Initial — 8 sequences. T2 coronal primary + STIR axial. Small-FOV scrotal protocol. Pre/post T1 Dixon |
+| `/protocols/Pelvis/Male Pelvis/undescended_testes.md` | ✅ Complete | Initial — 9 sequences. Large-FOV abdomen+pelvis. TWIST venogram for testicular vein. Pre/post T1 for viability |

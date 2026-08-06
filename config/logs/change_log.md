@@ -65,3 +65,4 @@
 | `/protocols/Pelvis/Female Pelvis/generic_pelvis.md` | ✅ Complete | Initial — 7 sequences. Gender-neutral general-purpose pelvic screening. StarVIBE post-contrast. Two pathology variations (O-RADS, pelvic venous) |
 | `/protocols/Pelvis/Male Pelvis/testes.md` | ✅ Complete | Initial — 8 sequences. T2 coronal primary + STIR axial. Small-FOV scrotal protocol. Pre/post T1 Dixon |
 | `/protocols/Pelvis/Male Pelvis/undescended_testes.md` | ✅ Complete | Initial — 9 sequences. Large-FOV abdomen+pelvis. TWIST venogram for testicular vein. Pre/post T1 for viability |
+| `/protocols/Pelvis/Male Pelvis/penis.md` | ✅ Complete | Initial — 11 sequences. T2 short/long axis + STIR in two planes. Dynamic sagittal post-contrast for plaque activity (Peyronie's). Wide-FOV pelvic survey pre/post. |

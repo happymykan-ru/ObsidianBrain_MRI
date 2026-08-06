@@ -11,6 +11,7 @@
 - **Immobilization:** Pelvic binder over the pelvic region — reduces respiratory motion transmitted to the pelvis and minimizes anterior abdominal wall movement.
 - **Laser Landmark:** Symphysis pubis
 - **Verbal Instructions:** Shallow breathing during the dynamic contrast acquisition — breath-hold is not required but the patient must not move. Deep breathing causes pelvic floor motion that degrades the DCE.
+- **Buscopan (Hyoscine butylbromide):** 10–20 mg IV, prior to the exam. Onset ~1 min, peak effect ~1–2 min. Paralyses rectal smooth muscle — the prostate sits directly against the rectum; rectal peristalsis displaces the gland and degrades DCE. Contraindications: glaucoma, urinary retention (BPH with obstruction), myasthenia gravis, tachyarrhythmia.
 - **IV Access:** Minimum 20G (pink). Injection rate: 2 mL/s. Standard dose. Saline flush: [Confirm volume].
 
 ---
@@ -21,6 +22,7 @@
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
+| — | **Buscopan** | — | 10–20 mg IV, prior to exam | — | — | — |
 | 1 | `t2_spc_sag` | Sagittal | True sagittal | Prostate + seminal vesicles + bladder base. | **None** | Free breathing |
 | 2 | `t2_tse_tra` | Axial Oblique | ⟂ posterior prostate wall | Prostate + seminal vesicles. Base → apex | **None** | Free breathing |
 | 3 | `t2_tse_cor` | Coronal Oblique | ∥ posterior prostate wall | Prostate + seminal vesicles + pelvic floor. A/P: pubic symphysis → rectum | **None** | Free breathing |

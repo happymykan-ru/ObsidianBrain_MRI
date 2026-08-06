@@ -54,3 +54,11 @@
 | `/protocols/Abdomen/Enteroclysis/enteroclysis.md` | ✅ Complete | Initial — 16 sequences. TrueFISP cine motility + Buscopan ×2 + split-FOV abdomen/pelvis + arterial/PVP. FL2D coronal post-contrast |
 | `/protocols/Pelvis/Male Pelvis/prostate.md` | ✅ Complete | Initial — 8 sequences. Oblique axial/coronal per prostate wall. DWI b=50/500/1500. DCE with 2 baseline measurements. T2 SPACE sagittal 3D |
 | `/protocols/Pelvis/Male Pelvis/FIA.md` | ✅ Complete | Initial — 6 sequences. Oblique axial/coronal per anal canal. T2 STIR + T1 TSE + delayed post-contrast T1 Dixon. 2 min delay |
+| `/protocols/Pelvis/Male Pelvis/CA_rectum.md` | ✅ Complete | Initial — 11 sequences. Oblique T2 aligned to tumour. Low rectal tumour addendum for anal sphincter. DWI b=50/800 |
+| `/protocols/Pelvis/Female Pelvis/fibroid.md` | ✅ Complete | Initial — 9 sequences. T2 in 3 planes + DWI + delayed post-contrast T1 in 3 planes. 2 min delay for fibroid enhancement |
+| `/protocols/Pelvis/Female Pelvis/Ca_cervix_or_corpus.md` | ✅ Complete | Initial — 17 sequences (4 optional). Oblique T2 per cervical canal/endometrial stripe. DCE sagittal + subtraction. Whole pelvis DWI. Optional abdominal screen |
+| `/protocols/Pelvis/Female Pelvis/brachytherapy_pre-OT.md` | ✅ Complete | Initial — 11 sequences. Head-first treatment position, vaginal gel, 2 mm true axial T2. DWI b=1500. True axial + oblique for CT fusion |
+| `/protocols/Pelvis/Female Pelvis/brachytherapy_with_applicator.md` | ✅ Complete | Initial — 4 sequences. Applicator in situ, sequential oblique planning from localizers. Non-contrast verification |
+| `/protocols/Pelvis/Female Pelvis/urethral_diverticulum.md` | ✅ Complete | Initial — 8 sequences. T2 in 3 planes + delayed post-contrast T1 + post-micturition imaging. 60 s contrast delay |
+| `/protocols/Pelvis/Female Pelvis/incontinence.md` | ✅ Complete | Initial — 7 sequences. T2 in 3 planes + T2 SPACE + pre/post T1 Dixon. Pelvic floor anatomical protocol |
+| `/protocols/Pelvis/Female Pelvis/endometriosis.md` | ✅ Complete | Initial — 7 sequences. T2 sagittal primary + axial + SPACE + DWI + pre/post T1. Sagittal + axial post-contrast |

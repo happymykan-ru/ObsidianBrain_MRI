@@ -66,3 +66,4 @@
 | `/protocols/Pelvis/Male Pelvis/testes.md` | ✅ Complete | Initial — 8 sequences. T2 coronal primary + STIR axial. Small-FOV scrotal protocol. Pre/post T1 Dixon |
 | `/protocols/Pelvis/Male Pelvis/undescended_testes.md` | ✅ Complete | Initial — 9 sequences. Large-FOV abdomen+pelvis. TWIST venogram for testicular vein. Pre/post T1 for viability |
 | `/protocols/Pelvis/Male Pelvis/penis.md` | ✅ Complete | Initial — 11 sequences. T2 short/long axis + STIR in two planes. Dynamic sagittal post-contrast for plaque activity (Peyronie's). Wide-FOV pelvic survey pre/post. |
+| `/protocols/MSK/mass_generic.md` | ✅ Complete | Initial — 10 sequences. Generic MSK mass template. STIR cor/sag screen + T1 Dixon cor/sag + T1 non-FS axial + T2 FS axial. Dynamic VIBE + T1 Dixon cor/axial C + T1 FS TSE axial C. Adjustment strategies for FOV, resolution, fat sat, coil, planes |

@@ -68,3 +68,4 @@
 | `/protocols/Pelvis/Male Pelvis/penis.md` | ✅ Complete | Initial — 11 sequences. T2 short/long axis + STIR in two planes. Dynamic sagittal post-contrast for plaque activity (Peyronie's). Wide-FOV pelvic survey pre/post. |
 | `/protocols/MSK/mass_generic.md` | ✅ Complete | Initial — 7 sequences (6+1 optional). STIR long axis + T1 Dixon long axis + T1 non-FS axial + T2 FS axial. T1 Dixon long C + T1 FS TSE axial C. Dynamic VIBE optional post-op. Adjustment strategies for FOV, resolution, fat sat, phase encoding, sat band & flow comp |
 | `/protocols/MSK/shoulder.md` | ✅ Complete | Initial — 8 sequences. PD FS axial + PD coronal + T2 FS cor + T2 FS sag 3mm + T1 sag 4mm. Three-plane T1 FS post-contrast. All planes oblique to glenohumeral joint |
+| `/protocols/MSK/knee.md` | ✅ Complete | Initial — 9 sequences. T2 FS sag SMS + 3D PD SPACE CS6 iso + MPR + T1 SE axial + dual-echo PD+T2 FS axial + PD FS coronal. Three-plane T1 FS post-contrast |

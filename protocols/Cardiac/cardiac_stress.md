@@ -119,7 +119,7 @@ This phase **is** the planning — every later plane is derived from it. TrueFIS
 
 **`t2_trufi_tra_thorax_bh` (#1)** — the axial TrueFISP survey — is the **axial planning localizer**: heart-only coverage, no aortic arch needed, the starting point for every subsequent step.
 
-**`trufi_pseudo_2c_loc` (#3), `trufi_pseudo_4c_loc` (#4), `trufi_shortaxis_loc` (#5)** — the pseudo-2C/4C/SAX — are single-slice steps of the **planning cascade**: "pseudo" because each is an approximation of the true long-axis geometry, refined at the next step. Each localizer is planned from the previous one; the final cine geometry is locked from the pseudo-SAX:
+**`trufi_pseudo_2c_loc` (#3), `trufi_pseudo_4c_loc` (#4), `trufi_shortaxis_loc` (#5)** — the pseudo-2C/4C/SAX — are single-slice steps of the **planning cascade**: "pseudo" because each is an approximation of the true long-axis geometry, refined at the next step. The cascade ends at the pseudo-SAX (#5), which shows the true short-axis geometry — the true cine long axes (3C/4C/2C) are then planned back from it (Phase 1):
 
 1. **Axial → pseudo 2C (#3):** on the axial localizer, place a single slice along the LV long axis, through the LV apex and the centre of the mitral valve — the first approximation of the 2-chamber view. Coverage: LV + LA, apex → mitral annulus.
 2. **Pseudo 2C → pseudo 4C (#4):** on the pseudo-2C image, prescribe a plane perpendicular to it whose trace passes through the LV apex and the centre of the mitral valve, continuing to the tricuspid valve — the first approximation of the 4-chamber view.
@@ -132,7 +132,7 @@ This phase **is** the planning — every later plane is derived from it. TrueFIS
 **True cine planning — back from the SA localizer.** The true long-axis cines are not planned from the pseudo views — they are planned on the SA localizer (#5), which shows the true short-axis geometry:
 
 - **`cine_tfi_retro_3c` (#6):** on the SA, the plane that bisects the LV and also bisects the outflow tract — its trace runs through the centre of the LV cavity and the centre of the LVOT/aortic valve seen on the basal slices.
-  - **What it shows:** the LV long axis with the LVOT and aortic valve opening into the aortic root — the outflow-tract view. Assesses aortic valve motion and AS/AR jets, the subvalvular outflow, and the anteroseptal/inferolateral walls and septal motion.
+  - **What it shows:** the LV long axis with the LVOT and aortic valve opening into the aortic root — the outflow-tract view. Assesses aortic valve motion and AS/AR (aortic stenosis/aortic regurgitation) jets, the subvalvular outflow, and the anteroseptal/inferolateral walls and septal motion.
 
 - **`cine_tfi_retro_4c` (#7):** on the SA, the plane through the angle of the RV and the centre of the LV — the trace joins the RV corner (acute margin) to the LV centre, bisecting the LV. Check the other SA slices: the plane must avoid the aorta on every other SA plane.
   - **What it shows:** all four chambers — the septum and lateral LV wall profiled on either side, mitral and tricuspid valve function, RV size and function, both atria. The reference view for global function and regional septal/lateral wall motion.
@@ -243,7 +243,11 @@ The **TI setting is increased gradually across the DE series** — as contrast w
 
 ---
 
-## 5. Pathology-Based Variations
+## 5. Variations
+
+**Arrhythmia / poor breath-hold — real-time cine fallback:** the real-time cine rescues the **retrospective-gated cine sequences only** — the mapping, perfusion, and LGE sequences remain gated. Full fallback description: `cardiac_non-stress.md` Variations.
+    - **What to swap:** `cine_tfi_retro_3c/4c/2c/lvot_noscout/sa_volumetry_c` → the `cine_trufi_cs_rt_adapt_*` real-time counterparts, same planes and coverage, no other parameter changes.
+    - **What it does not rescue:** the T1 maps, the perfusion runs, and the aortic flow — note these limitations in the report.
 
 **Inadequate stress response**
 - Step up the adenosine dose (up to 210 µg/kg/min) before the stress T1 map and perfusion — without an adequate HR/symptom response the stress data are non-diagnostic.
@@ -251,8 +255,8 @@ The **TI setting is increased gradually across the DE series** — as contrast w
 **Aortic stenosis / high-velocity jet suspected**
 - Repeat the flow sequence at VENC 400 cm/s — 150 cm/s aliases at stenotic velocities.
 
-**Suspected myocarditis / oedema** [AI ADDED]
-- Add a T2 STIR SAX stack (edema imaging) and extend the FS LGE to 2C/4C high-res — oedema + subepicardial enhancement pattern is the myocarditis signature.
+**Suspected myocarditis / oedema**
+- Add edema imaging — **T2 mapping (preferred, quantitative)** or a T2 STIR SAX stack (traditional) — and extend the FS LGE to 2C/4C high-res — oedema + subepicardial enhancement pattern is the myocarditis signature. What sequence to add is per radiologist choice — T1/T2 mapping are not necessarily default.
 
 ---
 

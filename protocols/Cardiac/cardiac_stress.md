@@ -1,6 +1,6 @@
 # Cardiac Stress (Adenosine Stress/Rest Perfusion CMR — T1 Mapping + LGE)
 
-**Version:** 1.0 | **Date:** 2026-08-29 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 2.0 | **Date:** 2026-09-01 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -97,9 +97,9 @@
 | — | **3rd dose injection** | — | Top-up dose at 4 ml/s, injected **immediately before** the volumetry cine; LGE imaging starts ~7 min after the 3rd dose | — | — |
 | 16 | `cine_tfi_retro_sa_volumetry_c` | SAX stack | ⟂ LV long axis — contiguous stack, planned on the diastolic phase | Whole ventricle — first slice no blood pool, last slice past the mitral valve level | BH |
 | 17 | `ti_scout` | SAX single | Single SA location at the thickest myocardium (mid-ventricular) | Single mid SAX slice | BH |
-| 18 | `de_overview_tfl_4c` | 4C | Copy Slice from #7 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 19 | `de_overview_tfl_2c` | 2C | Copy Slice from #8 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 20 | `de_overview_tfl_sax` | SAX stack | Copy Slice from #16 — prospective gating, TI increased gradually | Entire myocardium wall — whole LV | BH |
+| 18 | `de_overview_tfi_4c` | 4C | Copy Slice from #7 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
+| 19 | `de_overview_tfi_2c` | 2C | Copy Slice from #8 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
+| 20 | `de_overview_tfi_sax` | SAX stack | Copy Slice from #16 — prospective gating, TI increased gradually | Entire myocardium wall — whole LV | BH |
 | 21 | `de_trufi_overview_12si_psir_fb` | SAX ×12 | Copy Slice from #16 — 12 slices | Base → apex | FB |
 | 22 | `de_high-res_tfl_fs_sax` | SAX stack (optional 2D) | Copy Slice from #16 — only if radiologist finds a suspicious lesion on #21; TI set from #17, incremented | Base → apex, built slice-by-slice upward toward the apex | BH |
 
@@ -216,30 +216,28 @@ The LGE principle: at the equilibrium phase, scar/fibrosis holds onto gadolinium
 
 **`ti_scout` (#17):** performed at the **7-min mark (the late gadolinium enhancement window)** at a **single SA location through the thickest myocardium** (typically mid-ventricular). A Look-Locker series sweeps through inversion times to find the TI that nulls normal myocardium — it appears uniformly dark, while infarcted tissue keeps a different (brighter) look, which is exactly the contrast the DE images rely on. The **optimal TI is where normal myocardium is most uniformly dark without a dark rim**: a dark rim at the myocardial border means the blood pool is nulling too (TI too short) — the rim itself is the interface voxels, partial-volumed between the nulled blood pool and the myocardium — which would hide subendocardial scar against it; at the correct TI the myocardium is dark and the blood pool stays bright.
 
-**DE overview series — prospective gating.** All three are IR-prepared TurboFLASH, **prospectively gated** (one image per slice, acquired at a fixed cardiac phase):
-- **`de_overview_tfl_4c` (#18):** 4C.
-- **`de_overview_tfl_2c` (#19):** 2C.
-- **`de_overview_tfl_sax` (#20):** SAX stack.
-The **TI setting is increased gradually across the DE series** — as contrast washes out of the myocardium, T1 lengthens and the null point drifts later, so each subsequent series needs a slightly longer TI. They also verify the enhancement pattern and nulling before the definitive images.
+**DE overview series — prospective gating.** All three are IR-prepared **TrueFISP** (magnitude IR), **prospectively gated** (one image per slice, acquired at a fixed cardiac phase):
+- **`de_overview_tfi_4c` (#18):** 4C.
+- **`de_overview_tfi_2c` (#19):** 2C.
+- **`de_overview_tfi_sax` (#20):** SAX stack.
+
+Shared across the series: the **TI setting is increased gradually across the DE series** — as contrast washes out of the myocardium, T1 lengthens and the null point drifts later, so each subsequent series needs a slightly longer TI. They also verify the enhancement pattern and nulling before the definitive images.
 
 **`de_trufi_overview_12si_psir_fb` (#21) — TrueFISP PSIR overview:** a 12-slice SAX stack with phase-sensitive inversion recovery, free-breathing. PSIR is insensitive to TI error — the robust whole-ventricle survey that catches enhancement anywhere (including RV and thrombus) even if the TI is imperfect. **After this series, consult the radiologist** — if a suspicious lesion is found, proceed to the optional high-res series (#22).
 
 **`de_high-res_tfl_fs_sax` (#22) — high-res FS SAX (optional):** the definitive, targeted LGE acquisition — an **optional 2D series**, performed only if the radiologist finds a suspicious lesion on the overviews/PSIR. The TI is set (from the TI scout, incremented for the elapsed washout). Acquired as a **2D series — the SAX stack is built by repeatedly acquiring single 2D slices, stacking upward towards the apex**, each slice individually breath-held. Fat saturation removes the bright epicardial fat signal so thin subepicardial enhancement is not masked, and the high in-plane resolution delineates infarct transmurality, which drives viability-based decisions.
 
 - **Why both the DE overviews and the PSIR are needed:** both detect scar, but each fails in the way the other is immune to — together they close the gaps:
-    - **The DE overviews alone are not safe — TI-dependent:** magnitude-reconstructed IR-TurboFLASH contrast lives and dies by the TI — too short and it is the infarct itself that nulls (gadolinium shortens its T1, so its null point arrives earlier than normal myocardium's), turning the scar dark and invisible (**false negative**); too long and normal myocardium stays bright (**false positive**) — and the TI drifts as contrast washes out.
-    - **The PSIR is the safety net — TI-insensitive:** phase-sensitive reconstruction reads the sign of the magnetization, so the contrast direction survives TI error; free-breathing whole-ventricle coverage catches enhancement anywhere (RV, thrombus, unexpected territories). Its blind spots — lower resolution, bSSFP dark-rim/flow artifacts — are what the breath-held, TI-optimized overviews compensate for: better scar contrast in planes matched to the cines, and a live check that the scout TI works.
-    - **The division of labour:** the overviews find the scar and prove the TI; the PSIR guarantees nothing is missed. Only when the two agree — or either flags a suspicion — is the optional high-res series spent on the lesion.
+    - **The DE overviews alone are not safe — TI-dependent:** magnitude-reconstructed IR-TrueFISP contrast lives and dies by the TI — too short and it is the infarct itself that nulls (gadolinium shortens its T1, so its null point arrives earlier than normal myocardium's), turning the scar dark and invisible (**false negative**); too long and normal myocardium stays bright (**false positive**) — and the TI drifts as contrast washes out.
+    - **The PSIR is the safety net — TI-insensitive:** phase-sensitive reconstruction reads the sign of the magnetization, so the contrast direction survives TI error; free-breathing whole-ventricle coverage catches enhancement anywhere (RV, thrombus, unexpected territories). The overviews are the quality read — breath-held and magnitude-reconstructed: when the TI is right, normal myocardium nulls completely, giving the crispest, highest-contrast scar image; the PSIR pays for its TI robustness with free-breathing blur and a shallower null.
+    - **The bSSFP caveat — shared by both:** both overview sets are TrueFISP readouts, so both carry the SSFP artifacts (dark rim at the blood–myocardium interface, off-resonance banding). The artifact-free fallback for a flagged lesion is precisely the TurboFLASH high-res series (#22).
+    - **What they look for — and who does what:** the overviews answer the primary question — is there enhancement, and where; the PSIR guarantees nothing is missed — enhancement anywhere (RV, thrombus, unexpected territories); and the high-res series settles what the SSFP artifacts leave ambiguous — it is run only when a lesion has been flagged on either survey and the dark rim or banding could distort its interpretation.
 
 - **How the high-res series differs from the DE overviews (#18–#20):**
-    - **Mechanism:** same IR-TurboFLASH readout and gating — the difference is strategy: the overviews are standard-resolution multi-slice; the high-res series is segmented 2D, one slice per breath-hold, fat-saturated.
-    - **Result:** fast routine survey vs much sharper in-plane resolution with dark (suppressed) epicardial fat.
-    - **What they look for:** the overviews answer "is there enhancement, and is the TI right?"; the high-res series answers "how thick is the scar, and is it transmural?".
-    
-- **How the high-res series differs from the PSIR overview (#21):**
-    - **Mechanism:** the PSIR is free-breathing TrueFISP with phase-sensitive IR — contrast independent of TI errors; the high-res series is segmented 2D IR-GRE, breath-held, magnitude-reconstructed — contrast depends on the TI being exactly right, in exchange for higher in-plane resolution and fat saturation.
-    - **Result:** PSIR = fast, robust, TI-foolproof, lower resolution; high-res = TI-dependent, sharper, fat removed.
-    - **What they look for:** the PSIR is the catch-all — enhancement anywhere (RV, thrombus, unexpected territories); the high-res series is the definitive measurement of scar thickness and transmurality on the region the radiologist flagged.
+    - **Mechanism — two differences:** (1) **the readout:** the overviews are IR-TrueFISP — a balanced steady-state readout that is off-resonance-sensitive, producing the dark rim at the blood–myocardium interface and banding; the high-res series is IR-TurboFLASH — a spoiled GRE whose spoiler gradients destroy transverse coherence every TR, so no banding or dark rim can form. (2) **The acquisition strategy:** the overviews are standard-resolution multi-slice; the high-res series is segmented 2D, one slice per breath-hold, fat-saturated — where the resolution gain comes from. Both are magnitude IR, so both depend on the TI.
+    - **Diagnostic consequence:** the SSFP dark rim can mimic a thin subendocardial scar — or sit over one and hide it. The artifact-free GRE readout resolves the ambiguity: true subendocardial enhancement stays bright and crisp, a rim artifact disappears — so the transmurality measurement is trusted on this series, not on the TrueFISP images.
+    - **Result:** fast routine survey vs sharper in-plane resolution, dark (suppressed) epicardial fat, and no dark-rim/banding ambiguity.
+    - **What they look for:** the overviews answer "is there enhancement, and where?"; the high-res series answers "how thick is the scar, and is it transmural?" — the definitive measurement on the region the radiologist flagged.
 
 ---
 
@@ -297,4 +295,5 @@ The **TI setting is increased gradually across the DE series** — as contrast w
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
+| 2.0 | 2026-09-01 | — | Major refinement — DE overviews corrected to IR-TrueFISP magnitude (`de_overview_tfi_*`): LGE comparison logic rebalanced (magnitude overviews TI-dependent vs PSIR catch-all TI-robust vs TurboFLASH high-res artifact-clean) |
 | 1.0 | 2026-08-29 | — | Initial build — 22 workflow steps. TrueFISP surveys + pseudo-localizer cascade + retro cine (3C/4C/2C/LVOT) + aortic flow VENC 150 + native T1 map + adenosine stress (BP schedule, response check, stress T1 map at 30 s countdown, stress perfusion) + rest perfusion + SA volumetry + TI scout + DE overviews (4C/2C/SAX/TrueFISP PSIR FB) + optional high-res FS SAX LGE. Double dose 0.2 mmol/kg split into three |

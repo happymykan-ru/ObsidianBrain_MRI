@@ -138,3 +138,4 @@
 | `/protocols/Cardiac/cardiac_stress.md` | ✅ Revised | v1.63 — total dose 0.2 mmol/kg with concentration note restored |
 | `/protocols/Cardiac/cardiac_stress.md` | ✅ Finalized | Version history consolidated to a single 1.0 initial-build row (all iterations considered the first build) |
 | `/protocols/Cardiac/cardiac_non-stress.md` | ✅ Complete | Initial version — 18 workflow steps. Rest CMR: axial localizer + pseudo-cascade + retro cines + flow VENC 150 + native T1 + T2 map + single-dose contrast 2 ml/s + SA volumetry + LGE block (TI scout, overviews, PSIR FB, T1 seg FS SA). No stress arm — equivalent sequences condensed with references to cardiac_stress.md |
+| `/protocols/Cardiac/myocarditis.md` | ✅ Complete | Initial version — 23 workflow steps. Non-stress base + myocarditis channels: T2 TIRM 15-slice dark-blood SA stack, early enhancement block (EGE optional + early TI scout + early PSIR 3-plane), PSIR overviews both phases, high-res FS SAX |

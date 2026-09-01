@@ -1,6 +1,6 @@
 # Cardiac Non-Stress (Rest CMR — Function, T1/T2 Mapping + LGE)
 
-**Version:** 1.0 | **Date:** 2026-08-29 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 2.0 | **Date:** 2026-09-01 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -83,9 +83,9 @@ Same as `cardiac_stress.md` with the stress arm removed:
 | # | Series | Plane | Angulation | Coverage | Breathing |
 |---|--------|-------|------------|----------|-----------|
 | 13 | `ti_scout` | SAX single | Single SA location at the thickest myocardium (mid-ventricular) | Single mid SAX slice | BH |
-| 14 | `de_overview_tfl_4c` | 4C | Copy Slice from #6 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 15 | `de_overview_tfl_2c` | 2C | Copy Slice from #7 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 16 | `de_overview_tfl_sax` | SAX stack | Copy Slice from #12 — prospective gating, TI increased gradually | Entire myocardium wall — whole LV | BH |
+| 14 | `de_overview_tfi_4c` | 4C | Copy Slice from #6 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
+| 15 | `de_overview_tfi_2c` | 2C | Copy Slice from #7 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
+| 16 | `de_overview_tfi_sax` | SAX stack | Copy Slice from #12 — prospective gating, TI increased gradually | Entire myocardium wall — whole LV | BH |
 | 17 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #12 — 12 slices | Base → apex | FB |
 | 18 | `tfl13_2d_t1_seg_fs_sax` | SAX stack (2D) | Copy Slice from #12 — [Confirm: routine or optional] | Base → apex, built slice-by-slice upward toward the apex | BH |
 
@@ -216,9 +216,9 @@ Identical LGE block to `cardiac_stress.md` #17–#22:
 **Why infarcted myocardium enhances late:** after the 7-minute wait, the gadolinium has equilibrated in the extracellular space. Infarct and fibrosis replace myocytes with an expanded extracellular matrix, so contrast accumulates there and washes out slowly — the scar keeps a short T1 and stays **bright** on the inversion-recovery image, while normal myocardium nulls **dark** at the chosen TI. LGE is therefore a map of expanded extracellular space wherever it is focal.
 
 - **`ti_scout` (#13):** at the 7-min mark, single SA at the thickest myocardium. Optimal TI = normal myocardium most uniformly dark without a dark rim (blood pool nulling + interface partial volume — see cardiac_stress #17).
-- **DE overviews — `de_overview_tfl_4c` (#14), `de_overview_tfl_2c` (#15), `de_overview_tfl_sax` (#16):** IR-TurboFLASH, prospective gating, entire myocardial wall; TI increased gradually across the series as contrast washes out.
+- **DE overviews — `de_overview_tfi_4c` (#14), `de_overview_tfi_2c` (#15), `de_overview_tfi_sax` (#16):** IR-TrueFISP (magnitude IR), prospective gating, entire myocardial wall; TI increased gradually across the series as contrast washes out.
 - **`de_trufi_overview_12sl_psir_fb` (#17):** 12-slice PSIR free-breathing overview — TI-insensitive catch-all (RV, thrombus, any territory).
-- **`tfl13_2d_t1_seg_fs_sax` (#18):** the high-res segmented 2D T1 TurboFLASH FS SAX — the equivalent of `de_high-res_tfl_fs_sax` in cardiac_stress: built slice-by-slice upward toward the apex, fat saturation unmasks thin subepicardial enhancement, high resolution measures transmurality. [Confirm: routine here or optional after radiologist review as in the stress protocol.]
+- **`tfl13_2d_t1_seg_fs_sax` (#18):** the high-res segmented 2D T1 TurboFLASH FS SAX — the equivalent of `de_high-res_tfl_fs_sax` in cardiac_stress: built slice-by-slice upward toward the apex, fat saturation unmasks thin subepicardial enhancement, high resolution measures transmurality — a GRE readout free of the SSFP dark-rim/banding artifacts of the TrueFISP overviews. [Confirm: routine here or optional after radiologist review as in the stress protocol.]
 
 ---
 
@@ -261,4 +261,5 @@ Identical LGE block to `cardiac_stress.md` #17–#22:
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
+| 2.0 | 2026-09-01 | — | Major refinement — DE overviews corrected to IR-TrueFISP magnitude (`de_overview_tfi_*`); high-res noted as the GRE artifact-clean readout |
 | 1.0 | 2026-08-29 | — | Initial build — 18 workflow steps. TrueFISP axial localizer + pseudo-localizer cascade + retro cine (3C/4C/2C/LVOT) + aortic flow VENC 150 + native T1 map + T2 map (TrueFISP) + single-dose contrast (2 ml/s) + SA volumetry + TI scout + DE overviews (4C/2C/SAX/PSIR FB) + T1 seg FS SA high-res. Rest CMR — no stress arm |

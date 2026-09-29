@@ -63,11 +63,14 @@ Breast MRI answers four questions about a mass: is it a cyst or solid (T2), how 
 
 ## 5. Post-Processing
 
-1. **Rotation MIP — `Rotation_MIP_of_R/L_Breast`** — generated from the 3rd dynamic series (the 2nd post-contrast frame), one MIP per breast, processed separately. Remove the heart from the projection so it does not overlie the breast.
+1. **Rotation MIP — `Rotation_MIP_of_R/L_Breast`** — generated from the subtracted version of the 3rd dynamic series (the 2nd post-contrast frame), one MIP per breast, processed separately:
+   - **Crop the box** down to just the target breast (R or L).
+   - **Punch out the enhancing pectoralis major muscle** so it does not overlie the breast in the projection — and the heart too if the left-breast crop catches it.
+   - **Rotation MIP** on the transverse frames — rotate the projection R → Front → L about the long axis of the breast.
 
-2. **Wash-in map — `Wash_in_map (W___, C___)`** — readjust window width and level to approximately 1100 and 600. Criteria: the background must be black while the colour contrast remains sufficient — adjust until both conditions hold, then record the final values in the series name.
+2. **Wash-in map — `Wash_in_map (W___, C___)`** — computed from the first 3 non-subtracted measurements of the dynamic (#5). Readjust window width and level to approximately 1100 and 600. Criteria: the background must be black while the colour contrast remains sufficient — adjust until both conditions hold, then record the final values in the series name.
 
-3. **Delayed-phase sagittal MPR — per breast, along the long axis of the breast** — reformatted from the delayed post-contrast VIEWS. Each breast reformatted separately, aligned along its long axis (nipple → midpoint of the breast's chest wall attachment), covering the whole breast out to the skin margin where the breast tissue meets the chest wall.
+3. **Delayed-phase sagittal MPR — per breast, along the long axis of the breast, 0.9 cm thick** — reformatted from the delayed post-contrast subtracted VIEWS pair (#6 − #4), sagittal reformat. Each breast reformatted separately, aligned along its long axis (nipple → midpoint of the breast's chest wall attachment), covering the whole breast out to the skin margin where the breast tissue meets the chest wall.
 
 ---
 

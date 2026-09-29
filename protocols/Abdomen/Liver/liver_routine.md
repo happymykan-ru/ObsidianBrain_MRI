@@ -1,6 +1,6 @@
 # Liver Routine (Multiphasic Liver MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-03 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -35,11 +35,11 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
 | — | **Contrast** | — | **Check FOV consistency** — verify post-contrast FOV matches pre-contrast #8. Standard dose, 2 mL/s | — | — | — |
-| 9 | `t1_vibe_twist_dixon_tra_bh_art_5phase` | Axial | Copy Slice from #8 | Whole liver | **None** | Breath-hold. Fixed delay 30 s post-injection |
-| 10 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy Slice from #8 | — | **None** | Breath-hold, 20 s after #9 |
-| 11 | `t1_vibe_twist_dixon_tra_Delayed_2min` | Axial | Copy Slice from #8 | — | **None** | Breath-hold, ~2 min post-injection (50 s after #10) |
-| 12 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Slice from #8 | Whole liver | **None** | Free breathing |
-| 13 | `t1_vibe_twist_dixon_tra_Delayed_5min` | Axial | Copy Slice from #8 | — | **None** | Breath-hold, ~5 min post-injection |
+| 9 | `t1_vibe_twist_dixon_tra_bh_art_5phase` | Axial | Copy everything from #8 | Whole liver | **None** | Breath-hold. Fixed delay 30 s post-injection |
+| 10 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy everything from #8 | — | **None** | Breath-hold, 20 s after #9 |
+| 11 | `t1_vibe_twist_dixon_tra_Delayed_2min` | Axial | Copy everything from #8 | — | **None** | Breath-hold, ~2 min post-injection (50 s after #10) |
+| 12 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Center from #8 | Whole liver | **None** | Free breathing |
+| 13 | `t1_vibe_twist_dixon_tra_Delayed_5min` | Axial | Copy everything from #8 | — | **None** | Breath-hold, ~5 min post-injection |
 
 ---
 

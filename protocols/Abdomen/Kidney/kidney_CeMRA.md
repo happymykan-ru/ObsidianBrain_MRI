@@ -40,7 +40,7 @@
 | — | **Contrast** | — | Check FOV consistency. Standard dose, ≥2 mL/s | — | — | — |
 | 7A | `care_bolus_cor` | Coronal | Copy Slice from #6A — select the slice with most overlap with the renal arteries on the vessel scout. Single monitoring slice | Single slice through renal arteries | **None** | Free breathing |
 | 8A | `angio3d_cor_post_C` | Coronal | Copy Slice from #6A | — | **None** | Breath-hold |
-| 9A | `t1_vibe_twist_dixon_tra_post` | Axial | Copy Slice from #4 | Both kidneys | **None** | Breath-hold, immediately after #8A |
+| 9A | `t1_vibe_twist_dixon_tra_post` | Axial | Copy everything from #4 | Both kidneys | **None** | Breath-hold, immediately after #8A |
 
 *#6A: Pre-contrast mask for subtraction.*  
 *#7A: Visual Care Bolus — radiographer watches the monitoring slice and triggers manually when contrast reaches the renal arteries.*  
@@ -55,7 +55,7 @@
 | 7B | `test_bolus_tra` | Axial | Single slice through the descending aorta, above the renal artery origins | Single slice through descending aorta | **None** | Free breathing. Dynamic acquisition over ~60 s after test dose injection |
 | — | **Contrast** | — | Check FOV consistency. Standard dose, ≥2 mL/s, timed to the measured transit delay | — | — | — |
 | 8B | `angio3d_cor_post_C` | Coronal | Copy Slice from #6B | — | **None** | Breath-hold |
-| 9B | `t1_vibe_twist_dixon_tra_post` | Axial | Copy Slice from #4 | Both kidneys | **None** | Breath-hold, immediately after #8B |
+| 9B | `t1_vibe_twist_dixon_tra_post` | Axial | Copy everything from #4 | Both kidneys | **None** | Breath-hold, immediately after #8B |
 
 *#6B: Pre-contrast mask for subtraction.*  
 *#7B: Test bolus — a small test dose (~2 mL) is injected and a dynamic single-slice acquisition at the descending aorta (above the renal origins) measures the arm-to-aorta transit time. The measured delay is used to time the full-dose CeMRA (#8B).*  

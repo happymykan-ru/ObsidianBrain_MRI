@@ -1,6 +1,6 @@
 # MR Enteroclysis (MR Enterography with Contrast and Buscopan)
 
-**Version:** 1.0 | **Date:** 2026-08-05 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -55,8 +55,8 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
 | — | **2nd Buscopan 10 mg IV** | — | — | — | — | — |
-| 10 | `t1_vibe_fs_tra_abdomen_bh_pre` | Axial | Copy Slice from #8 | — | **None** | Breath-hold |
-| 11 | `t1_vibe_fs_tra_pelvis_bh_pre` | Axial | Copy Slice from #9 | — | **None** | Breath-hold |
+| 10 | `t1_vibe_fs_tra_abdomen_bh_pre` | Axial | Copy everything from #8 | — | **None** | Breath-hold |
+| 11 | `t1_vibe_fs_tra_pelvis_bh_pre` | Axial | Copy everything from #9 | — | **None** | Breath-hold |
 | 12 | `t1_vibe_cor_fs_bh_pre` | Coronal | True coronal | Entire small bowel | **None** | Breath-hold |
 
 *#10–#12: Pre-contrast T1 FS — the 2nd Buscopan dose ensures maximal bowel paralysis for the dynamic phases. These serve as the pre-contrast baseline for subtraction/enhancement comparison.*  
@@ -66,10 +66,10 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose, 2 mL/s | — | — | — |
-| 13 | `t1_vibe_cor_fs_bh_arterial_C` | Coronal | Copy Slice from #12 | Entire small bowel | **None** | Breath-hold. Fixed delay 30 s |
-| 14 | `t1_vibe_fs_tra_abdomen_bh_PVP_C` | Axial | Copy Slice from #10 | — | **None** | Breath-hold, 20 s after #13 |
-| 15 | `t1_vibe_fs_tra_pelvis_bh_PVP_C` | Axial | Copy Slice from #11 | — | **None** | Breath-hold, after #14 |
-| 16 | `t1_fl2d_cor_fs_bh_C` | Coronal | Copy Slice from #12 | — | **None** | Breath-hold, after #15 |
+| 13 | `t1_vibe_cor_fs_bh_arterial_C` | Coronal | Copy everything from #12 | Entire small bowel | **None** | Breath-hold. Fixed delay 30 s |
+| 14 | `t1_vibe_fs_tra_abdomen_bh_PVP_C` | Axial | Copy everything from #10 | — | **None** | Breath-hold, 20 s after #13 |
+| 15 | `t1_vibe_fs_tra_pelvis_bh_PVP_C` | Axial | Copy everything from #11 | — | **None** | Breath-hold, after #14 |
+| 16 | `t1_fl2d_cor_fs_bh_C` | Coronal | Copy Center from #12 | — | **None** | Breath-hold, after #15 |
 
 *#13: Arterial phase — coronal. Enhancing bowel mucosa against the dark bowel lumen. Active inflammation = mucosal hyperenhancement.*  
 *#14–#15: PVP — split-FOV abdomen + pelvis. Bowel wall enhancement pattern assessed: transmural enhancement (active Crohn's), mucosal-only enhancement (quiescent disease), or absent enhancement (fibrotic stricture).*  

@@ -1,6 +1,6 @@
 # IAM (Internal Auditory Meatus, No Brain Request)
 
-**Version:** 1.0 | **Date:** 2026-07-19 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -25,7 +25,7 @@
 | — | **Contrast** | — | — | — | — |
 | 5 | `t1_vibe_fs_cor_brain_C` | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **Inferior** |
 | 6 | `MPR` | Sag+Ax | — | Whole brain | — |
-| 7 | `t1_se_r_fs_tra_IAM_C` *(or `t1_tse_fs_tra_3mm_IAM_C` for 3T)* | Axial | Copy Slice from #3 | — | **None** |
+| 7 | `t1_se_r_fs_tra_IAM_C` *(or `t1_tse_fs_tra_3mm_IAM_C` for 3T)* | Axial | Copy Center from #3 | — | **None** |
 
 ---
 

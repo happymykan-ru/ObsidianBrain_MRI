@@ -138,5 +138,3 @@ Both protocols share the same IMRT principles — straight axial geometry on co-
 | Version | Date | Author | Changes |
 |---|---|---|---|
 | 1.0 | 2026-07-31 | — | Initial — 11 sequences (straight axial for IMRT, split OC/neck DWI, pre-contrast neck STIR/T1, T2 Dixon coronal, separate lower neck Dixon) |
-| 1.1 | 2026-07-31 | — | Corrections: #6 DWI OC includes skull base; #7 neck DWI explicitly tiltable; #8 StarVIBE includes vertex + can tilt; #10 VIBE OC starts ventricles level; #11 lower neck Dixon explicitly tiltable. Updated Sections 3, 4, 5, 7 accordingly |
-| 1.3 | 2026-07-31 | — | Restructured: Section 3 expanded with coverage-focused rationale; Section 5 converted to prose (no table); content deduplicated between rationale and difference sections |

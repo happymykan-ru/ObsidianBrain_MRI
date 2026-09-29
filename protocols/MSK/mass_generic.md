@@ -1,6 +1,6 @@
 # Mass — Generic (Musculoskeletal Tumour Protocol)
 
-**Version:** 1.0 | **Date:** 2026-08-07 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -31,7 +31,7 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band |
 |---|--------|-------|------------|----------|----------|
 | — | **Contrast** | — | Standard dose. Inject at 2 mL/s. | — | — |
-| 5 | `t1_vibe_tra_dyn_C` *(post-op only)* | Axial | Copy Slice from #3 | Mass only. Tight FOV for temporal resolution | **None** |
+| 5 | `t1_vibe_tra_dyn_C` *(post-op only)* | Axial | Copy Center from #3 | Mass only. Tight FOV for temporal resolution | **None** |
 | 6 | `t1_tse_dixon_cor_C` / `t1_tse_dixon_sag_C` | Copy from #1 (Long Axis) | Copy Slice from #1 | Copy coverage from #1 | **None** |
 | 7 | `t1_fs_tse_tra_C` | Axial | Copy Slice from #3 | Copy coverage from #3 | **None** |
 

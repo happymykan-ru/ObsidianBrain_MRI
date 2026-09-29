@@ -1,6 +1,6 @@
 # MS (Multiple Sclerosis Protocol with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-07-19 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -86,7 +86,7 @@ Pre- and post-contrast T1 orbit sequences are deliberately omitted. The STIR (#5
 ## 5. Pathology-Based Variations
 
 - **Whole spine screening:** Indicated when spinal cord symptoms are present (myelopathy, transverse myelitis), or when brain MRI is equivocal for dissemination in space — spinal cord lesions count as infratentorial under McDonald criteria. Add C-spine and T-spine sequences (see future spine protocol files).
-  - *Coverage:* Foramen magnum → conus medullaris (L1–L2). Must be contiguous from foramen magnum downward — no gap between brain and C-spine. Below the conus is cauda equina, which MS does not typically involve.
+  - *Coverage:* Foramen magnum → conus medullaris (L1–L2). The C-spine part must include the skull base and C-2 — start the stack at the skull base so the craniocervical junction is imaged, contiguous with the brain (no gap between brain and C-spine). Below the conus is cauda equina, which MS does not typically involve.
 
 ---
 

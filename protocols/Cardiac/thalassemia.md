@@ -50,7 +50,7 @@
 
 | # | Series | Plane | Angulation | Coverage | Breathing |
 |---|--------|-------|------------|----------|-----------|
-| 9 | `fl2d5_10echo_heart` | SAX single | Single mid-ventricular SA slice [Confirm "5"] — 10 echoes at increasing TE | Single mid-ventricular slice, septum in-plane | BH |
+| 9 | `fl2d5_10echo_heart` | SAX single | Single mid-ventricular SA slice [Confirm "5"] — 10 echoes at increasing TE, captured in systole | Single mid-ventricular slice, septum in-plane | BH |
 
 ### Phase 3 — Liver
 
@@ -100,6 +100,7 @@ Identical cines to `cardiac_non-stress.md` #5–#7, plus the volumetry — which
 **`fl2d5_10echo_heart` (#9) — the heart T2\* measurement:** the exam's core sequence.
     - **How the sequence is built — one excitation, many echoes:** a single RF pulse tips the magnetization, then 10 gradient-echo readouts at increasing TE sample the decay — one echo per image, one breath-hold, gated to a single cardiac phase; the signal decays as e^(−TE/T2\*).
     - **Slice positioning:** a single **mid-ventricular short-axis slice at the papillary muscle level**, planned from the SA localizer — mid-LV, away from the LVOT base and the apex.
+    - **Timing — systole, not diastole:** the slice is captured during **systole**, when the myocardium is thickest — the thicker wall minimizes partial volume in the septal ROI. The default capture cycle (diastolic) is **not used**: instead, the systolic moment is identified from the cine — the frame where the wall is thickest — and the **start time is entered manually**. Before running, verify on the cine that the myocardium is still in systole from the start time through the end of the acquisition window (start time + acquisition time) — the wall must not be thinning or moving while the echoes are collected, or the decay fit is corrupted.
     - **The ROI:** the **interventricular septum** — drawn inside the septal myocardium, clear of the blood-pool and epicardial borders (partial volume), and avoiding the RV insertion points. The septum is the safe region: the posterior wall and the lung/liver interfaces distort the decay with off-resonance, while the septum sits furthest from them — its decay is the cleanest monoexponential: plot ln(signal) vs TE, and the slope is −1/T2\*.
     - **The thresholds:** heart T2\* **> 20 ms normal; 10–20 ms mild-moderate overload; < 10 ms severe** — the value that drives chelation urgency and predicts heart-failure risk.
 
@@ -146,6 +147,7 @@ After the heart, the **table repositions to centre the liver** (via the scout vi
 | **Wrap-around** — any wrapping artifact at the image edges? | The cardiac FOV is small — signal outside it (arms, chest wall) can wrap into the image. If wrapping appears, increase the FOV |
 | **SAX volumetry contiguous** — no gaps, apex included, basal slice below the annulus? | Simpson's volumes/EF are wrong with missing or partial-volume slices |
 | **Heart T2* ROI** — septum measured, fit quality checked? | The septum is the clean ROI (furthest from lung/liver susceptibility); check the decay is a clean exponential — a distorted curve needs a re-acquisition |
+| **Heart T2* timing** — slice captured in systole? Start time entered manually from the cine, and the whole acquisition window (start + acquisition time) still within systole? | If the myocardium is moving or thinning during the echo train, the decay fit breaks — re-check the cine timing and re-enter the start time |
 | **Liver T2* slice** — right lobe, vessels avoided? | Vessels disrupt the fit — place the slice in homogeneous parenchyma |
 | **Field strength** — T2* thresholds match the scanner? | Iron T2* reference values are calibrated at 1.5T — at 3T the values run shorter and the same thresholds do not apply |
 

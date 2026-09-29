@@ -1,6 +1,6 @@
 # FIA (Fistula-in-Ano MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-05 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -24,7 +24,7 @@
 | 1 | `t2_stir_tse_cor_p2` | Coronal Oblique | ∥ anal canal | Perianal region. Center anal axis. Anal verge → above levator ani. Inferior border includes buttock margin. A/P: symphysis pubis → sacrum | **None** | Free breathing |
 | 2 | `t2_stir_tse_tra_p2` | Axial Oblique | ⟂ anal canal | Perianal region. Center anus. Inferior coverage includes buttock margin | **None** | Free breathing |
 | 3 | `t1_tse_tra_p2` | Axial Oblique | Copy Slice from #2 | — | **None** | Free breathing |
-| 4 | `t1_vibe_dixon_tra_pre` | Axial Oblique | Copy Slice from #2 | — | **None** | Breath-hold |
+| 4 | `t1_vibe_dixon_tra_pre` | Axial Oblique | Copy Center from #2 | — | **None** | Breath-hold |
 
 *#1–#2: T2 STIR — fluid-sensitive, uniform fat suppression. Coronal oblique (parallel to anal canal) and axial oblique (perpendicular). Fistula tracks are T2-hyperintense against dark fat.*  
 *#3: T1 TSE axial oblique — anatomical reference. The sphincter complex (internal and external anal sphincters) is profiled.*  
@@ -35,7 +35,7 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose. Delay 2 min before scanning | — | — | — |
 | 5 | `t1_vibe_dixon_tra_C` | Axial Oblique | Copy Slice from #4 | — | **None** | Breath-hold |
-| 6 | `t1_vibe_dixon_cor_C` | Coronal Oblique | Copy Slice from #1 | — | **None** | Breath-hold |
+| 6 | `t1_vibe_dixon_cor_C` | Coronal Oblique | Copy Center from #1 | — | **None** | Breath-hold |
 
 *#5–#6: Post-contrast T1 axial + coronal oblique, delayed 2 min. Enhancing granulation tissue lines the fistula track. Abscesses show rim enhancement. The 2 min delay allows contrast to accumulate in the inflammatory tissue.*  
 
@@ -53,9 +53,15 @@ All axial and coronal sequences are oblique — aligned perpendicular and parall
 
 ### Pre-Contrast
 
-**T2 STIR coronal oblique (#1):** STIR provides uniform fat suppression across the perineum — the perianal region has multiple air-skin interfaces where chemical FS would fail. The coronal oblique plane (parallel to the anal canal) profiles the entire sphincter complex, levator ani, and ischiorectal fossae in one view. The fistula track is T2-hyperintense against the dark suppressed fat. The internal opening at the dentate line and the relationship to the levator plate are assessed.
+**T2 STIR coronal oblique (#1):** STIR provides uniform fat suppression across the perineum — the perianal region has multiple air-skin interfaces where chemical FS would fail. The coronal oblique plane (parallel to the anal canal) profiles the entire sphincter complex, levator ani, and ischiorectal fossae in one view. The fistula track is T2-hyperintense against the dark suppressed fat. The internal opening at the dentate line and the relationship to the levator plate are assessed. **Coverage:**
+    - **Slice coverage (A/P):** well anterior to the anal canal → posterior gluteal cleft / coccyx — both sphincter complexes and the gluteal cleft must be included.
+    - **In-plane R/L:** ischial tuberosities and lateral ischioanal fossae.
+    - **In-plane S/I:** above the levator plate (incl. levator ani) → below the anal verge, including the external opening and perianal skin.
 
-**T2 STIR axial oblique (#2):** Perpendicular to the anal canal. This is the primary plane for Parks classification. Each axial slice shows the anal canal in true cross-section — the internal sphincter (smooth muscle, intermediate signal), external sphincter (striated muscle, dark), and the intersphincteric plane (fat, bright on STIR suppressed to dark). A fistula track crossing the external sphincter = transsphincteric; confined to the intersphincteric plane = intersphincteric; above the levator ani = suprasphincteric. Secondary extensions and abscesses (T2-hyperintense collections) are identified.
+**T2 STIR axial oblique (#2):** Perpendicular to the anal canal. This is the primary plane for Parks classification. Each axial slice shows the anal canal in true cross-section — the internal sphincter (smooth muscle, intermediate signal), external sphincter (striated muscle, dark), and the intersphincteric plane (fat, bright on STIR suppressed to dark). A fistula track crossing the external sphincter = transsphincteric; confined to the intersphincteric plane = intersphincteric; above the levator ani = suprasphincteric. Secondary extensions and abscesses (T2-hyperintense collections) are identified. **Coverage:**
+    - **Slice coverage (S/I):** above the levator plate (anorectal junction) → below the anal verge, including the external opening and perianal skin.
+    - **In-plane R/L:** ischial tuberosities and lateral ischioanal fossae.
+    - **In-plane A/P:** pubic symphysis → posterior gluteal cleft / coccyx.
 
 **T1 TSE axial oblique (#3):** Anatomical reference. The sphincter complex is delineated on T1 with preserved fat planes — useful when STIR fat suppression obscures the intersphincteric plane boundaries. TSE avoids susceptibility artefact at the perianal air-skin interface.
 
@@ -68,6 +74,8 @@ All axial and coronal sequences are oblique — aligned perpendicular and parall
 **T1 VIBE Dixon axial + coronal oblique (#5, #6):** Delayed 2 min post-injection. The fistula track is lined with granulation tissue — this enhances avidly on post-contrast T1. A non-enhancing T2-hyperintense track on STIR that enhances on post-contrast T1 = active fistula. A non-enhancing track = chronic/quiescent fistula (mature fibrous track without active inflammation). Abscesses appear as rim-enhancing fluid collections. The 2 min delay allows contrast to accumulate in the inflammatory tissue — earlier phases may underestimate the extent of enhancement.
 
 The coronal oblique (#6) provides an overview of the entire track from the internal opening to the external opening. The axial oblique (#5) sections the track at each level for sphincter relationship and Parks classification.
+
+**Coverage:** larger FOV than the pre-contrast set — shift the stack superiorly so the buttock is just included at the inferior margin, extending coverage into the pelvis. Why: the post-contrast set is the whole-extent map for surgical planning — in known Crohn disease, supralevator sepsis, pelvic abscess, or a high fistula, disease tracks superiorly into the pelvis, and a cranial extension clipped at the FOV edge is a missed surgical target. The inferior boundary stays just low enough to keep the external opening.
 
 ---
 

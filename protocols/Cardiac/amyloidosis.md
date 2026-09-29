@@ -1,6 +1,6 @@
 # Amyloidosis / Fabry (Infiltrative Cardiomyopathy CMR — T1/T2 Mapping, ECV + LGE)
 
-**Version:** 1.0 | **Date:** 2026-09-01 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-27 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -14,7 +14,7 @@ Same as `cardiac_non-stress.md`:
 - **ECG:** Vector ECG — optimise the R wave (largest amplitude, no T-wave oversensing). Every sequence in this protocol is ECG-gated, so a poor trigger degrades the entire study.
 - **IV Access:** **One line** — contrast only.
 - **Breath-Hold Coaching:** Consistent **end-inspiratory** breath-holds, kept small — consistency matters most: the T1/T2 maps and the ECV slices must not drift between acquisitions.
-- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol [Confirm threshold].
+- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol.
 - **Hematocrit:** a same-day blood hematocrit is required for the ECV calculation — draw it at cannulation and enter it into the ECV post-processing [AI ADDED].
 
 ---
@@ -24,7 +24,7 @@ Same as `cardiac_non-stress.md`:
 - **Phase 0 — Planning:** Localizers + pseudo-2C/4C/SAX cascade (#1–4)
 - **Phase 1 — Rest function:** Cines 3C/4C/2C/LVOT + aortic flow (#5–9)
 - **Phase 2 — Mapping:** Native T1 map + T2 map (#10–11)
-- **Phase 3 — Contrast:** Single dose at 2 ml/s → 7 min wait
+- **Phase 3 — Contrast:** Double dose at 2 ml/s → 7 min wait
 - **Phase 4 — Function:** SA volumetry fills the 7-min wait (#12)
 - **Phase 5 — LGE:** TI scout → PSIR overviews → 12-slice FB → T1 seg FS SA (#13–18)
 - **Phase 6 — ECV:** Post-contrast T1 map at the same three slices (#19)
@@ -33,9 +33,9 @@ Same as `cardiac_non-stress.md`:
 
 | When | What | Rate | Purpose |
 |---|---|---|---|
-| Phase 3 | Gadolinium — single dose [Confirm mmol/kg] | 2 ml/s | LGE equilibration + ECV post-contrast T1 |
+| Phase 3 | Gadolinium — double dose (Dotarem 0.2 mmol/kg / Gadovist 1.5×) | 2 ml/s | LGE equilibration + ECV post-contrast T1 |
 
-**Total contrast: single dose** [Confirm]. Slow rate is deliberate: no first-pass perfusion here, so no tight 4 ml/s bolus is needed.
+**Total contrast: double dose Dotarem (0.2 mmol/kg) / 1.5× Gadovist (0.15 mmol/kg), single injection** — dosing rules per cardiac_stress.md — Contrast dosing. Slow rate is deliberate: no first-pass perfusion here, so no tight 4 ml/s bolus is needed.
 
 ---
 
@@ -71,7 +71,7 @@ Same as `cardiac_non-stress.md`:
 
 | # | Series | Plane | Angulation | Coverage | Breathing |
 |---|--------|-------|------------|----------|-----------|
-| — | **Contrast — 2 ml/s** | — | Single gadolinium dose at 2 ml/s [Confirm dose] + saline flush | — | — |
+| — | **Contrast — 2 ml/s** | — | Gadolinium double dose at 2 ml/s + saline flush | — | — |
 | — | **7 min wait** | — | Late LGE imaging starts ~7 min after the injection | — | — |
 
 ### Phase 4 — Post-Contrast Function
@@ -88,7 +88,7 @@ Same as `cardiac_non-stress.md`:
 | 14 | `de_overview_tfi_psir_4c` | 4C | Copy Slice from #6 — late PSIR, TI increased gradually | Entire myocardium wall — base → apex | BH |
 | 15 | `de_overview_tfi_psir_2c` | 2C | Copy Slice from #7 — late PSIR, TI increased gradually | Entire myocardium wall — base → apex | BH |
 | 16 | `de_overview_tfi_psir_sax` | SAX stack | Copy Slice from #12 — late PSIR, TI increased gradually | Entire myocardium wall — whole LV | BH |
-| 17 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #12 — 12 slices | Base → apex | FB |
+| 17 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #12 — 12 slices, MOCO, 5 averages | Base → apex | FB |
 | 18 | `tfl13_2d_t1_seg_fs_c_sax` | SAX stack (2D) | Copy Slice from #12 — [Confirm: routine or optional] | Base → apex, built slice-by-slice upward toward the apex | BH |
 
 ### Phase 6 — ECV
@@ -156,7 +156,7 @@ Identical to `cardiac_non-stress.md` #5–#9 — retrospective gating, planned b
 
 ### Phase 3 — Contrast
 
-A single gadolinium dose at **2 ml/s** + saline flush — no first-pass to capture, so no tight bolus is needed. After the injection, the **7-minute wait** allows the contrast to equilibrate for LGE — and the same dose later serves the ECV post-contrast T1 measurement.
+A single injection of the double dose at **2 ml/s** + saline flush — no first-pass to capture, so no tight bolus is needed. After the injection, the **7-minute wait** allows the contrast to equilibrate for LGE — and the same dose later serves the ECV post-contrast T1 measurement.
 
 ### Phase 4 — Post-Contrast Function (#12)
 
@@ -164,7 +164,7 @@ A single gadolinium dose at **2 ml/s** + saline flush — no first-pass to captu
 
 ### Phase 5 — LGE (#13–#18)
 
-Same late LGE block as `myocarditis.md` #18–#23 — PSIR overviews, TI scout, 12-slice FB catch-all, and the TurboFLASH FS high-res (mechanics and PSIR rationale as in those files).
+Same late LGE block as `myocarditis.md` #18–#23 — PSIR overviews, TI scout, 12-slice FB catch-all (MOCO ×5), and the TurboFLASH FS high-res (mechanics and PSIR rationale as in those files).
 
 **Why the enhancement matters here:** amyloid infiltrates diffusely — the classic picture is **circumferential subendocardial enhancement** (sometimes transmural) with a **notoriously difficult null**: amyloid myocardium and the blood pool carry similar T1 after contrast, so the TI scout must separate two tissues that null almost together. PSIR's TI-insensitivity is exactly what this disease needs; the magnitude high-res series may be hard to null and is used with the incrementing TI. Fabry shows the opposite pattern: **focal mid-basal inferolateral enhancement** — replacement fibrosis where the storage-laden myocytes have died. Why this territory fails first is not fully settled, but the basal inferolateral wall carries the highest wall stress, and the glycosphingolipid also deposits in the intramural vessel endothelium — together making the storage-injured myocytes there the first to scar. The result is a focal non-ischemic mid-wall scar, easy to null, and the 4C/2C views catch it in-plane.
 
@@ -184,7 +184,7 @@ Same late LGE block as `myocarditis.md` #18–#23 — PSIR overviews, TI scout, 
 | Check | Improve |
 |---|---|
 | **ECG trigger** — lead with the cleanest R wave chosen for gating? | Choose the ECG lead with the cleanest R wave (largest amplitude, no T-wave oversensing) — every sequence is gated, so a poor trigger degrades the entire study |
-| **eGFR** — confirmed above 30 before contrast? | Single-dose protocol but still gadolinium — check before, not after |
+| **eGFR** — confirmed above 30 before contrast? | Double-dose gadolinium — check before, not after (see cardiac_stress.md — Contrast dosing) |
 | **Hematocrit** — same-day sample drawn and entered for the ECV calculation? | Without the hematocrit, ECV cannot be computed — draw it at cannulation, not after the scan |
 | **VENC** — any aliasing in the aortic flow? | Aliased phase wraps velocities — repeat at higher VENC (400 cm/s) |
 | **Wrap-around** — any wrapping artifact at the image edges? | The cardiac FOV is small — signal outside it (arms, chest wall) can wrap into the image. If wrapping appears, increase the FOV |

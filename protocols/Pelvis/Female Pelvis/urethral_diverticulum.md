@@ -1,6 +1,6 @@
 # Urethral Diverticulum (Urethral Diverticulum MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -24,7 +24,7 @@
 | 1 | `t2_tse_sag` | Sagittal | True sagittal | Urethra + bladder base + vagina. Small FOV | **None** | Free breathing |
 | 2 | `t2_tse_tra` | Axial | True axial | Urethra + periurethral region. Small FOV | **None** | Free breathing |
 | 3 | `t2_tse_cor` | Coronal | True coronal | Urethra + bladder base. Small FOV | **None** | Free breathing |
-| 4 | `t1_vibe_fs_tra_pre` | Axial | Copy Slice from #2 | Urethra + periurethral region | **None** | Breath-hold |
+| 4 | `t1_vibe_fs_tra_pre` | Axial | Copy Center from #2 | Urethra + periurethral region | **None** | Breath-hold |
 
 *#1–#3: T2 TSE in 3 planes, small FOV. The urethral diverticulum is a T2-hyperintense sac-like structure arising from the urethra, often horseshoe-shaped wrapping around the posterior/lateral urethral wall.*  
 *#4: Pre-contrast T1 FS — baseline for enhancement.*  
@@ -35,7 +35,7 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose. Delay 60 s before scanning | — | — | — |
 | 5 | `t1_vibe_fs_tra_C` | Axial | Copy Slice from #4 | Urethra + periurethral region | **None** | Breath-hold |
-| 6 | `t1_vibe_dixon_cor_C` | Coronal | Copy Slice from #3 | Urethra + bladder base | **None** | Breath-hold |
+| 6 | `t1_vibe_dixon_cor_C` | Coronal | Copy Center from #3 | Urethra + bladder base | **None** | Breath-hold |
 
 *#5–#6: Post-contrast at 60 s delay. The diverticulum wall enhances (inflamed). The 60 s delay allows contrast accumulation in the wall without filling the diverticulum lumen.*  
 

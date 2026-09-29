@@ -1,6 +1,6 @@
 # Incontinence (Pelvic Floor MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -24,8 +24,8 @@
 | 1 | `t2_tse_sag` | Sagittal | True sagittal | Pelvic floor. Pubic symphysis → sacrum/coccyx. L/R: both levator ani origins | **None** | Free breathing |
 | 2 | `t2_tse_tra` | Axial | True axial | Pelvic floor. Bladder base → perineum | **None** | Free breathing |
 | 3 | `t2_tse_cor` | Coronal | True coronal | Pelvic floor. A/P: pubic symphysis → sacrum | **None** | Free breathing |
-| 4 | `t2_space_sag_p2_iso` | Sagittal | Copy Slice from #1 | — | **None** | Free breathing |
-| 5 | `t1_vibe_dixon_tra_pre` | Axial | Copy Slice from #2 | Pelvic floor | **None** | Breath-hold |
+| 4 | `t2_space_sag_p2_iso` | Sagittal | Copy Center from #1 | — | **None** | Free breathing |
+| 5 | `t1_vibe_dixon_tra_pre` | Axial | Copy Center from #2 | Pelvic floor | **None** | Breath-hold |
 
 *#1–#3: T2 TSE in 3 planes — pelvic floor anatomy. Levator ani, puborectalis, endopelvic fascia, urethra, bladder neck, vagina, rectum.*  
 *#4: T2 SPACE sagittal — 3D T2 with isotropic resolution. MPR for pelvic floor assessment in any plane.*  
@@ -37,7 +37,7 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose. No specific delay required | — | — | — |
 | 6 | `t1_vibe_dixon_tra_C` | Axial | Copy Slice from #5 | Pelvic floor | **None** | Breath-hold |
-| 7 | `t1_vibe_dixon_cor_C` | Coronal | Copy Slice from #3 | Pelvic floor | **None** | Breath-hold |
+| 7 | `t1_vibe_dixon_cor_C` | Coronal | Copy Center from #3 | Pelvic floor | **None** | Breath-hold |
 
 *#6–#7: Post-contrast T1 axial + coronal. Enhancing cystocele/rectocele mucosa and pelvic floor soft tissues.*  
 

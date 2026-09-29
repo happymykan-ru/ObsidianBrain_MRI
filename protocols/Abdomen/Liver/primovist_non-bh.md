@@ -1,6 +1,6 @@
 # Primovist Non-Breath-Hold (Free-Breathing Hepatobiliary Contrast Liver MRI)
 
-**Version:** 1.0 | **Date:** 2026-08-03 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -25,8 +25,8 @@ As `liver_non-bh.md`. Primovist-specific: dose 0.1 mL/kg, withdraw from factory 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Primovist, hand injection | — | — | — |
-| 4 | `t1_starvibe_fs_tra_non-bh_dyn_C` | Axial | Copy Slice from #2 | Whole liver | **None** | Free breathing. Multiple measurements over ~3 min. Inject after 1st measurement |
-| 5 | `t1_starvibe_fs_tra_non-bh_delay_5min_C` | Axial | Copy Slice from #2 | — | **None** | Free breathing, ~5 min |
+| 4 | `t1_starvibe_fs_tra_non-bh_dyn_C` | Axial | Copy everything from #2 | Whole liver | **None** | Free breathing. Multiple measurements over ~3 min. Inject after 1st measurement |
+| 5 | `t1_starvibe_fs_tra_non-bh_delay_5min_C` | Axial | Copy everything from #2 | — | **None** | Free breathing, ~5 min |
 
 ### Post-Contrast — Hepatobiliary Wait (T2 sequences)
 
@@ -44,10 +44,10 @@ As `liver_non-bh.md`. Primovist-specific: dose 0.1 mL/kg, withdraw from factory 
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
-| 11 | `t1_starvibe_fs_tra_non-bh_delay_10min_C` | Axial | Copy Slice from #2 | — | **None** | Free breathing, ~10 min |
+| 11 | `t1_starvibe_fs_tra_non-bh_delay_10min_C` | Axial | Copy everything from #2 | — | **None** | Free breathing, ~10 min |
 | 12 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Slice from #2 | Whole liver | **None** | Free breathing |
 | — | *Pause ~5 min* | — | — | — | — | — |
-| 13 | `t1_starvibe_fs_tra_non-bh_delay_20min_C` | Axial | Copy Slice from #2 | — | **None** | Free breathing, ~20 min |
+| 13 | `t1_starvibe_fs_tra_non-bh_delay_20min_C` | Axial | Copy everything from #2 | — | **None** | Free breathing, ~20 min |
 
 *#11: Optional early hepatobiliary check — see rationale. #13: Diagnostic hepatobiliary phase. See primovist.md for lesion behaviour.*
 

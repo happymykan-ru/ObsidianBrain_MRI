@@ -1,6 +1,6 @@
 # Fast Brain (Ultra-Fast Brain MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-07-18 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -27,7 +27,7 @@
 | 6 | `t1_fl2d_tra_C` | Axial | Copy Slice from #1 | — | **None** |
 | 7 | `t1_fl2d_cor_C` | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **None** |
 | 8 | `t1_vibe_fs_cor_C` | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **Inferior** |
-| 9 | `t1_vibe_fs_tra_C` | Axial | Copy Slice from #1 | — | **Inferior** |
+| 9 | `t1_vibe_fs_tra_C` | Axial | Copy Center from #1 | — | **Inferior** |
 
 *All sequences are ~20 s each. Total scan time: ~5 min including contrast injection.*
 

@@ -1,6 +1,6 @@
 # Fibroid (Uterine Fibroid MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -23,11 +23,11 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
 | 1 | `t2_tse_sag` | Sagittal | True sagittal | Uterus + cervix + vagina. L/R: covering both ovaries and adnexae | **None** | Free breathing |
-| 2 | `t2_space_sag_p2_iso` | Sagittal | Copy Slice from #1 | — | **None** | Free breathing |
+| 2 | `t2_space_sag_p2_iso` | Sagittal | Copy Center from #1 | — | **None** | Free breathing |
 | 3 | `t2_tse_tra` | Axial | True axial | Uterus + adnexae. S/I: iliac crest → perineum | **None** | Free breathing |
 | 4 | `t2_tse_cor` | Coronal | True coronal | Uterus + adnexae. A/P: symphysis → sacrum | **None** | Free breathing |
 | 5 | `resolve_diff_b50_800_tra` | Axial | Copy Slice from #3 | Uterus only | **A/P** (anterior + posterior skin margins) | Free breathing |
-| 6 | `t1_vibe_dixon_tra_pre` | Axial | Copy Slice from #3 | Uterus + pelvic nodes | **None** | Breath-hold |
+| 6 | `t1_vibe_dixon_tra_pre` | Axial | Copy Center from #3 | Uterus + pelvic nodes | **None** | Breath-hold |
 
 *#1: T2 TSE sagittal — primary anatomical plane. Endometrium, junctional zone, myometrium, and fibroid zonal anatomy.*  
 *#2: T2 SPACE sagittal — 3D T2 with isotropic resolution. MPR for reformats in any plane.*  
@@ -41,8 +41,8 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose. 1–2 mL/s (timing not critical). Delay 2 min before scanning | — | — | — |
 | 7 | `t1_vibe_dixon_tra_C` | Axial | Copy Slice from #6 | Uterus + pelvic nodes | **None** | Breath-hold |
-| 8 | `t1_vibe_dixon_cor_C` | Coronal | Copy Slice from #4 | Uterus + adnexae | **None** | Breath-hold |
-| 9 | `t1_vibe_dixon_sag_C` | Sagittal | Copy Slice from #1 | Uterus + cervix | **None** | Breath-hold |
+| 8 | `t1_vibe_dixon_cor_C` | Coronal | Copy Center from #4 | Uterus + adnexae | **None** | Breath-hold |
+| 9 | `t1_vibe_dixon_sag_C` | Sagittal | Copy Center from #1 | Uterus + cervix | **None** | Breath-hold |
 
 *#7–#9: Post-contrast T1 in all three planes, delayed 2 min. Fibroids enhance (smooth muscle tumours) — the 2 min delay allows contrast accumulation in the interstitial space of the fibroid. Enhances less than myometrium — fibroid appears hypointense relative to the brightly enhancing myometrium.*  
 

@@ -1,6 +1,6 @@
 # Penis (Penile MRI with Dynamic Contrast — Peyronie's / Cancer / Fracture)
 
-**Version:** 1.0 | **Date:** 2026-08-07 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -27,7 +27,7 @@
 | 3 | `t2_tse_tra_short_axis_penis` | Axial Oblique (Short Axis) | ⟂ long axis of penile shaft (planned from #2) | Penis only. Penile root → glans tip | **None** | Free breathing |
 | 4 | `t2_tse_cor_long_axis_penis` | Coronal Oblique (Long Axis) | ∥ long axis of penile shaft (planned from #2) | Penis full length. Crura at ischial rami → glans tip. A/P: dorsal skin surface → ventral skin surface | **None** | Free breathing |
 | 5 | `stir_tse_tra_short_axis_penis` | Axial Oblique (Short Axis) | Copy Slice from #3 | Copy Slice from #3 | **None** | Free breathing |
-| 6 | `stir_tse_sag` | Sagittal | Copy Slice from #2 | Copy Slice from #2. Penis full length | **None** | Free breathing |
+| 6 | `stir_tse_sag` | Sagittal | Copy Center from #2 | Copy Center from #2. Penis full length | **None** | Free breathing |
 | 7 | `t1_vibe_dixon_sag_pre` | Sagittal | Copy Slice from #2 | Penis only. Pre-contrast baseline | **None** | Breath-hold |
 
 ### Post-Contrast
@@ -36,8 +36,8 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Standard dose. Inject at 2 mL/s. Dynamic acquisition starts with injection — no delay required. | — | — | — |
 | 8 | `t1_vibe_dixon_sag_dyn_C` | Sagittal | Copy Slice from #7 | Penis only | **None** | Shallow breathing. Multiple measurements. Inject at start of acquisition |
-| 9 | `t1_vibe_dixon_tra_short_axis_penis_C` | Axial Oblique (Short Axis) | Copy Slice from #3 | Copy Slice from #3 | **None** | Breath-hold |
-| 10 | `t1_vibe_dixon_cor_long_axis_penis_C` | Coronal Oblique (Long Axis) | Copy Slice from #4 | Copy Slice from #4 | **None** | Breath-hold |
+| 9 | `t1_vibe_dixon_tra_short_axis_penis_C` | Axial Oblique (Short Axis) | Copy Center from #3 | Copy Center from #3 | **None** | Breath-hold |
+| 10 | `t1_vibe_dixon_cor_long_axis_penis_C` | Coronal Oblique (Long Axis) | Copy Center from #4 | Copy Center from #4 | **None** | Breath-hold |
 | 11 | `t1_vibe_dixon_bh_tra_pelvis_C` | Axial | Copy Slice from #1 | Copy Slice from #1. FOV 320 mm | **None** | Breath-hold |
 
 ---

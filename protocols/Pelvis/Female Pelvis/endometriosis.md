@@ -1,6 +1,6 @@
 # Endometriosis (Deep Infiltrating Endometriosis MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -24,10 +24,10 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Buscopan** | — | 10–20 mg IV, prior to exam | — | — | — |
 | 1 | `t2_tse_sag` | Sagittal | True sagittal | Pelvis. Uterus + rectovaginal septum + pouch of Douglas + bladder. L/R: both adnexae | **None** | Free breathing |
-| 2 | `t2_space_sag_p2_iso` | Sagittal | Copy Slice from #1 | — | **None** | Free breathing |
+| 2 | `t2_space_sag_p2_iso` | Sagittal | Copy Center from #1 | — | **None** | Free breathing |
 | 3 | `t2_tse_tra` | Axial | True axial | Pelvis. Iliac crest → perineum. Both ovaries + pelvic sidewall | **None** | Free breathing |
 | 4 | `resolve_diff_b50_800_tra` | Axial | Copy Slice from #3 | Pelvis | **A/P** (anterior + posterior skin margins) | Free breathing |
-| 5 | `t1_vibe_dixon_tra_pre` | Axial | Copy Slice from #3 | Pelvis | **None** | Breath-hold |
+| 5 | `t1_vibe_dixon_tra_pre` | Axial | Copy Center from #3 | Pelvis | **None** | Breath-hold |
 
 *#1: T2 TSE sagittal — the primary plane for DIE. Pouch of Douglas, rectovaginal septum, uterosacral ligaments, and bladder dome profiled in one view.*  
 *#2: T2 SPACE sagittal — 3D T2 with MPR for any plane.*  
@@ -41,7 +41,7 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose. No specific delay required | — | — | — |
 | 6 | `t1_vibe_dixon_tra_C` | Axial | Copy Slice from #5 | Pelvis | **None** | Breath-hold |
-| 7 | `t1_vibe_dixon_sag_C` | Sagittal | Copy Slice from #1 | Pelvis. Uterus + rectovaginal septum + pouch of Douglas | **None** | Breath-hold |
+| 7 | `t1_vibe_dixon_sag_C` | Sagittal | Copy Center from #1 | Pelvis. Uterus + rectovaginal septum + pouch of Douglas | **None** | Breath-hold |
 
 *#6–#7: Post-contrast T1 axial + sagittal. Enhancing peritoneal deposits and endometriotic nodules.*  
 

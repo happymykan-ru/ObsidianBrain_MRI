@@ -1,6 +1,6 @@
 # Generic Pelvis (General-Purpose Pelvic MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -24,7 +24,7 @@
 | 1 | `t2_tse_sag` | Sagittal | True sagittal | Pelvis. Uterus + cervix + vagina. L/R: both adnexae | **None** | Free breathing |
 | 2 | `t2_tse_tra` | Axial | True axial | Pelvis. Iliac crest → perineum | **None** | Free breathing |
 | 3 | `t1_tse_dixon_tra` | Axial | Copy Slice from #2 | Pelvis | **None** | Free breathing |
-| 4 | `t2_space_sag_p2_iso` | Sagittal | Copy Slice from #1 | — | **None** | Free breathing |
+| 4 | `t2_space_sag_p2_iso` | Sagittal | Copy Center from #1 | — | **None** | Free breathing |
 | 5 | `resolve_diff_tra_b50_800` | Axial | Copy Slice from #2 | Pelvis | **A/P** (anterior + posterior skin margins) | Free breathing |
 
 *#1–#2: T2 TSE sagittal + axial — anatomical survey of the uterus, ovaries, and pelvic structures.*  
@@ -37,7 +37,7 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose. No specific delay required | — | — | — |
-| 6 | `t1_starvibe_fs_tra` | Axial | Copy Slice from #2 | Pelvis | **None** | Free breathing |
+| 6 | `t1_starvibe_fs_tra` | Axial | Copy Center from #2 | Pelvis | **None** | Free breathing |
 | 7 | `t1_starvibe_fs_cor` | Coronal | True coronal | Pelvis. A/P: symphysis → sacrum | **None** | Free breathing |
 
 *#6–#7: Post-contrast StarVIBE FS axial + coronal. Motion-robust radial acquisition — suitable for patients who cannot breath-hold (pelvic pain, post-operative).*  

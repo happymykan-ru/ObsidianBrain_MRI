@@ -1,6 +1,6 @@
 # Cardiac Stress (Adenosine Stress/Rest Perfusion CMR — T1 Mapping + LGE)
 
-**Version:** 2.0 | **Date:** 2026-09-01 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-27 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -25,7 +25,7 @@
 - **Phase 2 — Setup:** Positioning sweep → native T1 → true pre (#11–13)
 - **Phase 3 — Stress:** Water bolus primes the injector → adenosine 180 s + BP checks → response check → stress T1 @ 30 s countdown → contrast 4 ml/s + stress perfusion (#14). *Inadequate response → step-up dose, new 60 s countdown*
 - **Phase 4 — Recovery:** HR baseline + 6 min HR recovery wait → dose 2 → rest perfusion (#15)
-- **Phase 5 — LGE:** Dose 3 → volumetry fills the ~7 min wait (#16) → TI scout → overviews → PSIR → optional high-res (#17–22)
+- **Phase 5 — LGE:** Dose 3 → volumetry fills the ~7 min wait (#16) → TI scout → DE overviews (mag + PSIR) → 12-slice FB overview → optional high-res (#17–22)
 
 **Dose ledger**
 
@@ -36,7 +36,13 @@
 | Phase 5 | Gadolinium — dose 3 (top-up) | 4 ml/s | Cumulative dose to the LGE range |
 | Phase 3 | Adenosine infusion | 140 µg/kg/min, ~3 min [AI ADDED] | Maximal coronary vasodilation |
 
-**Total contrast: double dose (0.2 mmol/kg) split into three doses** — dose 1 (stress perfusion), dose 2 (rest perfusion), dose 3 (LGE top-up). 0.2 mmol/kg = 0.4 ml/kg of Dotaram (0.5 mmol/ml); if Gadovist (1.0 mmol/ml) is substituted, halve the volume to 0.2 ml/kg to deliver the same dose.
+**Contrast dosing (confirmed — all cardiac protocols)**
+
+- **Dotarem (gadoterate, 0.5 M): double dose — 0.2 mmol/kg = 0.4 ml/kg** — stress and non-stress alike. The double dose is for the LGE series: high cumulative tissue concentration sharpens the scar-vs-normal contrast at the inversion null.
+- **Gadovist (gadobutrol, 1.0 M): 1.5× dose — 0.15 mmol/kg = 0.15 ml/kg** — same LGE rationale; its higher relaxivity (below) means 1.5× already reaches the LGE range.
+- **Bolus split:** Dotarem = the three boluses in the ledger above (dose 1 = stress perfusion, dose 2 = rest perfusion, dose 3 = LGE top-up). **Gadovist = 2 boluses instead of 3** — the much smaller total volume (0.15 or 0.1 ml/kg vs 0.4 ml/kg) is too small to split three ways: dose 1 = stress perfusion, dose 2 = rest perfusion + LGE top-up combined. Non-stress protocols give the same doses as a single injection at 2 ml/s.
+- **Poor renal function (eGFR < 30):** consult the radiologist → switch to **Gadovist at standard dose — 0.1 ml/kg (= 0.1 mmol/kg)**. The smaller volume is just concentration (1.0 M vs 0.5 M); what makes standard dose acceptable is gadobutrol's ~45% higher relaxivity — the same mmol relaxes more protons.
+- **Why Gadovist has better relaxivity:** relaxivity (r1) is how many water protons one Gd ion relaxes per unit time — the number that turns mmol of gadolinium into T1 shortening. Gadobutrol r1 ≈ 5.2 vs gadoterate ≈ 3.6 L·mmol⁻¹·s⁻¹ at 1.5 T — about 45% more per mmol. A Gd ion relaxes protons through its fluctuating magnetic field, which fluctuates as the complex tumbles and as inner-sphere water molecules exchange; protons relax most efficiently when those motions match the Larmor frequency. Gadobutrol's rigid, compact macrocyclic cage gives the more favorable combination — fast water exchange and slower tumbling — so each ion relaxes more protons. [AI ADDED — relaxivity values and mechanism from literature; please verify]
 
 ---
 
@@ -79,7 +85,7 @@
 | — | **Response check + last BP / step-up** | — | Adequate (BP ↓ ≥10 mmHg or HR ↑ ≥10 bpm): proceed — stress T1 map at 30 s countdown, last BP at 20 s countdown, inject contrast only after the BP cuff has fully deflated. Inadequate: add adenosine dose, new 60 s countdown, stress T1 map at peak, inject after it finishes | — | — |
 | — | **Stress T1 map — at 30 s countdown** | SAX ×3 | Copy Slice from #11 — at countdown 30 s (peak stress) | Basal, mid, apical SAX | BH |
 | — | `t1map_nativestress` 5(6)3SA | SAX ×3 | Copy Slice from #11. MOLLI 5(6)3 | Basal, mid, apical SAX | BH |
-| — | **Contrast — 4 ml/s** | — | Gadolinium bolus at 4 ml/s + saline flush [Confirm dose] | — | — |
+| — | **Contrast — 4 ml/s** | — | Gadolinium bolus at 4 ml/s + saline flush | — | — |
 | 14 | `dynamic_tfl_sr_stress_C` | SAX ×3 | Copy Slice from #11 | Basal, mid, apical SAX | BH → shallow |
 
 ### Phase 4 — Recovery & Rest Perfusion
@@ -97,10 +103,10 @@
 | — | **3rd dose injection** | — | Top-up dose at 4 ml/s, injected **immediately before** the volumetry cine; LGE imaging starts ~7 min after the 3rd dose | — | — |
 | 16 | `cine_tfi_retro_sa_volumetry_c` | SAX stack | ⟂ LV long axis — contiguous stack, planned on the diastolic phase | Whole ventricle — first slice no blood pool, last slice past the mitral valve level | BH |
 | 17 | `ti_scout` | SAX single | Single SA location at the thickest myocardium (mid-ventricular) | Single mid SAX slice | BH |
-| 18 | `de_overview_tfi_4c` | 4C | Copy Slice from #7 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 19 | `de_overview_tfi_2c` | 2C | Copy Slice from #8 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 20 | `de_overview_tfi_sax` | SAX stack | Copy Slice from #16 — prospective gating, TI increased gradually | Entire myocardium wall — whole LV | BH |
-| 21 | `de_trufi_overview_12si_psir_fb` | SAX ×12 | Copy Slice from #16 — 12 slices | Base → apex | FB |
+| 18 | `de_overview_tfi_4c` | 4C | Copy Slice from #7 — prospective gating, TI increased gradually — single breath-hold, magnitude + PSIR images | Entire myocardium wall — base → apex | BH |
+| 19 | `de_overview_tfi_2c` | 2C | Copy Slice from #8 — prospective gating, TI increased gradually — single breath-hold, magnitude + PSIR images | Entire myocardium wall — base → apex | BH |
+| 20 | `de_overview_tfi_sax` | SAX stack | Copy Slice from #16 — prospective gating, TI increased gradually — single breath-hold, magnitude + PSIR images | Entire myocardium wall — whole LV | BH |
+| 21 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #16 — 12 slices, MOCO, 5 averages — magnitude + PSIR images | Base → apex | FB |
 | 22 | `de_high-res_tfl_fs_sax` | SAX stack (optional 2D) | Copy Slice from #16 — only if radiologist finds a suspicious lesion on #21; TI set from #17, incremented | Base → apex, built slice-by-slice upward toward the apex | BH |
 
 ---
@@ -212,29 +218,30 @@ The choreography, timed from the start of the infusion:
 
 **Part 2 — Late Gadolinium Enhancement**
 
-The LGE principle: at the equilibrium phase, scar/fibrosis holds onto gadolinium (expanded extracellular space, slow washout) and stays **bright** on an inversion-recovery image, while normal myocardium is **nulled (dark)**. Everything from here on depends on the TI being right.
+The LGE principle: at the equilibrium phase, scar/fibrosis holds onto gadolinium (expanded extracellular space, slow washout) and stays **bright** on an inversion-recovery image, while normal myocardium is **nulled (dark)**. Everything from here on depends on the TI being right — on the magnitude reconstructions; the PSIR reconstructions of the overviews tolerate TI error (below).
 
 **`ti_scout` (#17):** performed at the **7-min mark (the late gadolinium enhancement window)** at a **single SA location through the thickest myocardium** (typically mid-ventricular). A Look-Locker series sweeps through inversion times to find the TI that nulls normal myocardium — it appears uniformly dark, while infarcted tissue keeps a different (brighter) look, which is exactly the contrast the DE images rely on. The **optimal TI is where normal myocardium is most uniformly dark without a dark rim**: a dark rim at the myocardial border means the blood pool is nulling too (TI too short) — the rim itself is the interface voxels, partial-volumed between the nulled blood pool and the myocardium — which would hide subendocardial scar against it; at the correct TI the myocardium is dark and the blood pool stays bright.
 
-**DE overview series — prospective gating.** All three are IR-prepared **TrueFISP** (magnitude IR), **prospectively gated** (one image per slice, acquired at a fixed cardiac phase):
+**DE overview series — prospective gating.** All three are IR-prepared **TrueFISP**, each acquired in a **single breath-hold**, **prospectively gated** (one image per slice, acquired at a fixed cardiac phase) — and each reconstructing **both a magnitude and a PSIR image**:
 - **`de_overview_tfi_4c` (#18):** 4C.
 - **`de_overview_tfi_2c` (#19):** 2C.
 - **`de_overview_tfi_sax` (#20):** SAX stack.
 
-Shared across the series: the **TI setting is increased gradually across the DE series** — as contrast washes out of the myocardium, T1 lengthens and the null point drifts later, so each subsequent series needs a slightly longer TI. They also verify the enhancement pattern and nulling before the definitive images.
+Shared across the series: the **TI setting is increased gradually across the DE series** — as contrast washes out of the myocardium, T1 lengthens and the null point drifts later, so each subsequent series needs a slightly longer TI. The **magnitude image is read when the TI is right** (crispest null); the **PSIR image is the TI-robust read** — both come from the same acquisition (below). They also verify the enhancement pattern and nulling before the definitive images.
 
-**`de_trufi_overview_12si_psir_fb` (#21) — TrueFISP PSIR overview:** a 12-slice SAX stack with phase-sensitive inversion recovery, free-breathing. PSIR is insensitive to TI error — the robust whole-ventricle survey that catches enhancement anywhere (including RV and thrombus) even if the TI is imperfect. **After this series, consult the radiologist** — if a suspicious lesion is found, proceed to the optional high-res series (#22).
+**`de_trufi_overview_12sl_psir_fb` (#21) — the free-breathing TrueFISP overview:** the same IR-TrueFISP readout as #18–#20, likewise reconstructing **both magnitude and PSIR images** — the difference is the breathing: a **12-slice SAX stack, free-breathing with motion correction (MOCO) and 5 averages**. MOCO + averaging suppresses respiratory motion — no breath-hold needed, so it rescues patients who cannot hold — and raises the SNR, at the cost of scan time and slight blur. The PSIR reconstruction is insensitive to TI error — the robust whole-ventricle survey that catches enhancement anywhere (including RV and thrombus) even if the TI is imperfect. **After this series, consult the radiologist** — if a suspicious lesion is found, proceed to the optional high-res series (#22).
 
 **`de_high-res_tfl_fs_sax` (#22) — high-res FS SAX (optional):** the definitive, targeted LGE acquisition — an **optional 2D series**, performed only if the radiologist finds a suspicious lesion on the overviews/PSIR. The TI is set (from the TI scout, incremented for the elapsed washout). Acquired as a **2D series — the SAX stack is built by repeatedly acquiring single 2D slices, stacking upward towards the apex**, each slice individually breath-held. Fat saturation removes the bright epicardial fat signal so thin subepicardial enhancement is not masked, and the high in-plane resolution delineates infarct transmurality, which drives viability-based decisions.
 
-- **Why both the DE overviews and the PSIR are needed:** both detect scar, but each fails in the way the other is immune to — together they close the gaps:
-    - **The DE overviews alone are not safe — TI-dependent:** magnitude-reconstructed IR-TrueFISP contrast lives and dies by the TI — too short and it is the infarct itself that nulls (gadolinium shortens its T1, so its null point arrives earlier than normal myocardium's), turning the scar dark and invisible (**false negative**); too long and normal myocardium stays bright (**false positive**) — and the TI drifts as contrast washes out.
-    - **The PSIR is the safety net — TI-insensitive:** phase-sensitive reconstruction reads the sign of the magnetization, so the contrast direction survives TI error; free-breathing whole-ventricle coverage catches enhancement anywhere (RV, thrombus, unexpected territories). The overviews are the quality read — breath-held and magnitude-reconstructed: when the TI is right, normal myocardium nulls completely, giving the crispest, highest-contrast scar image; the PSIR pays for its TI robustness with free-breathing blur and a shallower null.
-    - **The bSSFP caveat — shared by both:** both overview sets are TrueFISP readouts, so both carry the SSFP artifacts (dark rim at the blood–myocardium interface, off-resonance banding). The artifact-free fallback for a flagged lesion is precisely the TurboFLASH high-res series (#22).
-    - **What they look for — and who does what:** the overviews answer the primary question — is there enhancement, and where; the PSIR guarantees nothing is missed — enhancement anywhere (RV, thrombus, unexpected territories); and the high-res series settles what the SSFP artifacts leave ambiguous — it is run only when a lesion has been flagged on either survey and the dark rim or banding could distort its interpretation.
+- **Why both the breath-held and the free-breathing overviews are needed:** every TruFi overview reconstructs **both a magnitude and a PSIR image** — the magnitude-vs-PSIR question is a reconstruction choice within each series, not a difference between them. The two acquisitions differ in breathing strategy, and each covers the failure mode of the other:
+    - **The acquisition difference — single breath-hold vs free breathing:** the `de_overview_tfi_*` series (#18–#20) are each one **single breath-hold** — one plane, crisp and quick, but breath-hold-dependent. `de_trufi_overview_12sl_psir_fb` (#21) is **free-breathing with MOCO and 5 averages** — 12 slices, whole-ventricle base → apex coverage, no breath-hold needed (rescues patients who cannot hold), motion-corrected and SNR-averaged at the cost of scan time and slight blur. Each rescues where the other fails: the breath-held series is the sharpest read; the free-breathing series works when the breath-hold cannot.
+    - **The magnitude read — TI-dependent:** magnitude reconstruction displays |M_z|, so the contrast lives and dies by the TI — too short and it is the infarct itself that nulls (gadolinium shortens its T1, so its null point arrives earlier than normal myocardium's), turning the scar dark and invisible (**false negative**); too long and normal myocardium stays bright (**false positive**) — and the TI drifts as contrast washes out. When the TI is right, the magnitude image is the crispest, highest-contrast scar image — the breath-held magnitude read is the quality read.
+    - **The PSIR read — the TI-insensitive safety net:** phase-sensitive reconstruction reads the **sign** of the magnetization, so the contrast direction survives TI error — the bright/dark assignment cannot flip as the TI drifts. Every series in this block reconstructs this image, so the safety net exists in both the breath-held and the free-breathing acquisitions; the PSIR pays for its robustness with a shallower null. The free-breathing series' whole-ventricle coverage is what catches enhancement anywhere (RV, thrombus, unexpected territories).
+    - **The bSSFP caveat — shared by both:** both overview sets are TrueFISP readouts, so both carry the SSFP artifacts (dark rim at the blood–myocardium interface, off-resonance banding) — in either reconstruction. The artifact-free fallback for a flagged lesion is precisely the TurboFLASH high-res series (#22).
+    - **What they look for — and who does what:** the overviews answer the primary question — is there enhancement, and where; the free-breathing whole-ventricle pass guarantees nothing is missed — enhancement anywhere (RV, thrombus, unexpected territories); and the high-res series settles what the SSFP artifacts leave ambiguous — it is run only when a lesion has been flagged on either survey and the dark rim or banding could distort its interpretation.
 
 - **How the high-res series differs from the DE overviews (#18–#20):**
-    - **Mechanism — two differences:** (1) **the readout:** the overviews are IR-TrueFISP — a balanced steady-state readout that is off-resonance-sensitive, producing the dark rim at the blood–myocardium interface and banding; the high-res series is IR-TurboFLASH — a spoiled GRE whose spoiler gradients destroy transverse coherence every TR, so no banding or dark rim can form. (2) **The acquisition strategy:** the overviews are standard-resolution multi-slice; the high-res series is segmented 2D, one slice per breath-hold, fat-saturated — where the resolution gain comes from. Both are magnitude IR, so both depend on the TI.
+    - **Mechanism — two differences:** (1) **the readout:** the overviews are IR-TrueFISP — a balanced steady-state readout that is off-resonance-sensitive, producing the dark rim at the blood–myocardium interface and banding; the high-res series is IR-TurboFLASH — a spoiled GRE whose spoiler gradients destroy transverse coherence every TR, so no banding or dark rim can form. (2) **The acquisition strategy:** the overviews are standard-resolution multi-slice; the high-res series is segmented 2D, one slice per breath-hold, fat-saturated — where the resolution gain comes from. The high-res series is magnitude-reconstructed, so it depends on the TI; the overviews, by contrast, also carry the TI-robust PSIR reconstruction.
     - **Diagnostic consequence:** the SSFP dark rim can mimic a thin subendocardial scar — or sit over one and hide it. The artifact-free GRE readout resolves the ambiguity: true subendocardial enhancement stays bright and crisp, a rim artifact disappears — so the transmurality measurement is trusted on this series, not on the TrueFISP images.
     - **Result:** fast routine survey vs sharper in-plane resolution, dark (suppressed) epicardial fat, and no dark-rim/banding ambiguity.
     - **What they look for:** the overviews answer "is there enhancement, and where?"; the high-res series answers "how thick is the scar, and is it transmural?" — the definitive measurement on the region the radiologist flagged.
@@ -265,7 +272,7 @@ Shared across the series: the **TI setting is increased gradually across the DE 
 | Check | Improve |
 |---|---|
 | **Caffeine/theophylline** — withdrawn 12–24 h? | Caffeine blocks the adenosine receptor — blunted stress response |
-| **Total gadolinium dose + eGFR** — cumulative dose within limit? | The check matters because a **double dose Dotaram** is given, split into three (stress, rest, top-up) — check before, not after. **If eGFR < 30: consult the radiologist** — adjust the dose or consider switching to **Gadovist** |
+| **Total gadolinium dose + eGFR** — cumulative dose within limit? | The check matters because a **double dose Dotaram** is given, split into three (stress, rest, top-up) — check before, not after. **If eGFR < 30: consult the radiologist** — switch to **Gadovist at standard dose (0.1 ml/kg), 2 boluses** (see Contrast dosing) |
 | **ECG trigger** — lead with the cleanest R wave chosen for gating? | Choose the ECG lead with the cleanest R wave (largest amplitude, no T-wave oversensing) — every sequence is gated, so a poor trigger degrades the entire study |
 | **Breath-hold consistency** — same end-inspiratory position on T1 maps and perfusion? | Slice drift between pre/stress/rest acquisitions breaks the comparison |
 | **VENC** — any aliasing in the aortic flow? | Aliased phase wraps velocities — repeat at higher VENC (400 cm/s) |
@@ -285,7 +292,7 @@ Shared across the series: the **TI setting is increased gradually across the DE 
 
 | Check | Improve |
 |---|---|
-| **TI correctness** — normal myocardium dark on the DE and high-res series? | The nulling TI sits around ~300 ms for normal myocardium — verify it on the DE and high-res images, not just at the scout. If the myocardium looks bright (nulling off) or the delay has shifted, re-scout and re-measure rather than adjusting blindly |
+| **TI correctness** — normal myocardium dark on the DE magnitude and high-res images? | The nulling TI sits around ~300 ms for normal myocardium — verify it on the DE magnitude and high-res images, not just at the scout (the PSIR reconstructions forgive an imperfect TI, the magnitude read does not). If the myocardium looks bright (nulling off) or the delay has shifted, re-scout and re-measure rather than adjusting blindly |
 | **Wrap-around** — any wrapping artifact at the image edges? | The cardiac FOV is small — signal outside it (arms, chest wall) can wrap into the image. If wrapping appears, increase the FOV |
 | **SAX volumetry contiguous** — no gaps, apex included, basal slice below the annulus? | Simpson's volumes/EF are wrong with missing or partial-volume slices |
 
@@ -295,5 +302,5 @@ Shared across the series: the **TI setting is increased gradually across the DE 
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 2.0 | 2026-09-01 | — | Major refinement — DE overviews corrected to IR-TrueFISP magnitude (`de_overview_tfi_*`): LGE comparison logic rebalanced (magnitude overviews TI-dependent vs PSIR catch-all TI-robust vs TurboFLASH high-res artifact-clean) |
+| 1.0 | 2026-08-29 | — | Initial build — 22 workflow steps. TrueFISP surveys + pseudo-localizer cascade + retro cine (3C/4C/2C/LVOT) + aortic flow VENC 150 + native T1 map + adenosine stress (BP schedule, response check, stress T1 map at 30 s countdown, stress perfusion) + rest perfusion + SA volumetry + TI scout + DE overviews (4C/2C/SAX/TrueFISP PSIR FB) + optional high-res FS SAX LGE. Double dose 0.2 mmol/kg split into three |
 | 1.0 | 2026-08-29 | — | Initial build — 22 workflow steps. TrueFISP surveys + pseudo-localizer cascade + retro cine (3C/4C/2C/LVOT) + aortic flow VENC 150 + native T1 map + adenosine stress (BP schedule, response check, stress T1 map at 30 s countdown, stress perfusion) + rest perfusion + SA volumetry + TI scout + DE overviews (4C/2C/SAX/TrueFISP PSIR FB) + optional high-res FS SAX LGE. Double dose 0.2 mmol/kg split into three |

@@ -1,6 +1,6 @@
 # PNS (Paranasal Sinuses MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-01 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -23,7 +23,7 @@
 | 3 | `t1_se_tra` | Axial | Copy Slice from #2 | — | **None** |
 | — | **Contrast** | — | — | — | — |
 | 4 | `resolve_4scan_trace_tra_PNS` | Axial | Copy Slice from #2 | — | **None** |
-| 5 | `t1_vibe_fs_tra_PNS_C` | Axial | Copy Slice from #2 | — | **None** |
+| 5 | `t1_vibe_fs_tra_PNS_C` | Axial | Copy Center from #2 | — | **None** |
 | 6 | `t1_tse_r_cor_PNS_fs_C` | Coronal | Copy Slice from #1 | — | **None** |
 
 *#4: RESOLVE DWI fills the post-contrast delay. Target ~3–5 min before post-contrast T1 (#5, #6).*

@@ -1,6 +1,6 @@
 # Ankle (Routine Ankle MRI — Non-Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-11 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -19,7 +19,7 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band |
 |---|--------|-------|------------|----------|----------|
 | 1 | `pd+t2_tse_fs_sag_ankle` | Sagittal | ∥ tibial plafond (ankle joint line) — planned from axial localizer | Medial malleolus → lateral malleolus. FOV: above tibial plafond → plantar calcaneus | **None** |
-| 2 | `pd_space_sag_p4_ankle` | Sagittal | Copy Slice from #1 | Copy coverage from #1. Isotropic voxels for MPR | **None** |
+| 2 | `pd_space_sag_p4_ankle` | Sagittal | Copy Center from #1 | Copy coverage from #1. Isotropic voxels for MPR | **None** |
 | 3 | `MPR` | Coronal + Axial | Reformatted from #2 | — | — |
 | 4 | `t1_tse_tra_ankle` | Axial | ∥ tibial plafond — planned from sagittal #1 | Above tibiofibular syndesmosis → base of 5th metatarsal. Both malleoli in FOV | **None** |
 | 5 | `t2_tse_fs_tra_ankle` | Axial | Copy Slice from #4 | Copy coverage from #4 | **None** |

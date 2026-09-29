@@ -1,6 +1,6 @@
 # Brachytherapy (Pre-OT) (Cervical Cancer Brachytherapy Planning MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -28,7 +28,7 @@
 | — | **Buscopan** | — | 10–20 mg IV, prior to exam | — | — | — |
 | 1 | `t2_tse_true_tra_pelvis_2mm` | Axial | True axial | Whole pelvis. Iliac crest → perineum | **None** | Free breathing |
 | 2 | `t2_tse_sag` | Sagittal | True sagittal | Uterus + cervix + vagina. L/R: both parametria + adnexae | **None** | Free breathing |
-| 3 | `t2_space_sag_p2_iso` | Sagittal | Copy Slice from #2 | — | **None** | Free breathing |
+| 3 | `t2_space_sag_p2_iso` | Sagittal | Copy Center from #2 | — | **None** | Free breathing |
 | 4 | `t2_tse_obl_cor` | Coronal Oblique | ∥ cervical canal | Tumour + uterine body + cervix + upper vagina. A/P: bladder → rectum | **None** | Free breathing |
 | 5 | `t2_tse_obl_tra` | Axial Oblique | ⟂ cervical canal | Tumour + both parametria (to pelvic sidewalls) | **None** | Free breathing |
 | 6 | `resolve_diff_b50_1500_obl_tra` | Axial Oblique | Copy Slice from #5 | Tumour only | **A/P** (anterior + posterior skin margins) | Free breathing |
@@ -40,9 +40,9 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose, 2 mL/s. Inject after 1st measurement | — | — | — |
-| 8 | `t1_vibe_dixon_sag_dyn_C` | Sagittal | Copy Slice from #2 | Tumour + uterus + cervix | **None** | Shallow breathing. Multiple measurements. Inject contrast after 1st measurement |
-| 9 | `t1_vibe_dixon_obl_tra_C` | Axial Oblique | Copy Slice from #5 | Tumour + parametria | **None** | Breath-hold |
-| 10 | `t1_vibe_dixon_obl_cor_C` | Coronal Oblique | Copy Slice from #4 | Tumour + uterine body + cervix | **None** | Breath-hold |
+| 8 | `t1_vibe_dixon_sag_dyn_C` | Sagittal | Copy Center from #2 | Tumour + uterus + cervix | **None** | Shallow breathing. Multiple measurements. Inject contrast after 1st measurement |
+| 9 | `t1_vibe_dixon_obl_tra_C` | Axial Oblique | Copy Center from #5 | Tumour + parametria | **None** | Breath-hold |
+| 10 | `t1_vibe_dixon_obl_cor_C` | Coronal Oblique | Copy Center from #4 | Tumour + uterine body + cervix | **None** | Breath-hold |
 | 11 | `t1_vibe_dixon_true_tra_pelvis_delayed` | Axial | Copy Slice from #7 | Whole pelvis | **None** | Breath-hold, delayed |
 
 

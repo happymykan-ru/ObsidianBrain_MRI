@@ -1,6 +1,6 @@
 # CA Rectum (Rectal Cancer Staging MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-05 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -24,10 +24,10 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Buscopan** | — | 10–20 mg IV, prior to exam | — | — | — |
 | 1 | `t2_tse_sag_3mm_rectum` | Sagittal | True sagittal | Rectum + mesorectum. Sacral promontory → anal verge | **None** | Free breathing |
-| 2 | `t2_spc_sag_rectum` | Sagittal | Copy Slice from #1 | — | **None** | Free breathing |
+| 2 | `t2_spc_sag_rectum` | Sagittal | Copy Center from #1 | — | **None** | Free breathing |
 | 3 | `t2_tseR_long_axis_3mm_rectum` | Coronal Oblique | ∥ rectal wall at tumour level (craniocaudal tumour extent) | Tumour-bearing segment. A/P: sacrum → bladder | **None** | Free breathing |
 | 4 | `t2_tseR_short_axis_3mm_rectum` | Axial Oblique | ⟂ rectal wall at tumour level (through-plane tumour depth) | Tumour-bearing segment + mesorectal fascia | **None** | Free breathing |
-| 5 | `t1_vibe_dixon_short_axis(plain cut only)` | Coronal Oblique | Copy Slice from #4 | Pelvic nodes. Iliac bifurcation → anal verge | **None** | Breath-hold |
+| 5 | `t1_vibe_dixon_short_axis(plain cut only)` | Coronal Oblique | Copy Center from #4 | Pelvic nodes. Iliac bifurcation → anal verge | **None** | Breath-hold |
 
 *#1: T2 TSE sagittal 3 mm — high-resolution tumour localization and distance from the anal verge.*  
 *#2: T2 SPACE sagittal — 3D T2 with MPR. Isotropic reformats for any plane.*  
@@ -50,9 +50,9 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose, 2 mL/s | — | — | — |
-| 8 | `t1_vibe_dixon_short_axis_rectum_dyn_C` | Axial Oblique | Copy Slice from #4 | —. Pelvic nodes included. Extend slab if tumour involves anus | **None** | Breath-hold |
-| 9 | `t1_vibe_dixon_sag_C` | Sagittal | Copy Slice from #1 | — | **None** | Breath-hold |
-| 10 | `t1_vibe_dixon_long_axis_C` | Coronal Oblique | Copy Slice from #3 | — | **None** | Breath-hold |
+| 8 | `t1_vibe_dixon_short_axis_rectum_dyn_C` | Axial Oblique | Copy Center from #4 | —. Pelvic nodes included. Extend slab if tumour involves anus | **None** | Breath-hold |
+| 9 | `t1_vibe_dixon_sag_C` | Sagittal | Copy Center from #1 | — | **None** | Breath-hold |
+| 10 | `t1_vibe_dixon_long_axis_C` | Coronal Oblique | Copy Center from #3 | — | **None** | Breath-hold |
 | 11 | `resolve_diff_b50_800_short_axis` | Coronal Oblique | Copy Slice from #4 | Tumour only | **A/P** (anterior + posterior skin margins) | Free breathing |
 
 *#8–#10: Post-contrast T1 in all three planes. Enhancing tumour, nodes, and extramural vascular invasion.*  

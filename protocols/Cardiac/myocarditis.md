@@ -1,6 +1,6 @@
 # Myocarditis (Myocarditis CMR — Edema, Early Enhancement + LGE)
 
-**Version:** 1.0 | **Date:** 2026-09-01 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-27 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -14,7 +14,7 @@ Same as `cardiac_non-stress.md`:
 - **ECG:** Vector ECG — optimise the R wave (largest amplitude, no T-wave oversensing). Every sequence in this protocol is ECG-gated, so a poor trigger degrades the entire study.
 - **IV Access:** **One line** — contrast only; no adenosine.
 - **Breath-Hold Coaching:** Consistent **end-inspiratory** breath-holds, kept small — consistency matters most: the T1/T2 maps and the TIRM stack must not drift between acquisitions.
-- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol [Confirm threshold].
+- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol.
 
 ---
 
@@ -23,7 +23,7 @@ Same as `cardiac_non-stress.md`:
 - **Phase 0 — Planning:** Localizers + pseudo-2C/4C/SAX cascade (#1–4)
 - **Phase 1 — Rest function:** Cines 3C/4C/2C/LVOT + aortic flow (#5–9)
 - **Phase 2 — Edema & mapping:** T2 TIRM dark-blood stack + native T1 map + T2 map (#10–12)
-- **Phase 3 — Contrast & early enhancement:** Single dose at 2 ml/s → early Gd enhancement (optional) → early TI scout → early PSIR overviews (#13–16)
+- **Phase 3 — Contrast & early enhancement:** Double dose at 2 ml/s → early Gd enhancement (optional) → early TI scout → early PSIR overviews (#13–16)
 - **Phase 4 — Function:** SA volumetry fills the 7-min wait (#17)
 - **Phase 5 — LGE:** TI scout → PSIR overviews → 12-slice FB → T1 seg FS SA (#18–23)
 
@@ -31,9 +31,9 @@ Same as `cardiac_non-stress.md`:
 
 | When | What | Rate | Purpose |
 |---|---|---|---|
-| Phase 3 | Gadolinium — single dose [Confirm mmol/kg] | 2 ml/s | Early enhancement + LGE equilibration |
+| Phase 3 | Gadolinium — double dose (Dotarem 0.2 mmol/kg / Gadovist 1.5×) | 2 ml/s | Early enhancement + LGE equilibration |
 
-**Total contrast: single dose** [Confirm]. Slow rate is deliberate: no first-pass perfusion here, so no tight 4 ml/s bolus is needed.
+**Total contrast: double dose Dotarem (0.2 mmol/kg) / 1.5× Gadovist (0.15 mmol/kg), single injection** — dosing rules per cardiac_stress.md — Contrast dosing. Slow rate is deliberate: no first-pass perfusion here, so no tight 4 ml/s bolus is needed.
 
 ---
 
@@ -70,7 +70,7 @@ Same as `cardiac_non-stress.md`:
 
 | # | Series | Plane | Angulation | Coverage | Breathing |
 |---|--------|-------|------------|----------|-----------|
-| — | **Contrast — 2 ml/s** | — | Single gadolinium dose at 2 ml/s [Confirm dose] + saline flush | — | — |
+| — | **Contrast — 2 ml/s** | — | Gadolinium double dose at 2 ml/s + saline flush | — | — |
 | — | **Early Gd enhancement (optional)** | — | T1-weighted early post-contrast for the early enhancement ratio [Confirm sequence] — the classic hyperemia marker | — | BH |
 | 13 | `ti_scout_early` | SAX single | Single SA location at the thickest myocardium — early-phase TI | Single mid SAX slice | BH |
 | 14 | `de_overview_tfi_psir_sax_early_c` | SAX stack | Copy Slice from #10 — early post-contrast PSIR | Entire myocardium wall — whole LV | BH |
@@ -92,7 +92,7 @@ Same as `cardiac_non-stress.md`:
 | 19 | `de_overview_tfi_psir_4c` | 4C | Copy Slice from #6 — late PSIR, TI increased gradually | Entire myocardium wall — base → apex | BH |
 | 20 | `de_overview_tfi_psir_2c` | 2C | Copy Slice from #7 — late PSIR, TI increased gradually | Entire myocardium wall — base → apex | BH |
 | 21 | `de_overview_tfi_psir_sax` | SAX stack | Copy Slice from #17 — late PSIR, TI increased gradually | Entire myocardium wall — whole LV | BH |
-| 22 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #17 — 12 slices | Base → apex | FB |
+| 22 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #17 — 12 slices, MOCO, 5 averages — magnitude + PSIR images | Base → apex | FB |
 | 23 | `tfl13_2d_t1_seg_fs_c_sax` | SAX stack (2D) | Copy Slice from #17 — [Confirm: routine or optional] | Base → apex, built slice-by-slice upward toward the apex | BH |
 
 ---
@@ -113,7 +113,7 @@ The myocarditis study is the acute-inflammation exam: **is the myocardium inflam
 
 - **T2 TIRM dark-blood SA stack added (#10):** the traditional edema sequence beside the T2 map — dark blood against bright edema gives regional delineation the map can't show; together the qualitative T2W and the quantitative T2 map satisfy the edema criterion from both directions.
 - **The early gadolinium enhancement block (#13–#16):** hyperemia — inflamed myocardium has increased blood volume and capillary leak, so it takes up gadolinium early. The block runs ~1–3 min post contrast: the optional EGE (classic Lake Louise criterion, early enhancement ratio), its own early TI scout, and early PSIR overviews in three planes. The non-stress protocol has no early phase.
-- **DE overviews are TrueFISP PSIR in both phases** — the non-stress protocol uses plain TrueFISP magnitude IR overviews; this protocol reads all enhancement on PSIR, whose TI-insensitivity suits the rapidly changing early phase and the often-subtle subepicardial patterns.
+- **DE overviews are read PSIR in both phases** — the TrueFISP overviews reconstruct both magnitude and PSIR images (as in cardiac_non-stress); this protocol reads all enhancement on the PSIR reconstruction, whose TI-insensitivity suits the rapidly changing early phase and the often-subtle subepicardial patterns.
 - **Otherwise identical:** cines, flow, T1/T2 maps, volumetry, and the late LGE block are the same sequences and planning as cardiac_non-stress.
 
 ### Phase 0 — Surveys & Localizers (#1–#4) — the planning stage
@@ -144,7 +144,7 @@ Identical to `cardiac_non-stress.md` #5–#9 — retrospective gating, planned b
 
 ### Phase 3 — Contrast & Early Enhancement (#13–#16)
 
-A single gadolinium dose at **2 ml/s** + saline flush — no first-pass to capture, so no tight bolus is needed. Immediately after injection the **early enhancement window (~1–3 min)** opens:
+A single injection of the double dose at **2 ml/s** + saline flush — no first-pass to capture, so no tight bolus is needed. Immediately after injection the **early enhancement window (~1–3 min)** opens:
 
 - **Early Gd enhancement (optional):** the **hyperemia read** — the classic Lake Louise criterion 1. Inflamed myocardium is vasodilated with leaky capillaries, so gadolinium floods in fast, before any equilibrium; T1-weighted early imaging measures the early enhancement ratio (myocardium vs skeletal muscle, traditionally >4 = positive). It detects **active inflammation even when there is no necrosis yet** — the myocardium that is sick but will recover. [Confirm sequence/ratio.]
     - **When it earns its place:** when LGE is negative but suspicion is high — the early phase can support active inflammation where LGE has nothing to show (inflammation-dominant myocarditis never necroses and stays LGE-negative). On follow-up scans it is not needed — the healed-myocarditis question is edema resolution (T2) and residual fibrosis (LGE), not hyperemia.
@@ -172,9 +172,9 @@ Same late LGE block as `cardiac_non-stress.md` #13–#18, on PSIR overviews:
 - **`ti_scout` (#18):** the late TI — optimal = normal myocardium most uniformly dark without a dark rim (blood pool nulling + interface partial volume — see cardiac_non-stress #13).
 - **Late PSIR overviews — `de_overview_tfi_psir_4c` (#19), `_2c` (#20), `_sax` (#21):** three-plane late enhancement; TI increased gradually across the series as contrast washes out.
     - **Why PSIR here too:** myocarditis enhancement is often thin, subepicardial, and low-contrast — exactly the pattern a slightly-off TI destroys on magnitude IR. PSIR's sign-based read keeps the assignment correct even when the TI drifts, so in this protocol sensitivity comes first in every enhancement read.
-    - **Machine dependency:** PSIR is a reconstruction option on the same IR sequence, not a separate sequence — machines with older software or without the option run these overviews magnitude-reconstructed. On such a machine the overviews become TI-dependent and TI correctness turns critical, exactly as in the non-stress protocol.
-- **`de_trufi_overview_12sl_psir_fb` (#22):** 12-slice PSIR free-breathing overview — TI-insensitive catch-all (RV, thrombus, any territory).
-    - **Why both this and the 3-plane PSIR overviews:** with PSIR on both sets, the difference between them is coverage and breathing, not reconstruction — the three breath-held planes are the quality read in the standard geometry; the free-breathing 12-slice stack is the whole-ventricle catch-all (every segment, RV, thrombus; robust when breath-holds fail).
+    - **Machine dependency:** PSIR is a reconstruction option on the same IR sequence, not a separate sequence — machines with older software or without the option run these overviews magnitude-reconstructed. On such a machine only the magnitude image is available, the TI-robust read is lost, and TI correctness turns critical — the failure mode of the magnitude reconstruction described in cardiac_stress #21.
+- **`de_trufi_overview_12sl_psir_fb` (#22):** 12-slice free-breathing overview with MOCO and 5 averages, likewise magnitude + PSIR — the TI-insensitive PSIR read is the catch-all (RV, thrombus, any territory).
+    - **Why both this and the 3-plane PSIR overviews:** with magnitude + PSIR on both sets, the difference between them is coverage and breathing, not reconstruction — the three breath-held planes are the quality read in the standard geometry; the free-breathing 12-slice stack (MOCO + 5 averages) is the whole-ventricle catch-all (every segment, RV, thrombus; robust when breath-holds fail).
 - **`tfl13_2d_t1_seg_fs_c_sax` (#23):** the high-res segmented 2D T1 TurboFLASH FS SAX — slice-by-slice toward the apex; fat saturation unmasks the thin subepicardial enhancement from epicardial fat; high resolution measures its thickness. [Confirm: routine or optional.]
 
 ---
@@ -196,7 +196,7 @@ Same late LGE block as `cardiac_non-stress.md` #13–#18, on PSIR overviews:
 | Check | Improve |
 |---|---|
 | **ECG trigger** — lead with the cleanest R wave chosen for gating? | Choose the ECG lead with the cleanest R wave (largest amplitude, no T-wave oversensing) — every sequence is gated, so a poor trigger degrades the entire study |
-| **eGFR** — confirmed above 30 before contrast? | Single-dose protocol but still gadolinium — check before, not after |
+| **eGFR** — confirmed above 30 before contrast? | Double-dose gadolinium — check before, not after (see cardiac_stress.md — Contrast dosing) |
 | **Breath-hold consistency** — same small end-inspiratory position on TIRM, T1/T2 maps? | Slice drift between the edema stack and the maps breaks the comparison |
 | **T2 TIRM quality** — blood dark, edema bright? | Dark-blood prep failed if the cavity is bright — regional edema becomes unreadable; check before moving to the maps |
 | **VENC** — any aliasing in the aortic flow? | Aliased phase wraps velocities — repeat at higher VENC (400 cm/s) |

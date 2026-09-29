@@ -143,3 +143,76 @@
 | `/protocols/Cardiac/thalassemia.md` | ✅ Complete | Initial version — 13 workflow steps. Iron-overload exam: non-stress cardiac base minus contrast (cines + pre-contrast SA volumetry) + heart T2* (fl2d5 10-echo mid-ventricular SA, septum ROI) + liver phase (table reposition, HASTE/TSE FS/VIBE Dixon, fl2d1 14-echo liver T2*). Fully native — no contrast. T2*StarMap options as variations |
 | `/protocols/Cardiac/hcm.md` | ✅ Complete | Initial version — 20 workflow steps. Thick-heart exam: iPAT localizer cascade + tf2d13 cines (3C stack / 4C / 2C / LVOT noscout) + aortic flow VENC 150 ePAT + native T1 maps (SAx3 + 4C + 2C + pathological site; no T2 map, no ECV) + single-dose contrast + SA volumetry (fills 7-min wait) + TI scout + all-PSIR LGE (4C/2C/SA + 12-slice FB) + TurboFLASH T1 seg FS SA high-res. HCM fibrosis reading (patchy mid-wall/RV insertion, ≥15% ICD threshold); amyloid/Fabry differential |
 | `/protocols/Intervention/cryoablation.md` | ✅ Complete | Initial version — 11 steps. MR-guided cryoablation: head-first-supine registration rule, HASTE localization, table reset (ISO→FIX), T2 BLADE tra/sag planning pair (bore coil), optional T1 StarVIBE in/out phase, pixel-lens needle planning, lab-laser skin marking (table out by 1002 + z; H50 example → 1052; +x right / −x left), BEAT interactive needle guidance, BLADE re-check loop, cryo monitoring (1st/2nd/post), send list (BLADE tra/sag ×4 timepoints) |
+
+2026-09-08 Session
+
+| File | Status | Change |
+|---|---|---|
+| `knowledge/physics/pulse_sequences.md` | ✅ Complete | New — knowledge hub (Table A sequence → contrast/good-for; Table B options; token decode; TOC) |
+| `knowledge/physics/01_physics_foundations.md` | ✅ Complete | New — physics primer (Larmor, relaxation, echo formation, signal equations, k-space, contrast logic) |
+| `knowledge/physics/02_spin_echo_family.md` | ✅ Complete | New — SE/TSE/IR/SPACE/HASTE/BLADE/Restore/HASTE-DWI, deep-dive format |
+| `knowledge/physics/03_gradient_echo_family.md` | ✅ Complete | New — FLASH/VIBE/MPRAGE-MP2RAGE/TrueFISP/MEDIC/T2*/SWI/StarVIBE/TWIST/SR-TFL |
+| `knowledge/physics/04_epi_and_diffusion.md` | ✅ Complete | New — EPI readout/DWI-DTI/DSC/BOLD/EPI-T2* |
+| `knowledge/physics/05_angiography_and_flow.md` | ✅ Complete | New — TOF/PC/CE-MRA/NATIVE/TWIST-MRA/hydrography |
+| `knowledge/physics/06_cardiac_sequences.md` | ✅ Complete | New — cine/PC-flow/MOLLI/T2-T2*-maps/perfusion/LGE |
+| `knowledge/physics/07_spectroscopy_and_functional.md` | ✅ Complete | New — MRS sLASER-CSI; ASL flagged not-in-vault |
+| `knowledge/physics/08_options_and_parameters.md` | ✅ Complete | New — fat sat/accel/motion/k-space/SAR/metal/recon/contrast timing/field strength/platform |
+| `knowledge/physics/sequence_token_glossary.md` | ✅ Complete | New — reverse index: vault token → generic type → file → regions |
+
+## 2026-09-21 Session
+
+| File | Status | Change |
+|------|--------|--------|
+| `/protocols/Abdomen/Kidney/kidney_MRU.md` | ✅ Revised | Coronal slabs A/P coverage standardized — HASTE #1, VIBE Dixon #7/#15, SPACE #9, Angio3D #10 all "A/P: Slab covering both kidneys, ureters, and bladder"; Angio3D underlying sequence clarified as 3D FLASH (flash3d) |
+| `/protocols/Abdomen/Liver/liver_non-bh.md` | ✅ Complete | Added in/opp-phase TE alert — 1.5T OP 2.4/IP 4.8 ms, 3T OP 1.2/IP 2.4 ms, in-phase dark-rim check, no bandwidth/TE adjustment |
+
+## 2026-09-22 Session
+
+| File | Status | Change |
+|------|--------|--------|
+| `/protocols/Cardiac/thalassemia.md` | ✅ Complete | Heart T2* (fl2d5 10-echo) slice timing — systolic capture at thickest myocardium, manual start time from cine instead of default diastolic capture cycle, systole-span verification; matching alert row + table note |
+| `/protocols/Abdomen/Liver/liver_non-bh.md` | ✅ Revised | Fixed swapped in/opp TE values in #7/#8 rationale — in-phase 4.8@1.5T / 2.4@3T, opposed 2.4@1.5T / 1.2@3T |
+| `knowledge/physics/08_options_and_parameters.md` | ✅ Complete | New §2 Dixon fat–water separation deep dive — core arithmetic, GRE dual-echo vs SE shifted-refocusing mechanism (Δφ = −2Δωδ), swap physics, q-Dixon; sections renumbered 2–12 → 3–13 |
+
+## 2026-09-23 Session
+
+| File | Status | Change |
+|------|--------|--------|
+| `/protocols/Cardiac/cardiac_stress.md` | ✅ Revised | v2.1 — DE overviews + 12-slice FB corrected: both TrueFISP series reconstruct magnitude AND PSIR images; series difference = single BH vs FB with MOCO + 5 averages; magnitude-vs-PSIR discussion retained as the reconstruction choice within each series |
+| `/protocols/Cardiac/cardiac_non-stress.md` | ✅ Revised | v2.1 — same correction in the Phase 5 LGE block (#14–#17) |
+| `/protocols/Cardiac/myocarditis.md` | ✅ Revised | "non-stress = magnitude-only overviews" cross-refs corrected; FB series gains MOCO + 5 averages |
+| `/protocols/Cardiac/hcm.md` | ✅ Revised | Same cross-ref correction (PSIR read vs magnitude-first read); FB series gains MOCO + 5 averages |
+| `/protocols/Cardiac/amyloidosis.md` | ✅ Revised | FB series gains MOCO + 5 averages |
+| `knowledge/physics/06_cardiac_sequences.md` | ✅ Revised | §7 LGE corrected — overviews reconstruct both magnitude + PSIR; FB variant 12 slices MOCO ×5 (was "9 slices per breath-hold"); token list + readout rows updated |
+| `knowledge/physics/sequence_token_glossary.md` | ✅ Revised | LGE token row updated to both overview token forms |
+
+## 2026-09-27 Session
+
+| File | Status | Change |
+|------|--------|--------|
+| `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Revised | v1.1 — added `t2_trufi_bil_obl_sag_bh` double-oblique localizer (#1) + ± `t1_vibe_dixon_tra_bh` (#4); oblique HASTE FS prescribed from TRUFI; coverage now entire kidney incl. all cysts; positioning workflow rewritten (both tilts corrected in one step); ⏳ pending — confirm "composing" = shimming |
+| `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Revised | v1.2 — coronal coverage = both kidneys only; VIBE cor/tra rationale = renal vascular ID (axial vessels ≈ A/P tilt, L/R tilt from coronal contour); final 3 oblique planes stated mutually orthogonal |
+| `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Revised | v1.3 — "composing" clarified: alert corrected to Composing (set and go) for large vertical coverage of the transverse stack (not shimming/fat sat) |
+| `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Revised | v1.4 — Composing purpose corrected (proper shimming + fat sat per segment); fat-sat importance for volumetry added to Alerts (crisp kidney contour, boundary errors accumulate) |
+| `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Revised | v1.5 — breath-hold = shallow-breathing hold (no end-inspiration/expiration), corrected in positioning + breath-hold alert |
+| `/protocols/Abdomen/Kidney/renal_volume.md` | ✅ Revised | v1.6 — tra VIBE Dixon trigger stated: only acquired when cysts obscure the kidney orientation |
+| `/protocols/Intervention/cryoablation.md` | ✅ Revised | v1.1 — new §1 Settings Preparation (before patient arrival): couch sheet + U-pillow, external monitor, HDMI boxes ×2, lab laser, ultrasound loan (Philips for endometriosis), fblade/BEAT function test, nursing cabinet outside suite; sections renumbered |
+| `/protocols/Intervention/cryoablation.md` | ✅ Revised | v1.2 — ultrasound machine clarified: borrow from Rm 7/15; Philips for endometriosis or US-guided cryoablation/hydrodissection needle insertion |
+| `/protocols/Cardiac/cardiac_stress.md` | ✅ Revised | v2.2 — Contrast dosing block (confirmed): Dotarem double dose 0.2 mmol/kg / Gadovist 1.5× (0.15 mmol/kg); eGFR<30 → Gadovist standard dose 0.1 ml/kg; Gadovist = 2 boluses; relaxivity rationale added. eGFR alert updated, [Confirm dose] cleared |
+| `/protocols/Cardiac/cardiac_non-stress.md` | ✅ Revised | v2.2 — dose confirmed: double dose Dotarem / 1.5× Gadovist, single injection; refers to cardiac_stress.md Contrast dosing |
+| `/protocols/Cardiac/myocarditis.md` | ✅ Revised | v1.1 — dose confirmed: double dose Dotarem / 1.5× Gadovist, single injection; refers to cardiac_stress.md Contrast dosing |
+| `/protocols/Cardiac/amyloidosis.md` | ✅ Revised | v1.1 — dose confirmed: double dose Dotarem / 1.5× Gadovist, single injection; refers to cardiac_stress.md Contrast dosing |
+| `/protocols/Cardiac/hcm.md` | ✅ Revised | v1.1 — dose confirmed: double dose Dotarem / 1.5× Gadovist, single injection; refers to cardiac_stress.md Contrast dosing |
+| `/protocols/Cardiac/cardiac_non-stress.md` + myocarditis + amyloidosis + hcm | ✅ Revised | eGFR threshold confirmed (30) — [Confirm threshold] flags removed |
+| `/protocols/Cardiac/aorta.md` | ✅ Revised | v1.1 — eGFR threshold confirmed (30). 1.5× main-injection dose still [Confirm] |
+
+## 2026-09-29 Session
+
+| File | Status | Change |
+|------|--------|--------|
+| `/protocols/Head Aug 2025/Brain/MS.md` | ✅ Revised | v1.1 — whole spine screening coverage: C-spine part must include the skull base and C-2 (stack starts at the skull base, contiguous with the brain) |
+| Vault-wide sweep — 35 files: MSK ×5 (ankle, knee, wrist, mass_generic, arthrogram), Spine/SI_joint, Abdomen ×10 (liver_non-bh, MRCP_non-bh, primovist_non-bh, pancreas_non-bh, adrenal, enteroclysis, kidney, liver_routine, primovist, pancreas), Pelvis ×12 (brachytherapy_pre-OT, CA_cervix_or_corpus, endometriosis, fibroid, generic_pelvis, incontinence, urethral_diverticulum, CA_rectum, FIA, penis, prostate, testes), Head & Neck ×2 (PNS, salivary_glands), Head Aug 2025 ×5 (fast_brain, IAM×2, fMRI, paed_brain) | ✅ Revised | Copy terminology standardized — Copy Slice → Copy Center wherever source & copier are not both 2D (3D←2D and 2D←3D). Kept: care_bolus single-slice selection from angio3d (CeMRA, kidney_CeMRA); shoulder #5 thickness-based Copy Center; 3D↔3D Copy Slice. All bumped to 1.1 |
+| Abdomen multiphasic VIBE — liver_routine, primovist, adrenal, kidney, pancreas, enteroclysis, liver_non-bh, primovist_non-bh, pancreas_non-bh, kidney_CeMRA (38 rows) | ✅ Revised | Multiphasic VIBE sets (pre/art/PVP/delay) changed to Copy everything — full geometry+parameter match for phase comparison. No version bumps. Pelvis DCE / pre-post pairs / angio multiphasic flagged as candidates — left unchanged per user |
+| `/protocols/Pelvis/Male Pelvis/FIA.md` | ✅ Revised | v1.2 — in-paragraph Coverage added to coronal (#1) and axial (#2) sequence explanations (anal verge → above levator ani → buttock margin) |
+| `/protocols/Pelvis/Male Pelvis/FIA.md` | ✅ Revised | v1.3 — Coverage rewritten as anatomy: coronal = sphincter complexes + ischioanal fossae + gluteal cleft; axial = above levator plate → below anal verge incl. external opening |
+| Vault-wide (45 files) | ✅ Reset | Version history removed — all protocols back to Version 1.0 headers with single 1.0 initial-build rows. New policy: no version bumps during build; versions only for true protocol changes. History retained in this change log |

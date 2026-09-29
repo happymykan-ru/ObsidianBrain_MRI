@@ -1,6 +1,6 @@
 # Cardiac Non-Stress (Rest CMR — Function, T1/T2 Mapping + LGE)
 
-**Version:** 2.0 | **Date:** 2026-09-01 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-27 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -14,7 +14,7 @@ Same as `cardiac_stress.md` with the stress arm removed:
 - **ECG:** Vector ECG — optimise the R wave (largest amplitude, no T-wave oversensing). Every sequence in this protocol is ECG-gated, so a poor trigger degrades the entire study.
 - **IV Access:** **One line** — contrast only; no adenosine, so no second line, no BP cuff choreography, no contraindication screen, and no caffeine restriction.
 - **Breath-Hold Coaching:** Consistent **end-inspiratory** breath-holds, kept small — a small breath-hold taken at the same point every time is sufficient; oversized held breaths are unnecessary. Consistency matters most: the T1/T2 maps must not drift between acquisitions. (No perfusion run here — the stress protocol's long-hold warning does not apply.)
-- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol [Confirm threshold].
+- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol.
 
 ---
 
@@ -23,17 +23,17 @@ Same as `cardiac_stress.md` with the stress arm removed:
 - **Phase 0 — Planning:** Localizers + pseudo-2C/4C/SAX cascade (#1–4)
 - **Phase 1 — Rest function:** Cines 3C/4C/2C/LVOT + aortic flow (#5–9)
 - **Phase 2 — Mapping:** Native T1 map + T2 map (#10–11)
-- **Phase 3 — Contrast:** Single dose at 2 ml/s → 7 min wait
+- **Phase 3 — Contrast:** Double dose at 2 ml/s → 7 min wait
 - **Phase 4 — Function:** SA volumetry fills the 7-min wait (#12)
-- **Phase 5 — LGE:** TI scout → DE overviews → PSIR → T1 seg FS SA (#13–18)
+- **Phase 5 — LGE:** TI scout → DE overviews (mag + PSIR) → 12-slice FB overview → T1 seg FS SA (#13–18)
 
 **Dose ledger**
 
 | When | What | Rate | Purpose |
 |---|---|---|---|
-| Phase 3 | Gadolinium — single dose [Confirm mmol/kg] | 2 ml/s | LGE equilibration |
+| Phase 3 | Gadolinium — double dose (Dotarem 0.2 mmol/kg / Gadovist 1.5×) | 2 ml/s | LGE equilibration |
 
-**Total contrast: single dose** [Confirm — stress protocol uses 0.2 mmol/kg split into three; this protocol has one injection]. Slow rate is deliberate: no first-pass perfusion here, so no tight 4 ml/s bolus is needed.
+**Total contrast: double dose Dotarem (0.2 mmol/kg) / 1.5× Gadovist (0.15 mmol/kg), single injection** — dosing rules per cardiac_stress.md — Contrast dosing. Slow rate is deliberate: no first-pass perfusion here, so no tight 4 ml/s bolus is needed.
 
 ---
 
@@ -69,7 +69,7 @@ Same as `cardiac_stress.md` with the stress arm removed:
 
 | # | Series | Plane | Angulation | Coverage | Breathing |
 |---|--------|-------|------------|----------|-----------|
-| — | **Contrast — 2 ml/s** | — | Single gadolinium dose at 2 ml/s [Confirm dose] + saline flush. No perfusion run, so no first-pass timing | — | — |
+| — | **Contrast — 2 ml/s** | — | Gadolinium double dose at 2 ml/s + saline flush. No perfusion run, so no first-pass timing | — | — |
 | — | **7 min wait** | — | LGE imaging starts ~7 min after the injection | — | — |
 
 ### Phase 4 — Post-Contrast Function
@@ -83,10 +83,10 @@ Same as `cardiac_stress.md` with the stress arm removed:
 | # | Series | Plane | Angulation | Coverage | Breathing |
 |---|--------|-------|------------|----------|-----------|
 | 13 | `ti_scout` | SAX single | Single SA location at the thickest myocardium (mid-ventricular) | Single mid SAX slice | BH |
-| 14 | `de_overview_tfi_4c` | 4C | Copy Slice from #6 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 15 | `de_overview_tfi_2c` | 2C | Copy Slice from #7 — prospective gating, TI increased gradually | Entire myocardium wall — base → apex | BH |
-| 16 | `de_overview_tfi_sax` | SAX stack | Copy Slice from #12 — prospective gating, TI increased gradually | Entire myocardium wall — whole LV | BH |
-| 17 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #12 — 12 slices | Base → apex | FB |
+| 14 | `de_overview_tfi_4c` | 4C | Copy Slice from #6 — prospective gating, TI increased gradually — single breath-hold, magnitude + PSIR images | Entire myocardium wall — base → apex | BH |
+| 15 | `de_overview_tfi_2c` | 2C | Copy Slice from #7 — prospective gating, TI increased gradually — single breath-hold, magnitude + PSIR images | Entire myocardium wall — base → apex | BH |
+| 16 | `de_overview_tfi_sax` | SAX stack | Copy Slice from #12 — prospective gating, TI increased gradually — single breath-hold, magnitude + PSIR images | Entire myocardium wall — whole LV | BH |
+| 17 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy Slice from #12 — 12 slices, MOCO, 5 averages — magnitude + PSIR images | Base → apex | FB |
 | 18 | `tfl13_2d_t1_seg_fs_sax` | SAX stack (2D) | Copy Slice from #12 — [Confirm: routine or optional] | Base → apex, built slice-by-slice upward toward the apex | BH |
 
 ---
@@ -203,7 +203,7 @@ Identical sequences and planning to `cardiac_stress.md` #6–#10 — retrospecti
 
 ### Phase 3 — Contrast
 
-A single gadolinium dose at **2 ml/s** + saline flush. The slow rate is intentional: with no first-pass perfusion to capture, there is no benefit to a tight 4 ml/s bolus — the dose only needs to reach LGE equilibrium, and the gentler injection is kinder to the vein. After the injection, the **7-minute wait** allows the contrast to equilibrate between blood and the myocardial extracellular space — the same LGE physiology as cardiac_stress.
+A single injection of the double dose at **2 ml/s** + saline flush. The slow rate is intentional: with no first-pass perfusion to capture, there is no benefit to a tight 4 ml/s bolus — the dose only needs to reach LGE equilibrium, and the gentler injection is kinder to the vein. After the injection, the **7-minute wait** allows the contrast to equilibrate between blood and the myocardial extracellular space — the same LGE physiology as cardiac_stress.
 
 ### Phase 4 — Post-Contrast Function (#12)
 
@@ -216,8 +216,8 @@ Identical LGE block to `cardiac_stress.md` #17–#22:
 **Why infarcted myocardium enhances late:** after the 7-minute wait, the gadolinium has equilibrated in the extracellular space. Infarct and fibrosis replace myocytes with an expanded extracellular matrix, so contrast accumulates there and washes out slowly — the scar keeps a short T1 and stays **bright** on the inversion-recovery image, while normal myocardium nulls **dark** at the chosen TI. LGE is therefore a map of expanded extracellular space wherever it is focal.
 
 - **`ti_scout` (#13):** at the 7-min mark, single SA at the thickest myocardium. Optimal TI = normal myocardium most uniformly dark without a dark rim (blood pool nulling + interface partial volume — see cardiac_stress #17).
-- **DE overviews — `de_overview_tfi_4c` (#14), `de_overview_tfi_2c` (#15), `de_overview_tfi_sax` (#16):** IR-TrueFISP (magnitude IR), prospective gating, entire myocardial wall; TI increased gradually across the series as contrast washes out.
-- **`de_trufi_overview_12sl_psir_fb` (#17):** 12-slice PSIR free-breathing overview — TI-insensitive catch-all (RV, thrombus, any territory).
+- **DE overviews — `de_overview_tfi_4c` (#14), `de_overview_tfi_2c` (#15), `de_overview_tfi_sax` (#16):** IR-TrueFISP, prospective gating, single breath-hold each — each reconstructing **both magnitude and PSIR images**; TI increased gradually across the series as contrast washes out.
+- **`de_trufi_overview_12sl_psir_fb` (#17):** the same IR-TrueFISP, likewise **magnitude + PSIR**, but a 12-slice free-breathing acquisition with MOCO and 5 averages — the difference from #14–#16 is the breathing (no breath-hold needed, motion-corrected, SNR-averaged); the TI-insensitive PSIR read is the whole-ventricle catch-all (RV, thrombus, any territory).
 - **`tfl13_2d_t1_seg_fs_sax` (#18):** the high-res segmented 2D T1 TurboFLASH FS SAX — the equivalent of `de_high-res_tfl_fs_sax` in cardiac_stress: built slice-by-slice upward toward the apex, fat saturation unmasks thin subepicardial enhancement, high resolution measures transmurality — a GRE readout free of the SSFP dark-rim/banding artifacts of the TrueFISP overviews. [Confirm: routine here or optional after radiologist review as in the stress protocol.]
 
 ---
@@ -248,11 +248,11 @@ Identical LGE block to `cardiac_stress.md` #17–#22:
 | Check | Improve |
 |---|---|
 | **ECG trigger** — lead with the cleanest R wave chosen for gating? | Choose the ECG lead with the cleanest R wave (largest amplitude, no T-wave oversensing) — every sequence is gated, so a poor trigger degrades the entire study |
-| **eGFR** — confirmed above 30 before contrast? | Single-dose protocol but still gadolinium — check before, not after |
+| **eGFR** — confirmed above 30 before contrast? | Double-dose gadolinium — check before, not after (see cardiac_stress.md — Contrast dosing) |
 | **Breath-hold consistency** — same small end-inspiratory position on T1/T2 maps? | Slice drift between the maps breaks the T1/T2/LGE comparison |
 | **VENC** — any aliasing in the aortic flow? | Aliased phase wraps velocities — repeat at higher VENC (400 cm/s) |
 | **Wrap-around** — any wrapping artifact at the image edges? | The cardiac FOV is small — signal outside it (arms, chest wall) can wrap into the image. If wrapping appears, increase the FOV |
-| **TI correctness** — normal myocardium dark on the DE and high-res series? | The nulling TI sits around ~300 ms — verify it on the DE and high-res images, not just at the scout. If the myocardium looks bright (nulling off) or the delay has shifted, re-scout and re-measure rather than adjusting blindly |
+| **TI correctness** — normal myocardium dark on the DE magnitude and high-res images? | The nulling TI sits around ~300 ms — verify it on the DE magnitude and high-res images, not just at the scout (the PSIR reconstructions forgive an imperfect TI, the magnitude read does not). If the myocardium looks bright (nulling off) or the delay has shifted, re-scout and re-measure rather than adjusting blindly |
 | **SAX volumetry contiguous** — no gaps, apex included, basal slice below the annulus? | Simpson's volumes/EF are wrong with missing or partial-volume slices |
 
 ---
@@ -261,5 +261,4 @@ Identical LGE block to `cardiac_stress.md` #17–#22:
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 2.0 | 2026-09-01 | — | Major refinement — DE overviews corrected to IR-TrueFISP magnitude (`de_overview_tfi_*`); high-res noted as the GRE artifact-clean readout |
 | 1.0 | 2026-08-29 | — | Initial build — 18 workflow steps. TrueFISP axial localizer + pseudo-localizer cascade + retro cine (3C/4C/2C/LVOT) + aortic flow VENC 150 + native T1 map + T2 map (TrueFISP) + single-dose contrast (2 ml/s) + SA volumetry + TI scout + DE overviews (4C/2C/SAX/PSIR FB) + T1 seg FS SA high-res. Rest CMR — no stress arm |

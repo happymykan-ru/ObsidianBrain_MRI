@@ -1,6 +1,6 @@
 # fMRI (Functional MRI — Pre-Surgical Motor, Language, and Visual Mapping)
 
-**Version:** 1.0 | **Date:** 2026-07-22 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -32,7 +32,7 @@
 | 10 | `t1_vibe_fs_cor_C` | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **Inferior** |
 | 11 | `MPR` | Sag+Ax | — | Whole brain | — |
 | 12 | `ep2d_diff_sms_mddw_20_DTI_whole_brain` | Axial | Copy Slice from #4 | Foramen magnum → vertex | **None** |
-| 13 | `ep2d_diff_3scan_trace_p2` | Axial | Copy Slice from #1 | — | **None** |
+| 13 | `ep2d_diff_3scan_trace_p2` | Axial | Copy Center from #1 | — | **None** |
 
 *Acronyms: PACE = Prospective Acquisition CorrEction (real-time motion correction). MoCo = offline motion correction. SMS = simultaneous multi-slice. MDDW = multi-direction diffusion weighted.*
 

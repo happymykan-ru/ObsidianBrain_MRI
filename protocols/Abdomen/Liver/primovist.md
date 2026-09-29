@@ -1,6 +1,6 @@
 # Primovist (Hepatobiliary Contrast Liver MRI)
 
-**Version:** 1.0 | **Date:** 2026-08-03 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -22,17 +22,17 @@
 |---|--------|-------|------------|----------|----------|-------------|
 | 1 | `t2_haste_cor_mbh` | Coronal | True coronal | A/P: anterior abdominal wall → posterior liver margin. Whole liver | **Superior oblique** over heart | Multi breath-hold |
 | 2 | `t1_vibe_dixon_tra_bh` | Axial | True axial | Whole liver | **None** | Breath-hold |
-| 3 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy Slice from #2 | — | **None** | Breath-hold |
+| 3 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy everything from #2 | — | **None** | Breath-hold |
 
 ### Post-Contrast — Dynamic Phases
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
 | — | **Contrast** | — | Check FOV consistency — verify post-contrast FOV matches pre-contrast #3. Primovist, 2 mL/s | — | — | — |
-| 4 | `t1_vibe_twist_dixon_tra_bh_art_5phase` | Axial | Copy Slice from #3 | Whole liver | **None** | Breath-hold. Fixed delay 30 s |
-| 5 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy Slice from #3 | — | **None** | Breath-hold, 20 s after #4 |
-| 6 | `t1_vibe_twist_dixon_tra_Delayed_2min` | Axial | Copy Slice from #3 | — | **None** | Breath-hold, ~2 min |
-| 7 | `t1_vibe_twist_dixon_tra_Delayed_5min` | Axial | Copy Slice from #3 | — | **None** | Breath-hold, ~5 min |
+| 4 | `t1_vibe_twist_dixon_tra_bh_art_5phase` | Axial | Copy everything from #3 | Whole liver | **None** | Breath-hold. Fixed delay 30 s |
+| 5 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy everything from #3 | — | **None** | Breath-hold, 20 s after #4 |
+| 6 | `t1_vibe_twist_dixon_tra_Delayed_2min` | Axial | Copy everything from #3 | — | **None** | Breath-hold, ~2 min |
+| 7 | `t1_vibe_twist_dixon_tra_Delayed_5min` | Axial | Copy everything from #3 | — | **None** | Breath-hold, ~5 min |
 
 *Dynamic phases are identical to liver_routine.md — arterial, PVP, delayed 2 min, delayed 5 min. TWIST view-sharing, water-only image used. See liver_routine.md for full rationale.*
 
@@ -40,12 +40,12 @@
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
-| 8 | `t2_tse_fs_tra_mbh` | Axial | Copy Slice from #2 | Whole liver | **None** | Multi breath-hold |
-| 9 | `t2_tse_tra_mbh` | Axial | Copy Slice from #2 | — | **None** | Multi breath-hold |
-| 10 | `t2_heavy_tse_fs_tra_mbh` | Axial | Copy Slice from #2 | — | **None** | Multi breath-hold |
-| 11 | `t2_haste_fs_tra_p2_mbh` | Axial | Copy Slice from #2 | — | **None** | Multi breath-hold |
+| 8 | `t2_tse_fs_tra_mbh` | Axial | Copy Center from #2 | Whole liver | **None** | Multi breath-hold |
+| 9 | `t2_tse_tra_mbh` | Axial | Copy Center from #2 | — | **None** | Multi breath-hold |
+| 10 | `t2_heavy_tse_fs_tra_mbh` | Axial | Copy Center from #2 | — | **None** | Multi breath-hold |
+| 11 | `t2_haste_fs_tra_p2_mbh` | Axial | Copy Center from #2 | — | **None** | Multi breath-hold |
 | 12 | `t2_trufi_cor_non-bh` | Coronal | Copy Slice from #1 | — | Copy Sat from #1 | Free breathing |
-| 13 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Slice from #2 | Whole liver | **None** | Free breathing |
+| 13 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Center from #2 | Whole liver | **None** | Free breathing |
 
 *T2 sequences and DWI are acquired during the ~15 min gap between the delayed 5 min phase (#7) and the hepatobiliary phase (#14). This fills the waiting period efficiently — the total scan time is similar to liver_routine despite the additional hepatobiliary phase.*
 *These sequences are identical to their counterparts in liver_routine.md — see that protocol for full rationale.*
@@ -54,7 +54,7 @@
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
-| 14 | `t1_vibe_twist_dixon_tra_hepatobiliary` | Axial | Copy Slice from #3 | Whole liver | **None** | Breath-hold, ~20 min post-injection |
+| 14 | `t1_vibe_twist_dixon_tra_hepatobiliary` | Axial | Copy everything from #3 | Whole liver | **None** | Breath-hold, ~20 min post-injection |
 
 *#14: Hepatobiliary phase. Functioning hepatocytes take up Primovist via OATP transporters — the liver parenchyma is brightly enhancing. Lesions without functioning hepatocytes (metastasis, most HCCs, adenoma) appear dark against the bright liver.*
 

@@ -1,6 +1,6 @@
 # MRCP Non-Breath-Hold (Free-Breathing MRCP)
 
-**Version:** 1.0 | **Date:** 2026-08-04 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -20,7 +20,7 @@ As `MRCP.md`. All sequences are free-breathing or respiratory-triggered — no b
 | 4 | `t2_fblade_fs_tra_non-bh` | Axial | Copy Slice from #2 | — | **None** | Free breathing |
 | 5 | `t1_tfl_in-phase_tra_non-bh` | Axial | True axial | Whole liver + pancreas | **None** | Free breathing |
 | 6 | `t1_tfl_opp-phase_tra_non-bh` | Axial | Copy Slice from #5 | — | **None** | Free breathing |
-| 7 | `t1_starvibe_fs_tra_non-bh` | Axial | Copy Slice from #5 | — | **None** | Free breathing |
+| 7 | `t1_starvibe_fs_tra_non-bh` | Axial | Copy Center from #5 | — | **None** | Free breathing |
 | 8 | `t2_trufi_cor_non-bh` | Coronal | Copy Slice from #1 | — | Copy Sat from #1 | Free breathing |
 | 9 | `t2_space_cor_obl_p2_trig_MRCP` | Coronal Oblique | Angle on axial to cover the gallbladder, CBD, and entire pancreas | Gallbladder → ampulla. Entire pancreas included | **L/R** (arms) | Respiratory triggered |
 | 10 | `t2_haste_cor_obl_thin_slab_trig` | Coronal Oblique | On axial at porta hepatis: draw line through CBD toward pancreatic head (≈ ∥ pancreatic head). Single oblique | Single thick slab (~20–40 mm) through CBD from hilum → ampulla | **None** | Respiratory triggered |

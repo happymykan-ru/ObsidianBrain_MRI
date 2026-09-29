@@ -1,6 +1,6 @@
 # Wrist (Routine Wrist MRI — Non-Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-11 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -22,7 +22,7 @@
 | 2 | `t2_tse_fs_tra_wrist` | Axial | Copy Slice from #1 | Copy coverage from #1 | **None** |
 | 3 | `t1_tse_cor_wrist` | Coronal | ∥ long axis of carpus (scaphoid-lunate-capitate axis) — planned from axial #1 | Dorsal skin margin → volar skin margin | **None** |
 | 4 | `pd_tse_fs_cor_wrist` | Coronal | Copy Slice from #3 | Copy coverage from #3 | **None** |
-| 5 | `t2_me3d_cor_wrist` | Coronal | Copy Slice from #3 | Copy coverage from #3. Isotropic voxels for MPR | **None** |
+| 5 | `t2_me3d_cor_wrist` | Coronal | Copy Center from #3 | Copy coverage from #3. Isotropic voxels for MPR | **None** |
 | 6 | `t2_tse_fs_sag_wrist` | Sagittal | ∥ radius shaft (⟂ radiocarpal joint line) — planned from axial #1 | Radial styloid → ulnar styloid | **None** |
 
 ---

@@ -1,6 +1,6 @@
 # Prostate (Multiparametric Prostate MRI with Dynamic Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-05 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -26,7 +26,7 @@
 | 1 | `t2_spc_sag` | Sagittal | True sagittal | Prostate + seminal vesicles + bladder base. | **None** | Free breathing |
 | 2 | `t2_tse_tra` | Axial Oblique | ⟂ posterior prostate wall | Prostate + seminal vesicles. Base → apex | **None** | Free breathing |
 | 3 | `t2_tse_cor` | Coronal Oblique | ∥ posterior prostate wall | Prostate + seminal vesicles + pelvic floor. A/P: pubic symphysis → rectum | **None** | Free breathing |
-| 4 | `t1_vibe_dixon_tra_bh_320` | Axial Oblique | Copy Slice from #2 | Prostate + pelvic nodes. FOV 320 mm | **None** | Breath-hold |
+| 4 | `t1_vibe_dixon_tra_bh_320` | Axial Oblique | Copy Center from #2 | Prostate + pelvic nodes. FOV 320 mm | **None** | Breath-hold |
 | 5 | `resolve_diff_b50_500_tra_prostate` | Axial Oblique | Copy Slice from #2 | Prostate only | **A/P** (anterior + posterior skin margins) | Free breathing |
 | 6 | `resolve_diff_b1500_tra_prostate` | Axial Oblique | Copy Slice and Sat from #5 | — | — | Free breathing |
 
@@ -34,8 +34,8 @@
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
-| 7 | `t1_vibe_tra_dyn` | Axial Oblique | Copy Slice from #2 | Prostate only | **None** | Shallow breathing. Multiple measurements. Inject contrast after 2 baseline measurements |
-| 8 | `t1_vibe_fs_tra_bh_320_C` | Axial Oblique | Copy Slice from #2 | Prostate + pelvic nodes. FOV 320 mm | **None** | Breath-hold |
+| 7 | `t1_vibe_tra_dyn` | Axial Oblique | Copy Center from #2 | Prostate only | **None** | Shallow breathing. Multiple measurements. Inject contrast after 2 baseline measurements |
+| 8 | `t1_vibe_fs_tra_bh_320_C` | Axial Oblique | Copy Center from #2 | Prostate + pelvic nodes. FOV 320 mm | **None** | Breath-hold |
 
 ---
 

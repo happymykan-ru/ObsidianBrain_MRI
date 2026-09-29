@@ -1,6 +1,6 @@
 # IAM + Brain (Internal Auditory Meatus with Full Brain ± Contrast)
 
-**Version:** 1.0 | **Date:** 2026-07-19 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -27,7 +27,7 @@
 | — | **Contrast** | — | — | — | — |
 | 7 | `t1_vibe_fs_cor_brain_C` | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **Inferior** |
 | 8 | `MPR planning` | Sag+Ax | — | Whole brain | — |
-| 9 | `t1_se_r_fs_tra_IAM_C` *(or `t1_tse_fs_tra_3mm_IAM_C` for 3T)* | Axial | Copy Slice from #4 | — | **None** |
+| 9 | `t1_se_r_fs_tra_IAM_C` *(or `t1_tse_fs_tra_3mm_IAM_C` for 3T)* | Axial | Copy Center from #4 | — | **None** |
 
 *#5 is for plain brain only — omit if contrast is given.*
 

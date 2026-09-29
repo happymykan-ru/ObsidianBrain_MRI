@@ -1,6 +1,6 @@
 # Testes (Scrotal / Testicular MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -25,8 +25,8 @@
 | 2 | `t2_space_sag_p2` | Sagittal | True sagittal | Scrotum + both testes. L/R: both hemiscrotums | **None** | Free breathing |
 | 3 | `t2_tse_tra` | Axial | True axial | Scrotum + both testes + spermatic cords to the external inguinal ring | **None** | Free breathing |
 | 4 | `t2_stir_tse_tra` | Axial | Copy Slice from #3 | — | **None** | Free breathing |
-| 5 | `t1_vibe_dixon_tra` | Axial | Copy Slice from #3 | Scrotum + both testes | **None** | Breath-hold |
-| 6 | `t1_vibe_dixon_cor` | Coronal | Copy Slice from #1 | Scrotum + both testes | **None** | Breath-hold |
+| 5 | `t1_vibe_dixon_tra` | Axial | Copy Center from #3 | Scrotum + both testes | **None** | Breath-hold |
+| 6 | `t1_vibe_dixon_cor` | Coronal | Copy Center from #1 | Scrotum + both testes | **None** | Breath-hold |
 
 
 ### Post-Contrast

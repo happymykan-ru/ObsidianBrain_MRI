@@ -21,19 +21,20 @@
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
-| 1 | `t2_haste_cor_mbh` | Coronal | True coronal | A/P: anterior abdominal wall → posterior abdominal wall. Kidneys → bladder | **Superior oblique** over heart | Multi breath-hold |
+| 1 | `t2_haste_cor_mbh` | Coronal | True coronal | A/P: Slab covering both kidneys, ureters, and bladder. Kidneys → bladder | **Superior oblique** over heart | Multi breath-hold |
 | 2 | `t2_haste_sag_mbh` | Sagittal | True sagittal | L/R: midline → lateral margins. Kidneys → bladder | **None** | Multi breath-hold |
 | 3 | `t2_tse_fs_tra_p2_mbh_upper` | Axial | True axial | Kidneys → mid-ureters | **None** | Multi breath-hold |
 | 4 | `t2_tse_fs_tra_p2_mbh_lower` | Axial | True axial | Mid-ureters → bladder | **None** | Multi breath-hold |
 | 5 | `t1_vibe_dixon_tra_p4_bh_upper` | Axial | True axial | Kidneys → mid-ureters | **None** | Breath-hold |
 | 6 | `t1_vibe_dixon_tra_p4_bh_lower` | Axial | True axial | Mid-ureters → bladder | **None** | Breath-hold |
-| 7 | `t1_vibe_dixon_cor_p4_bh` | Coronal | True coronal | Kidneys → bladder | **None** | Breath-hold |
+| 7 | `t1_vibe_dixon_cor_p4_bh` | Coronal | True coronal | A/P: Slab covering both kidneys, ureters, and bladder. Kidneys → bladder | **None** | Breath-hold |
 | 8 | `t2_trufi_cor_p2_non-bh` | Coronal | Copy Slice from #1 | — | Copy Sat from #1 | Free breathing |
-| 9 | `t2_space_cor_p3_trig_iso` | Coronal | True coronal. Slab covering both kidneys, ureters, and bladder | Kidneys → bladder | **L/R** (arms) | Respiratory triggered |
-| 10 | `angio3d_cor_pre` | Coronal | True coronal. Slab covering both kidneys, ureters, and bladder | Kidneys → bladder | **None** | Breath-hold |
+| 9 | `t2_space_cor_p3_trig_iso` | Coronal | True coronal | A/P: Slab covering both kidneys, ureters, and bladder. Kidneys → bladder | **L/R** (arms) | Respiratory triggered |
+| 10 | `angio3d_cor_pre` | Coronal | True coronal | A/P: Slab covering both kidneys, ureters, and bladder. Kidneys → bladder | **None** | Breath-hold |
 
 *#1–#2: T2 HASTE coronal + sagittal survey — entire urinary tract.*  
-*#9: T2 SPACE — heavily T2 static-fluid 3D. Non-contrast urogram equivalent. Isometric resolution for MPR.*  
+*#9: T2 SPACE — heavily T2 static-fluid 3D. Non-contrast urogram equivalent. Isometric resolution for MPR.*
+*#10: Angio3D — pre-contrast subtraction mask. Underlying sequence: 3D FLASH gradient echo (`flash3d`).*  
 
 ### Post-Contrast — Excretory Phases
 
@@ -44,7 +45,7 @@
 | 12 | `angio3d_cor_C_5min` | Coronal | Copy Slice from #10 | — | **None** | Breath-hold, ~5 min post-injection |
 | 13 | `t1_vibe_dixon_tra_p4_bh_upper_C` | Axial | Copy Slice from #5 | Kidneys → mid-ureters | **None** | Breath-hold, after #12 |
 | 14 | `t1_vibe_dixon_tra_p4_bh_lower_C` | Axial | Copy Slice from #6 | Mid-ureters → bladder | **None** | Breath-hold, after #13 |
-| 15 | `t1_vibe_dixon_cor_p4_bh_C` | Coronal | Copy Slice from #7 | Kidneys → bladder | **None** | Breath-hold, after #14 |
+| 15 | `t1_vibe_dixon_cor_p4_bh_C` | Coronal | Copy Slice from #7 | A/P: Slab covering both kidneys, ureters, and bladder. Kidneys → bladder | **None** | Breath-hold, after #14 |
 | 16 | `angio3d_cor_C_10min` | Coronal | Copy Slice from #10 | — | **None** | Breath-hold, ~10 min post-injection |
 | 17 | `angio3d_cor_C_15min` | Coronal | Copy Slice from #10 | — | **None** | Breath-hold, ~15 min post-injection |
 
@@ -87,7 +88,7 @@ MR urography assesses the entire upper urinary tract — kidneys, collecting sys
 
 ### Post-Contrast — Excretory Phases
 
-**Angio3D delayed phases (#11, #12, #16, #17):** The core urographic sequences. A coronal 3D slab covering kidneys to bladder is acquired at progressive delays after contrast injection — 2, 5, 10, and 15 min. Each is subtracted from the pre-contrast mask (#10) to produce a pure excretory urogram.
+**Angio3D delayed phases (#11, #12, #16, #17):** The core urographic sequences. The underlying sequence is a 3D FLASH gradient echo (`flash3d`) — T1-weighted, short TR/TE spoiled GRE. A coronal 3D slab covering kidneys to bladder is acquired at progressive delays after contrast injection — 2, 5, 10, and 15 min. Each is subtracted from the pre-contrast mask (#10) to produce a pure excretory urogram.
 
 - **2 min (#11):** Contrast in the renal parenchyma and beginning to enter the collecting system (nephrogram → early pyelogram).
 - **5 min (#12):** Contrast in the renal pelvis and upper ureters.

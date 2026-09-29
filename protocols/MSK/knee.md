@@ -1,6 +1,6 @@
 # Knee (Routine Knee MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-07 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -21,7 +21,7 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band |
 |---|--------|-------|------------|----------|----------|
 | 1 | `t2_tse_fs_sms_sag_knee` | Sagittal Oblique | ∥ lateral femoral condyle long axis (∥ ACL course) — planned from axial localizer | Medial femoral condyle → lateral femoral condyle (entire joint). FOV includes patella to popliteal fossa | **None** |
-| 2 | `pd_space_sag_cs6_iso_knee` | Sagittal Oblique | Copy Slice from #1 | Copy coverage from #1. Isotropic voxels for MPR | **None** |
+| 2 | `pd_space_sag_cs6_iso_knee` | Sagittal Oblique | Copy Center from #1 | Copy coverage from #1. Isotropic voxels for MPR | **None** |
 | 3 | `MPR` | Coronal + Axial | Reformatted from #2 | — | — |
 | 4 | `t1_se_tra_knee` | Axial Oblique | ⟂ coronal plane, ∥ tibial plateau — planned from sagittal #1 | Above patella → below tibiofibular joint. Joint line and menisci centred in the stack | **None** |
 | 5 | `pd+t2_tse_fs_tra_knee` | Axial Oblique | Copy Slice from #4 | Copy coverage from #4 | **None** |

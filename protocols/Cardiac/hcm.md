@@ -1,6 +1,6 @@
 # HCM (Hypertrophic Cardiomyopathy CMR)
 
-**Version:** 1.0 | **Date:** 2026-09-03 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-27 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -14,7 +14,7 @@ Same as `cardiac_non-stress.md` — the stress arm is removed:
 - **ECG:** Vector ECG — optimise the R wave (largest amplitude, no T-wave oversensing). Every sequence in this protocol is ECG-gated, so a poor trigger degrades the entire study.
 - **IV Access:** **One line** — contrast only; no adenosine, so no second line, no BP cuff choreography, no contraindication screen, and no caffeine restriction.
 - **Breath-Hold Coaching:** Consistent **end-inspiratory** breath-holds, kept small — consistency matters most: the T1 maps must not drift between acquisitions. (No perfusion run here — the stress protocol's long-hold warning does not apply.)
-- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol [Confirm threshold].
+- **eGFR check:** Gadolinium — confirm eGFR above 30 before the protocol.
 
 ---
 
@@ -23,7 +23,7 @@ Same as `cardiac_non-stress.md` — the stress arm is removed:
 - **Phase 0 — Planning:** Localizers + pseudo-2C/4C/SAX cascade (#1–4)
 - **Phase 1 — Rest function & obstruction:** 3C stack + 4C/2C cines + LVOT noscout + aortic flow (#5–9)
 - **Phase 2 — Native tissue:** T1 maps — SAx3 + 4C + 2C + pathological site (#10–13)
-- **Phase 3 — Contrast:** Single dose at 2 ml/s → 7 min wait
+- **Phase 3 — Contrast:** Double dose at 2 ml/s → 7 min wait
 - **Phase 4 — Function:** SA volumetry fills the 7-min wait (#14)
 - **Phase 5 — LGE:** TI scout → PSIR overviews 4C/2C/SA → 12-slice FB PSIR → high-res T1 seg FS SA (#15–20)
 
@@ -31,9 +31,9 @@ Same as `cardiac_non-stress.md` — the stress arm is removed:
 
 | When | What | Rate | Purpose |
 |---|---|---|---|
-| Phase 3 | Gadolinium — single dose [Confirm mmol/kg — see note] | 2 ml/s | LGE equilibration |
+| Phase 3 | Gadolinium — double dose (Dotarem 0.2 mmol/kg / Gadovist 1.5×) | 2 ml/s | LGE equilibration |
 
-**Total contrast: single dose** [Confirm]. The stress protocol splits 0.2 mmol/kg across three injections; a fibrosis-focused cardiomyopathy exam is the setting where a double dose is the common alternative — dose per local practice.
+**Total contrast: double dose Dotarem (0.2 mmol/kg) / 1.5× Gadovist (0.15 mmol/kg), single injection** — dosing rules per cardiac_stress.md — Contrast dosing. No first-pass perfusion here, so no tight 4 ml/s bolus is needed.
 
 ---
 
@@ -71,7 +71,7 @@ Same as `cardiac_non-stress.md` — the stress arm is removed:
 
 | # | Series | Plane | Angulation | Coverage | Breathing |
 |---|--------|-------|------------|----------|-----------|
-| — | **Contrast — 2 ml/s** | — | Single gadolinium dose at 2 ml/s [Confirm dose] + saline flush. No perfusion run, so no first-pass timing | — | — |
+| — | **Contrast — 2 ml/s** | — | Gadolinium double dose at 2 ml/s + saline flush. No perfusion run, so no first-pass timing | — | — |
 | — | **7 min wait** | — | LGE imaging starts ~7 min after the injection | — | — |
 
 ### Phase 4 — Post-Contrast Function
@@ -88,7 +88,7 @@ Same as `cardiac_non-stress.md` — the stress arm is removed:
 | 16 | `de_overview_tfi_psir_4c` | 4C | Copy from #6 | Entire myocardial wall — base → apex | BH |
 | 17 | `de_overview_tfi_psir_2c` | 2C | Copy from #7 | Entire myocardial wall — base → apex | BH |
 | 18 | `de_overview_tfi_psir_sa` | SAX stack | Copy from #14 | Entire myocardial wall — whole LV | BH |
-| 19 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy from #14 — 12 slices | Base → apex | FB |
+| 19 | `de_trufi_overview_12sl_psir_fb` | SAX ×12 | Copy from #14 — 12 slices, MOCO, 5 averages | Base → apex | FB |
 | 20 | `tfl13_2d_t1_seg_fs_c_sa` | SAX stack (2D) | Copy from #14 — [Confirm: routine or optional] | Base → apex, built slice-by-slice toward the apex | BH |
 
 ---
@@ -118,7 +118,7 @@ Same as `cardiac_non-stress.md` — the stress arm is removed:
 
 - **The cines gain the obstruction question:** the 3C is acquired as a **stack** through the septum (#5), and the LVOT cine + aortic flow (#8–9) are read for SAM and the LVOT gradient — HCM's signature hemodynamic problem. In cardiac_non-stress the same views serve generic valvular/functional questions; in amyloidosis the question does not exist at all.
 - **The maps become native-T1-only and targeted:** no T2 map (chronic HCM is not an edema disease); the native T1 extends beyond the standard SAx3 with the 4C, 2C and pathological-site placements (#11–13) — aimed at the maximal hypertrophy and the apical variant. No post-contrast maps, so no ECV in this build — the amyloidosis protocol measures it.
-- **The LGE block is all-PSIR and read for HCM:** every overview is phase-sensitive — thick walls and diffuse fibrosis make the TI null unreliable, so TI-robust PSIR replaces the TI-dependent magnitude overviews of cardiac_non-stress. The interpretation is HCM-specific (the Phase 5 LGE reading).
+- **The LGE block is read PSIR for HCM:** every overview is read on its PSIR reconstruction — thick walls and diffuse fibrosis make the TI null unreliable, so the TI-robust PSIR read replaces the magnitude-first read of cardiac_non-stress. The interpretation is HCM-specific (the Phase 5 LGE reading).
 - **The thick-heart differential (vs amyloidosis):** echo shows a thickened ventricle in both — CMR separates them: native T1 mildly-to-moderately ↑ in HCM (fibrosis) vs markedly ↑ in amyloid (the highest of any cardiomyopathy) vs shortened in Fabry; LGE patchy mid-wall + RV insertions vs a diffuse subendocardial ring with a difficult null (the full three-way pattern read in Phase 5).
 
 ### Phase 0 — Surveys & Localizers (#1–#4) — the planning stage
@@ -168,7 +168,7 @@ Identical planning to `cardiac_non-stress.md` #5–#9 — retrospective gating, 
 
 ### Phase 3 — Contrast
 
-A single gadolinium dose at **2 ml/s** + saline flush — no first-pass perfusion to capture, so the slow rate suffices. After the injection, the **7-minute wait** lets the contrast equilibrate — the same LGE physiology as cardiac_non-stress.
+A single injection of the double dose at **2 ml/s** + saline flush — no first-pass perfusion to capture, so the slow rate suffices. After the injection, the **7-minute wait** lets the contrast equilibrate — the same LGE physiology as cardiac_non-stress.
 
 ### Phase 4 — Post-Contrast Function (#14)
 
@@ -179,8 +179,8 @@ A single gadolinium dose at **2 ml/s** + saline flush — no first-pass perfusio
 **Why fibrotic myocardium enhances late:** the same LGE physiology as cardiac_non-stress Phase 5 — after the 7-minute wait, gadolinium has equilibrated in the extracellular space; fibrosis replaces myocytes with an expanded extracellular matrix, so contrast accumulates there, washes out slowly, and stays **bright** against nulled **dark** myocardium. HCM's fibrosis comes in two forms — **focal replacement fibrosis** (microvascular ischemia; LGE-visible) and **diffuse interstitial fibrosis** (raises background T1 everywhere; makes the null harder).
 
 - **`ti_scout` (#15):** at the 7-min mark, single SA at the thickest myocardium. Optimal TI = normal myocardium most uniformly dark without a dark rim (blood pool nulling + interface partial volume — see cardiac_stress #17). In HCM the thickest myocardium is exactly where the null must be verified.
-- **`de_overview_tfi_psir_4c` (#16), `de_overview_tfi_psir_2c` (#17), `de_overview_tfi_psir_sa` (#18) — PSIR overviews, three planes:** phase-sensitive IR reconstruction — TI-robust (the sign-sensitive read survives an imperfect TI, as in the myocarditis late overviews). HCM's thick walls and diffuse fibrosis make the TI null unreliable across segments, so all three breath-held overviews are PSIR rather than the TI-dependent magnitude IR of non-stress. Three planes because the fibrosis pattern is patchy.
-- **`de_trufi_overview_12sl_psir_fb` (#19) — 12-slice free-breathing PSIR:** a second whole-ventricle base → apex PSIR pass, free-breathing with averaging. Both overview sets cover the whole ventricle — the difference is the breathing: the free-breathing averaging raises the SNR for the subtle patchy HCM fibrosis and rescues patients who cannot hold breath, and the PSIR read stays the TI-insensitive catch-all (RV, thrombus, any territory — as cardiac_non-stress #17).
+- **`de_overview_tfi_psir_4c` (#16), `de_overview_tfi_psir_2c` (#17), `de_overview_tfi_psir_sa` (#18) — PSIR overviews, three planes:** phase-sensitive IR reconstruction — TI-robust (the sign-sensitive read survives an imperfect TI, as in the myocarditis late overviews). HCM's thick walls and diffuse fibrosis make the TI null unreliable across segments, so all three breath-held overviews are read on their PSIR reconstruction rather than the magnitude-first read of cardiac_non-stress. Three planes because the fibrosis pattern is patchy.
+- **`de_trufi_overview_12sl_psir_fb` (#19) — 12-slice free-breathing PSIR:** a second whole-ventricle base → apex PSIR pass, free-breathing with MOCO and 5 averages. Both overview sets cover the whole ventricle — the difference is the breathing: the MOCO + averaging raises the SNR for the subtle patchy HCM fibrosis and rescues patients who cannot hold breath, and the PSIR read stays the TI-insensitive catch-all (RV, thrombus, any territory — as cardiac_non-stress #17).
 - **`tfl13_2d_t1_seg_fs_c_sa` (#20) — the high-res 2D SA:** segmented T1-weighted TurboFLASH, fat-saturated, built slice-by-slice toward the apex — fat saturation unmasks thin subepicardial enhancement, high resolution measures transmurality — a GRE readout free of the SSFP dark-rim/banding artifacts of the TrueFISP PSIR overviews (the same high-res sequence as cardiac_non-stress #18). [Confirm: routine or optional after radiologist review.]
 
 **The HCM LGE reading — how the bright spots are read:**
@@ -213,7 +213,7 @@ A single gadolinium dose at **2 ml/s** + saline flush — no first-pass perfusio
 | Check | Improve |
 |---|---|
 | **ECG trigger** — lead with the cleanest R wave chosen for gating? | Choose the ECG lead with the cleanest R wave (largest amplitude, no T-wave oversensing) — every sequence is gated, so a poor trigger degrades the entire study |
-| **eGFR** — confirmed above 30 before contrast? | Single-dose protocol but still gadolinium — check before, not after |
+| **eGFR** — confirmed above 30 before contrast? | Double-dose gadolinium — check before, not after (see cardiac_stress.md — Contrast dosing) |
 | **Breath-hold consistency** — same small end-inspiratory position on the T1 maps? | Slice drift between the maps breaks the T1/LGE comparison |
 | **LVOT planning** — 3C stack and LVOT cine through the outflow tract; SAM–septal contact and the jet caught? | The obstruction is dynamic — if the jet is not seen on the cines, the views are off-plane |
 | **Maximal wall thickness** — measured in diastole at the thickest segment? | The diagnostic criterion (≥ 15 mm) — measure and document it |

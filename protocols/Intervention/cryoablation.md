@@ -1,10 +1,24 @@
 # Cryoablation (MR-Guided Cryoablation)
 
-**Version:** 1.0 | **Date:** 2026-09-06 | **Scanner:** [Confirm model]
+**Version:** 1.0 | **Date:** 2026-09-27 | **Scanner:** [Confirm model]
 
 ---
 
-## 1. Patient Positioning & Registration
+## 1. Settings Preparation (Before Patient Arrival)
+
+**Before the patient arrives:**
+
+- **Couch:** large blue incontinence sheet over the MRI couch; U-shaped pillow for prone positioning.
+- **External MRI monitor:** place on the opposite side of the surgery site.
+- **HDMI connection boxes:** turn on both.
+- **Lab laser:** turn on.
+- **Ultrasound machine:** borrow from Rm 7/15 — use the Philips machine for endometriosis, or when the cryoablation / hydrodissection needle is inserted via US guidance instead of MRI guidance.
+- **Scanner function test:** test the `fblade` and `beat` interactive functionality of the MRI scanner.
+- **Nursing cabinet:** move it outside the MRI suite for preparation.
+
+---
+
+## 2. Patient Positioning & Registration
 
 - **Registration — always head-first supine:** regardless of the patient's physical position on the table, the exam is **always registered as head-first supine** — so the image orientation is always the same as what the radiologist sees when inserting the needle inside the bore.
 - **Position:** per target organ — **prone** for kidney cryoablation, **supine** for others (e.g., endometriosis) — the registration remains head-first supine in every case
@@ -13,7 +27,7 @@
 
 ---
 
-## 2. Procedure Overview
+## 3. Procedure Overview
 
 **What it is:** MR-guided cryoablation destroys a tumor by freezing — under image guidance, needles are placed into the tumor percutaneously, and the cryo-probes freeze it in controlled cycles. The MRI does four jobs at once: it finds and characterizes the tumor, plans the needle paths, drives the needles in under real-time imaging, and displays the **ice ball** as it forms — frozen tissue is a signal void on the images, so the ablation zone can be watched until it covers the tumor with a margin.
 
@@ -23,7 +37,7 @@ The step-by-step flow is the Workflow Overview below.
 
 ---
 
-## 3. Workflow Overview
+## 4. Workflow Overview
 
 **The procedure flows as one chain — each phase hands the geometry to the next:**
 
@@ -38,7 +52,7 @@ The step-by-step flow is the Workflow Overview below.
 
 ---
 
-## 4. Imaging Series
+## 5. Imaging Series
 
 ### Phase 0 — Initial Localization
 
@@ -95,7 +109,7 @@ The step-by-step flow is the Workflow Overview below.
 
 ---
 
-## 5. Skin Marking Procedure (Lab Laser)
+## 6. Skin Marking Procedure (Lab Laser)
 
 1. **Pixel lens coordinates:** the radiologist marks the needle insertion site on the console and reads off its position (x, y, z) — the z is the table coordinate, **H(+ve) = head-ward, F(−ve) = foot-ward** of the red-laser isocenter.
 2. **Laser geometry:** the distance from the red (internal) laser to the green **lab laser** = **1002** mm of table movement (centre → lab laser).
@@ -107,7 +121,7 @@ The step-by-step flow is the Workflow Overview below.
 
 ---
 
-## 6. Sequence Rationale
+## 7. Sequence Rationale
 
 **Why the bore coil:** the bore-integrated coil leaves the patient's skin exposed for the puncture — the standard anterior body-array coils would cover the needle entry site.
 
@@ -160,7 +174,7 @@ The step-by-step flow is the Workflow Overview below.
 
 ---
 
-## 7. Alerts
+## 8. Alerts
 
 | Check | Improve |
 |---|---|
@@ -175,7 +189,7 @@ The step-by-step flow is the Workflow Overview below.
 
 ---
 
-## 8. Version Control
+## 9. Version Control
 
 | Version | Date | Author | Changes |
 |---|---|---|---|

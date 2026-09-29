@@ -1,6 +1,6 @@
 # Pancreas (Dedicated Pancreas MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-04 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -27,7 +27,7 @@
 | 5 | `t1_vibe_dixon_tra_bh` | Axial | True axial | Pancreas only | **None** | Breath-hold |
 | 6 | `t2_trufi_cor_non-bh` | Coronal | Copy Slice from #1 | — | Copy Sat from #1 | Free breathing |
 | 7 | `t2_space_cor_p2_trig_ERCP` | Coronal Oblique | Angle on axial to cover the pancreas and CBD | Pancreas + ampulla. CBD from hilum → ampulla | **L/R** (arms) | Respiratory triggered |
-| 8 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy Slice from #5 | — | **None** | Breath-hold |
+| 8 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy everything from #5 | — | **None** | Breath-hold |
 
 *#1–#5: Liver screen sequences adapted for pancreas-only coverage. See `liver_routine.md` for individual sequence rationale (same sequences, different coverage).*  
 *#6: TrueFISP coronal — vessels and bile bright without contrast. Portal vein, splenic vein, SMV patency.*  
@@ -39,10 +39,10 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
 | — | **Contrast** | — | Check FOV consistency — verify post-contrast FOV matches pre-contrast #8. Standard dose, 2 mL/s | — | — | — |
-| 9 | `t1_vibe_twist_dixon_tra_bh_art_5phase` | Axial | Copy Slice from #8 | Pancreas only | **None** | Breath-hold. Fixed delay 30 s |
-| 10 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy Slice from #8 | — | **None** | Breath-hold, 20 s after #9 |
-| 11 | `t1_vibe_twist_dixon_tra_Delay_2min` | Axial | Copy Slice from #8 | — | **None** | Breath-hold, ~2 min |
-| 12 | `ep2d_diff_b50_300_800_tra_pancreas` | Axial | Copy Slice from #8 | Pancreas only | **None** | Free breathing |
+| 9 | `t1_vibe_twist_dixon_tra_bh_art_5phase` | Axial | Copy everything from #8 | Pancreas only | **None** | Breath-hold. Fixed delay 30 s |
+| 10 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy everything from #8 | — | **None** | Breath-hold, 20 s after #9 |
+| 11 | `t1_vibe_twist_dixon_tra_Delay_2min` | Axial | Copy everything from #8 | — | **None** | Breath-hold, ~2 min |
+| 12 | `ep2d_diff_b50_300_800_tra_pancreas` | Axial | Copy Center from #8 | Pancreas only | **None** | Free breathing |
 
 *#9–#11: Dynamic phases — same as liver_routine.md but pancreas-only coverage.*  
 *#12: DWI — same b-values as liver. Pancreas-only FOV for higher in-plane resolution.*  

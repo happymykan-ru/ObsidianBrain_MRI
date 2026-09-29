@@ -1,6 +1,6 @@
 # Arthrogram (MR Arthrography — Wrist / Hip / Knee)
 
-**Version:** 1.0 | **Date:** 2026-08-17 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -24,7 +24,7 @@ Positioning and coil setup follow the respective routine joint protocols (wrist.
 | 3 | `t1_tse_cor_wrist` | Coronal | ∥ long axis of carpus | Dorsal skin → volar skin | **None** |
 | 4 | `pd_tse_fs_cor_wrist` | Coronal | Copy Slice from #3 | Copy coverage from #3 | **None** |
 | 5 | `pd_tse_fs_sag_wrist` | Sagittal | ⟂ radiocarpal joint line | Radial styloid → ulnar styloid | **None** |
-| 6 | `t2_me3d_cor_wrist` | Coronal | Copy Slice from #3 | Copy coverage from #3. Isotropic voxels for MPR | **None** |
+| 6 | `t2_me3d_cor_wrist` | Coronal | Copy Center from #3 | Copy coverage from #3. Isotropic voxels for MPR | **None** |
 | — | **Arthrogram** | — | Intra-articular dilute gadolinium (~1:200). Distension confirmed before scanning | — | — |
 | 7 | `t1_tse_fs_tra_wrist_C` | Axial | Copy Slice from #1 | Copy coverage from #1 | **None** |
 | 8 | `t1_tse_fs_cor_wrist_C` | Coronal | Copy Slice from #3 | Copy coverage from #3 | **None** |
@@ -47,7 +47,7 @@ Positioning and coil setup follow the respective routine joint protocols (wrist.
 | # | Series | Plane | Angulation | Coverage | Sat Band |
 |---|--------|-------|------------|----------|----------|
 | 1 | `t2_tse_fs_sag_knee` | Sagittal | ∥ ACL course | Medial → lateral femoral condyles | **None** |
-| 2 | `pd_space_sag_knee` | Sagittal | Copy Slice from #1 | Copy coverage from #1. Isotropic voxels for MPR | **None** |
+| 2 | `pd_space_sag_knee` | Sagittal | Copy Center from #1 | Copy coverage from #1. Isotropic voxels for MPR | **None** |
 | 3 | `t1_se_tra_knee` | Axial | ∥ tibial plateau | Above patella → below tibiofibular joint | **None** |
 | 4 | `pd+t2_tse_fs_tra_knee` | Axial | Copy Slice from #3 | Copy coverage from #3 | **None** |
 | 5 | `pd_tse_fs_cor_knee` | Coronal | ⟂ tibial plateau | Half patella → popliteal fossa | **None** |

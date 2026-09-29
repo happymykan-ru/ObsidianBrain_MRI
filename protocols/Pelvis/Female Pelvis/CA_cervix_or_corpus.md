@@ -1,6 +1,6 @@
 # CA Cervix / Corpus (Cervical or Endometrial Cancer Staging MRI with Dynamic Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-06 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -27,8 +27,8 @@
 | — | **Optional abdomen** | — | If abdominal nodal/metastatic survey is required | — | — | — |
 | 3A | `t1_vibe_dixon_tra_p4_bh_upper_abd` | Axial | True axial | Upper abdomen: diaphragm → renal hilum | **None** | Breath-hold |
 | 4A | `t1_vibe_dixon_tra_p4_bh_mid_abd` | Axial | True axial | Mid abdomen: renal hilum → iliac crest | **None** | Breath-hold |
-| 5A | `t2_tse_fs_tra_p2_mbh_upper_abd` | Axial | Copy Slice from #3A | — | **None** | Multi breath-hold |
-| 6A | `t2_tse_fs_tra_p2_mbh_mid_abd` | Axial | Copy Slice from #4A | — | **None** | Multi breath-hold |
+| 5A | `t2_tse_fs_tra_p2_mbh_upper_abd` | Axial | Copy Center from #3A | — | **None** | Multi breath-hold |
+| 6A | `t2_tse_fs_tra_p2_mbh_mid_abd` | Axial | Copy Center from #4A | — | **None** | Multi breath-hold |
 
 *#1: T2 HASTE coronal — whole abdomen + pelvis survey for hydronephrosis, nodal disease, peritoneal deposits.*  
 *#3A–#6A: Optional abdominal screen — add if full staging for para-aortic nodes and liver metastases is required. Split into upper and mid abdomen. Skip if staging is pelvis-only.*  
@@ -39,11 +39,11 @@
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Buscopan** | — | 10–20 mg IV, prior to exam | — | — | — |
 | 7 | `t2_tse_sag_pelvis` | Sagittal | True sagittal | Uterus + cervix + vagina. L/R: both ovaries + adnexae | **None** | Free breathing |
-| 8 | `t2_space_sag_p2_iso` | Sagittal | Copy Slice from #7 | — | **None** | Free breathing |
+| 8 | `t2_space_sag_p2_iso` | Sagittal | Copy Center from #7 | — | **None** | Free breathing |
 | 9 | `t2_tse_tra_short_axis` | Axial Oblique | ⟂ cervical canal (Ca cervix) or endometrial stripe (Ca corpus) | Tumour + both parametria (to pelvic sidewalls). S/I: above tumour → below vaginal fornices (cervix) or fundus → below cervix (corpus) | **None** | Free breathing |
 | 10 | `t2_tse_tra_long_axis` | Coronal Oblique | ∥ cervical canal (Ca cervix) or endometrial stripe (Ca corpus) | Tumour + entire uterine body + cervix + upper vagina. A/P: bladder → rectum | **None** | Free breathing |
 | 11 | `t1_tse_fs_dixon_short_axis_pelvis` | Axial Oblique | Copy Slice from #9 | Whole pelvis. Iliac crest → perineum | **None** | Free breathing |
-| 12 | `t1_vibe_dixon_short_axis_pelvis` | Axial Oblique | Copy Slice from #9 | Whole pelvis | **None** | Breath-hold |
+| 12 | `t1_vibe_dixon_short_axis_pelvis` | Axial Oblique | Copy Center from #9 | Whole pelvis | **None** | Breath-hold |
 | 13 | `resolve_diff_b50_800_short_axis` | Axial Oblique | Copy Slice from #9 | Whole pelvis | **A/P** (anterior + posterior skin margins) | Free breathing |
 
 *#9: T2 TSE short axis — perpendicular to the cervical canal or endometrial stripe. Primary staging plane.*  
@@ -54,10 +54,10 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose, 2 mL/s. Inject after 1st measurement | — | — | — |
-| 14 | `t1_vibe_fs_sag_dyn_C_pelvis` | Sagittal | Copy Slice from #7 | Tumour + uterus + cervix | **None** | Shallow breathing. Multiple measurements. Inject contrast after 1st measurement |
-| 15 | `t1_vibe_dixon_short_axis_pelvis_C` | Axial Oblique | Copy Slice from #9 | Tumour + parametria / myometrium | **None** | Breath-hold. With subtraction |
-| 16 | `t1_vibe_dixon_long_axis_pelvis_C` | Coronal Oblique | Copy Slice from #10 | Tumour + uterine body + cervix | **None** | Breath-hold |
-| 17 | `t1_vibe_dixon_sag_pelvis_C` | Sagittal | Copy Slice from #7 | Uterus + cervix | **None** | Breath-hold |
+| 14 | `t1_vibe_fs_sag_dyn_C_pelvis` | Sagittal | Copy Center from #7 | Tumour + uterus + cervix | **None** | Shallow breathing. Multiple measurements. Inject contrast after 1st measurement |
+| 15 | `t1_vibe_dixon_short_axis_pelvis_C` | Axial Oblique | Copy Center from #9 | Tumour + parametria / myometrium | **None** | Breath-hold. With subtraction |
+| 16 | `t1_vibe_dixon_long_axis_pelvis_C` | Coronal Oblique | Copy Center from #10 | Tumour + uterine body + cervix | **None** | Breath-hold |
+| 17 | `t1_vibe_dixon_sag_pelvis_C` | Sagittal | Copy Center from #7 | Uterus + cervix | **None** | Breath-hold |
 
 *#14: DCE sagittal — multiple measurements. 1st measurement = pre-contrast baseline. Contrast injected after. Enhancement kinetics of the tumour.*  
 *#15: Post-contrast short axis with subtraction. Enhancing tumour against suppressed background.*  

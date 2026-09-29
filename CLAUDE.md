@@ -110,7 +110,7 @@ Each protocol must contain:
 3. Sequence Rationale
 4. Pathology-Based Variations
 5. Alerts & Important Considerations
-6. Version Control
+6. Version Control (For now stop version control until the entire vault has been built. Version should only indicate updates in protocol itself, not the current build edit)
 
 ---
 Patient Positioning & Coil Guidance Rules

@@ -1,6 +1,6 @@
 # Adrenal (Dedicated Adrenal MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-05 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -22,10 +22,10 @@
 |---|--------|-------|------------|----------|----------|-------------|
 | 1 | `t2_haste_cor_mbh` | Coronal | True coronal | A/P: anterior abdominal wall → posterior abdominal wall. Both adrenals + kidneys | **Superior oblique** over heart | Multi breath-hold |
 | 2 | `t1_vibe_dixon_tra_bh` | Axial | True axial | Both adrenals | **None** | Breath-hold |
-| 3 | `t2_tse_fs_tra_mbh` | Axial | Copy Slice from #2 | — | **None** | Multi breath-hold |
-| 4 | `t2_tse_tra_mbh` | Axial | Copy Slice from #2 | — | **None** | Multi breath-hold |
+| 3 | `t2_tse_fs_tra_mbh` | Axial | Copy Center from #2 | — | **None** | Multi breath-hold |
+| 4 | `t2_tse_tra_mbh` | Axial | Copy Center from #2 | — | **None** | Multi breath-hold |
 | 5 | `t1_vibe_dixon_cor_bh` | Coronal | True coronal | A/P: covering both adrenals + kidneys | **None** | Breath-hold |
-| 6 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy Slice from #2 | — | **None** | Breath-hold |
+| 6 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy everything from #2 | — | **None** | Breath-hold |
 
 *#2: T1 VIBE Dixon axial — in/opposed phase. Sequenced early (before T2 TSE) because chemical shift is the primary diagnostic tool for adrenal lesions. In/opp phase must be acquired pre-contrast.*  
 *#3–#4: T2 TSE pair — FS for lesion detection, non-FS for anatomical reference.*  
@@ -37,9 +37,9 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
 | — | **Contrast** | — | Check FOV consistency — verify post-contrast FOV matches pre-contrast #6. Standard dose, 2 mL/s | — | — | — |
-| 7 | `t1_vibe_twist_dixon_tra_AP` | Axial | Copy Slice from #6 | Both adrenals | **None** | Breath-hold. Fixed delay 30 s |
-| 8 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy Slice from #6 | — | **None** | Breath-hold, 20 s after #7 |
-| 9 | `t1_vibe_twist_dixon_cor_PVP` | Coronal | Copy Slice from #5 | — | **None** | Breath-hold, after #8 |
+| 7 | `t1_vibe_twist_dixon_tra_AP` | Axial | Copy everything from #6 | Both adrenals | **None** | Breath-hold. Fixed delay 30 s |
+| 8 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy everything from #6 | — | **None** | Breath-hold, 20 s after #7 |
+| 9 | `t1_vibe_twist_dixon_cor_PVP` | Coronal | Copy everything from #5 | — | **None** | Breath-hold, after #8 |
 
 *#7: Single arterial phase — no 5-phase TWIST. The adrenal enhancement pattern is binary (adenoma = rapid wash-in/wash-out; metastasis/phaeochromocytoma = progressive enhancement). A single well-timed arterial capture is sufficient.*  
 *#8–#9: PVP axial + coronal. The coronal PVP assesses IVC invasion and renal vein involvement.*  

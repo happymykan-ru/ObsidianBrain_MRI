@@ -1,6 +1,6 @@
 # SI Joint (Sacroiliac Joint MRI — with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-15 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -18,8 +18,8 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band |
 |---|--------|-------|------------|----------|----------|
 | 1 | `t2_tse_dixon_cor_si_joint` | Coronal | ∥ sacral axis (through both SI joints) — planned from axial localizer; ∥ sacral long axis on sagittal | Anterior to sacrum → posterior to sacrum. L5 → coccyx | **Superior + Anterior** |
-| 2 | `t1_space_cor_si_joint` | Coronal | Copy Slice from #1 | Copy coverage from #1. Isotropic voxels for MPR | **Superior + Anterior + Posterior** |
-| 3 | `t1_vibe_fs_cor_si_joint` | Coronal | Copy Slice from #1 | Copy coverage from #1 | **Superior + Anterior** |
+| 2 | `t1_space_cor_si_joint` | Coronal | Copy Center from #1 | Copy coverage from #1. Isotropic voxels for MPR | **Superior + Anterior + Posterior** |
+| 3 | `t1_vibe_fs_cor_si_joint` | Coronal | Copy Center from #1 | Copy coverage from #1 | **Superior + Anterior** |
 | 4 | `t2_tse_fs_tra_si_joint` | Axial | ⟂ sacral axis — planned from sagittal #1 | Above SI joint → below SI joint. Both joints included | **Superior + Anterior** |
 | 5 | `t1_tse_tra_si_joint` | Axial | Copy Slice from #4 | Copy coverage from #4 | **Superior + Anterior** |
 | — | **Contrast** | — | Standard dose. | — | — |

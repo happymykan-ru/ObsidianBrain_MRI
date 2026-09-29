@@ -1,6 +1,6 @@
 # Pancreas Non-Breath-Hold (Free-Breathing Pancreas MRI)
 
-**Version:** 1.0 | **Date:** 2026-08-04 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -33,7 +33,7 @@ As `pancreas.md`. All sequences are free-breathing or respiratory-triggered. Fas
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
 | — | **Contrast** | — | Check FOV consistency. Standard dose, 2 mL/s | — | — | — |
-| 8 | `t1_starvibe_fs_tra_non-bh_dyn_C` | Axial | Copy Slice from #6 | Pancreas only | **None** | Free breathing. Multiple measurements over ~3 min. Inject contrast after 1st measurement |
+| 8 | `t1_starvibe_fs_tra_non-bh_dyn_C` | Axial | Copy everything from #6 | Pancreas only | **None** | Free breathing. Multiple measurements over ~3 min. Inject contrast after 1st measurement |
 | 9 | `ep2d_diff_b50_300_800_tra_pancreas` | Axial | Copy Slice from #6 | Pancreas only | **None** | Free breathing |
 
 *#8: StarVIBE dynamic — same as liver_non-bh.md. 1st measurement = pre-contrast baseline, contrast injected after, remaining measurements capture arterial → PVP → delayed passage.*  

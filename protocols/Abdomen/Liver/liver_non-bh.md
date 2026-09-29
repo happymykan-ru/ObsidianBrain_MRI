@@ -1,6 +1,6 @@
 # Liver Non-Breath-Hold (Free-Breathing Multiphasic Liver MRI)
 
-**Version:** 1.0 | **Date:** 2026-08-03 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -43,9 +43,9 @@
 
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breathing |
 |---|--------|-------|------------|----------|----------|-----------|
-| 9 | `t1_starvibe_fs_tra_non-bh_dyn_C` | Axial | Copy Slice from #7 | Whole liver | **None** | Free breathing. First measurement = pre-contrast baseline. Contrast injected after 1st measurement. Subsequent measurements over ~3 min |
+| 9 | `t1_starvibe_fs_tra_non-bh_dyn_C` | Axial | Copy everything from #7 | Whole liver | **None** | Free breathing. First measurement = pre-contrast baseline. Contrast injected after 1st measurement. Subsequent measurements over ~3 min |
 | 10 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Slice from #7 | Whole liver | **None** | Free breathing |
-| 11 | `t1_starvibe_fs_tra_non-bh_delay_5min_C` | Axial | Copy Slice from #7 | — | **None** | Free breathing, ~5 min post-injection |
+| 11 | `t1_starvibe_fs_tra_non-bh_delay_5min_C` | Axial | Copy everything from #7 | — | **None** | Free breathing, ~5 min post-injection |
 
 *#8: StarVIBE has a stack-of-stars radial acquisition — motion-robust, free breathing. Multiple consecutive measurements over ~3 min: 1st measurement = baseline/mask, contrast injected, remaining measurements capture arterial → PVP → delayed passage. No separate pre-contrast acquisition needed.*
 *#10: Late delayed phase with the same StarVIBE acquisition.*
@@ -86,10 +86,10 @@ HASTE FS — in Variant B, backup to BLADE FS (#2B). In Variant A, the primary F
 T2 TrueFISP coronal. Very short TR — essentially motion-insensitive. Blood and bile are bright. Portal vein, hepatic veins, IVC, and biliary tree assessed in the coronal plane.
 
 **`t1_tfl_in-phase_tra_non-bh` (#7)**
-T1 TurboFLASH (TFL) in-phase axial. TFL is a 2D single-shot spoiled gradient echo — each slice is acquired in <1 s, free breathing. Unlike VIBE (3D, breath-hold, Dixon-capable), TFL is a 2D single-shot technique: lower SNR, thicker slices, and no Dixon support, so in-phase and opposed-phase must be acquired as two separate sequences. The benefit is motion robustness — breathing cannot cause intra-slice ghosting. In-phase TE (~2.4 ms at 1.5T, ~4.8 ms at 3T) where water and fat signal add constructively. Higher SNR than opposed-phase, preserved fat planes. Assesses liver morphology, intrinsic T1-hyperintensity, and iron deposition.
+T1 TurboFLASH (TFL) in-phase axial. TFL is a 2D single-shot spoiled gradient echo — each slice is acquired in <1 s, free breathing. Unlike VIBE (3D, breath-hold, Dixon-capable), TFL is a 2D single-shot technique: lower SNR, thicker slices, and no Dixon support, so in-phase and opposed-phase must be acquired as two separate sequences. The benefit is motion robustness — breathing cannot cause intra-slice ghosting. In-phase TE (~4.8 ms at 1.5T, ~2.4 ms at 3T) where water and fat signal add constructively. Higher SNR than opposed-phase, preserved fat planes. Assesses liver morphology, intrinsic T1-hyperintensity, and iron deposition.
 
 **`t1_tfl_opp-phase_tra_non-bh` (#8)**
-T1 TurboFLASH opposed-phase axial. Matched to #6 but at the opposed-phase TE (~1.2 ms at 1.5T, ~2.4 ms at 3T). Signal dropout confirms intracellular lipid — diffuse steatosis or intralesional fat.
+T1 TurboFLASH opposed-phase axial. Matched to #6 but at the opposed-phase TE (~2.4 ms at 1.5T, ~1.2 ms at 3T). Signal dropout confirms intracellular lipid — diffuse steatosis or intralesional fat.
 
 ---
 
@@ -117,6 +117,7 @@ T1 StarVIBE FS axial, single measurement ~5 min post-injection. Late delayed pha
 | Check | Improve |
 |---|---|
 | **Coverage** — Whole liver on all sequences? | Free breathing causes diaphragmatic excursion — the liver dome position varies. Check that all sequences cover the full liver despite respiratory motion. Prescribe stacks slightly wider than the anatomical liver extent |
+| **In/opp-phase TE** — Echo times correct? 1.5T: OP ~2.4 ms / IP ~4.8 ms. 3T: OP ~1.2 ms / IP ~2.4 ms. In-phase image: no dark rim at organ borders? | If the in-phase echo shows a dark rim (India ink) at fat–water interfaces, the echo is not truly in-phase — the TE has shifted. Do not adjust bandwidth or TE — either changes the echo timing and breaks the in/opposed phasing |
 | **Post-contrast** — Contrast present? Hepatic artery and portal vein enhance on StarVIBE measurements? | If absent: check IV line, confirm injection |
 
 ---

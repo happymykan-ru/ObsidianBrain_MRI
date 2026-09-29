@@ -1,6 +1,6 @@
 # Kidney (Dedicated Renal MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-08-05 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -26,7 +26,7 @@
 | 4 | `t1_vibe_dixon_tra_bh` | Axial | True axial | Both kidneys | **None** | Breath-hold |
 | 5 | `t1_vibe_dixon_cor_bh` | Coronal | True coronal | Both kidneys + renal vessels | **None** | Breath-hold |
 | 6 | `t2_trufi_cor_non-bh` | Coronal | Copy Slice from #1 | — | Copy Sat from #1 | Free breathing |
-| 7 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy Slice from #4 | — | **None** | Breath-hold |
+| 7 | `t1_vibe_twist_dixon_tra_pre` | Axial | Copy everything from #4 | — | **None** | Breath-hold |
 
 
 ### Post-Contrast
@@ -34,12 +34,12 @@
 | # | Series | Plane | Angulation | Coverage | Sat Band | Breath-Hold |
 |---|--------|-------|------------|----------|----------|-------------|
 | — | **Contrast** | — | Check FOV consistency — verify post-contrast FOV matches pre-contrast #7. Standard dose, 2 mL/s | — | — | — |
-| 8 | `t1_vibe_twist_dixon_tra_AP` | Axial | Copy Slice from #7 | Both kidneys | **None** | Breath-hold. Fixed delay 30 s |
-| 9 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy Slice from #7 | — | **None** | Breath-hold, 20 s after #8 |
-| 10 | `t1_vibe_twist_dixon_cor_PVP` | Coronal | Copy Slice from #5 | Both kidneys + renal vessels | **None** | Breath-hold, after #9 |
-| 11 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Slice from #7 | Both kidneys | **None** | Free breathing |
-| 12 | `t1_vibe_twist_dixon_tra_delay` | Axial | Copy Slice from #7 | — | **None** | Breath-hold, ~3–5 min |
-| 13 | `t1_vibe_twist_dixon_cor_delay` | Coronal | Copy Slice from #5 | Both kidneys + renal vessels | **None** | Breath-hold, after #12 |
+| 8 | `t1_vibe_twist_dixon_tra_AP` | Axial | Copy everything from #7 | Both kidneys | **None** | Breath-hold. Fixed delay 30 s |
+| 9 | `t1_vibe_twist_dixon_tra_PVP` | Axial | Copy everything from #7 | — | **None** | Breath-hold, 20 s after #8 |
+| 10 | `t1_vibe_twist_dixon_cor_PVP` | Coronal | Copy everything from #5 | Both kidneys + renal vessels | **None** | Breath-hold, after #9 |
+| 11 | `ep2d_diff_b50_300_800_tra` | Axial | Copy Center from #7 | Both kidneys | **None** | Free breathing |
+| 12 | `t1_vibe_twist_dixon_tra_delay` | Axial | Copy everything from #7 | — | **None** | Breath-hold, ~3–5 min |
+| 13 | `t1_vibe_twist_dixon_cor_delay` | Coronal | Copy everything from #5 | Both kidneys + renal vessels | **None** | Breath-hold, after #12 |
 
 
 ---

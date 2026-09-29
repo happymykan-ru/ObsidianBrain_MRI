@@ -1,6 +1,6 @@
 # Paediatric Brain (Age-Adapted Brain MRI with Contrast)
 
-**Version:** 1.0 | **Date:** 2026-07-27 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -23,7 +23,7 @@
 | 3 | `t1_mprage_cor_p2_brain` *(<2yr)* / `t1_mprage_cor` *(>2yr)* | Coronal | ⟂ AC-PC line | Frontal sinus → occipital pole | **Inferior** |
 | 4 | `MPR` | Sag+Ax | — | Whole brain | — |
 | 5 | `resolve_3scan_trace_tra_p2` *(<2yr)* / `resolve_3scan_trace_tra` *(>2yr)* | Axial | Copy Slice from #1 | — | **None** |
-| 6 | `t2_flair_fs_cor` | Coronal | Copy Slice from #3 | — | **Inferior** |
+| 6 | `t2_flair_fs_cor` | Coronal | Copy Center from #3 | — | **Inferior** |
 | — | **Contrast** | — | — | — | — |
 | 7 | `t1_fl2d_tra_brain_C` | Axial | Copy Slice from #1 | — | **None** |
 | 8 | `t1_vibe_fs_cor_brain_C` | Coronal | Copy Slice from #3 | — | **Inferior** |

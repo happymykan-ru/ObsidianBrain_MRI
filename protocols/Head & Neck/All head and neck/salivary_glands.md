@@ -1,6 +1,6 @@
 # Salivary Glands (Salivary Gland MRI with Contrast and DCE)
 
-**Version:** 1.0 | **Date:** 2026-08-02 | **Scanner:** [Confirm 1.5T/3T]
+**Version:** 1.0 | **Date:** 2026-09-29 | **Scanner:** [Confirm 1.5T/3T]
 
 ---
 
@@ -25,9 +25,9 @@
 | 4 | `t1_se_tra` | Axial | Copy Slice from #3 | — | **None** |
 | 5 | `resolve_4scan_trace_tra` | Axial | Copy Slice from #3 | — | **None** |
 | — | **Contrast** | — | — | — | — |
-| 6 | `t1_vibe_tra_dyn_C` | Axial | Copy Slice from #3 | — (covers whole parotid) | **None** |
-| 7 | `t1_vibe_fs_tra_C` | Axial | Copy Slice from #3 | — | **None** |
-| 8 | `t1_starvibe_fs_cor_C` | Coronal | Copy Slice from #1 | — | **None** |
+| 6 | `t1_vibe_tra_dyn_C` | Axial | Copy Center from #3 | — (covers whole parotid) | **None** |
+| 7 | `t1_vibe_fs_tra_C` | Axial | Copy Center from #3 | — | **None** |
+| 8 | `t1_starvibe_fs_cor_C` | Coronal | Copy Center from #1 | — | **None** |
 | 9 | `MPR` | Sag+Ax | — | Whole volume | — |
 
 *#6: DCE acquisition covers the whole parotid gland. A single slice through the most enhancing portion of the lesion is selected retrospectively for mean curve plotting. Off normalization — raw signal intensity displayed. 
